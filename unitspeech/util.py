@@ -1,6 +1,8 @@
 """ from https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS """
 
 import torch
+import matplotlib.pyplot as plt
+import numpy as np
 
 
 def sequence_mask(length, max_length=None):
@@ -30,6 +32,12 @@ def convert_pad_shape(pad_shape):
     l = pad_shape[::-1]
     pad_shape = [item for sublist in l for item in sublist]
     return pad_shape
+
+
+def parse_filelist(filelist_path, split_char="|"):
+    with open(filelist_path, encoding='utf-8') as f:
+        filepaths_and_text = [line.strip().split(split_char) for line in f]
+    return filepaths_and_text
 
 
 def fix_len_compatibility(length, num_downsamplings_in_unet=3):
@@ -63,7 +71,8 @@ def process_unit(encoded, sampling_rate, hop_length):
 
     new_length = len(expand_unit) // hop_length * hop_length
 
-    unit = torch.LongTensor(expand_unit)[:new_length].reshape(-1, hop_length).mode(1)[0].tolist()
+    unit = torch.LongTensor(expand_unit)[
+        :new_length].reshape(-1, hop_length).mode(1)[0].tolist()
 
     squeezed_unit = [unit[0]]
     squeezed_duration = [1]
@@ -79,6 +88,41 @@ def process_unit(encoded, sampling_rate, hop_length):
     duration = torch.LongTensor(squeezed_duration)
 
     return unit, duration
+
+
+def duration_loss(logw, logw_, lengths):
+    loss = torch.sum((logw - logw_)**2) / torch.sum(lengths)
+    return loss
+
+
+def save_plot(tensor, savepath):
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 3))
+    im = ax.imshow(tensor, aspect="auto", origin="lower", interpolation='none')
+    plt.colorbar(im, ax=ax)
+    plt.tight_layout()
+    fig.canvas.draw()
+    plt.savefig(savepath)
+    plt.close()
+    return
+
+
+def save_figure_to_numpy(fig):
+    data = np.fromstring(fig.canvas.tostring_rgb(), dtype=np.uint8, sep='')
+    data = data.reshape(fig.canvas.get_width_height()[::-1] + (3,))
+    return data
+
+
+def plot_tensor(tensor):
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 3))
+    im = ax.imshow(tensor, aspect="auto", origin="lower", interpolation='none')
+    plt.colorbar(im, ax=ax)
+    plt.tight_layout()
+    fig.canvas.draw()
+    data = save_figure_to_numpy(fig)
+    plt.close()
+    return data
 
 
 class HParams():

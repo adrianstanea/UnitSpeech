@@ -32,7 +32,7 @@ def text_to_speech(
     attn_mask = x_mask.unsqueeze(-1) * y_mask.unsqueeze(2)
     attn = generate_path(w_ceil.squeeze(1), attn_mask.squeeze(1)).unsqueeze(1)
 
-    # Align encoded text and get mu_y
+    # Align encoded text and get mu_y (my_y is cond_y in UnitSpeech => the PRIOR CONDITION?? in reverse diffusion)
     cond_y = torch.matmul(attn.squeeze(1).transpose(1, 2).contiguous(), cond_x.transpose(1, 2).contiguous())
     cond_y = cond_y.transpose(1, 2).contiguous()
 

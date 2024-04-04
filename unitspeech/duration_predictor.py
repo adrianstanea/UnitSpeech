@@ -22,7 +22,12 @@ class LayerNorm(nn.Module):
 
 
 class DurationPredictor(BaseModule):
-    def __init__(self, in_channels, filter_channels, kernel_size, p_dropout, spk_emb_dim=0):
+    def __init__(self,
+                 in_channels,
+                 filter_channels,
+                 kernel_size,
+                 p_dropout,
+                 spk_emb_dim=0):
         super(DurationPredictor, self).__init__()
         in_channels = in_channels + spk_emb_dim
 
@@ -42,7 +47,10 @@ class DurationPredictor(BaseModule):
     def forward(self, x, x_mask, w=None, g=None, reverse=False):
         x = torch.detach(x)
         if g is not None:
-            x = torch.cat([x, g.transpose(1, 2).repeat(1, 1, x.shape[-1])], dim=1)
+            # x = torch.cat([x, g.transpose(1, 2).repeat(1, 1, x.shape[-1])], dim=1)
+            # TODO: when changing phomeme generation make sure to adapt the dimensions here
+            # NOTE: this is how is done in GradTTS
+            x = torch.cat([x, g.unsqueeze(-1).repeat(1, 1, x.shape[-1])], dim=1)
         x = self.conv_1(x * x_mask)
         x = torch.relu(x)
         x = self.norm_1(x)

@@ -5,6 +5,7 @@ import torch
 from einops import rearrange
 
 from unitspeech.base import BaseModule
+from unitspeech.util import fix_len_compatibility, generate_path, sequence_mask
 
 
 class Mish(BaseModule):
@@ -400,3 +401,41 @@ class UnitSpeech(BaseModule):
                        requires_grad=False)
         t = torch.clamp(t, offset, 1.0 - offset)
         return self.loss_t(x0, mask, cond, t, spk_emb)
+
+    def execute_text_to_speech(self, phoneme, phoneme_lengths, spk_emb,
+                               text_encoder, duration_predictor,
+                               num_downsamplings_in_unet,
+                               n_timesteps):
+        cond_x, x, x_mask = text_encoder(phoneme, phoneme_lengths)
+        logw = duration_predictor(x, x_mask, w=None, g=spk_emb, reverse=True)
+
+        w = torch.exp(logw) * x_mask
+        w_ceil = torch.ceil(w) * self.pe_scale
+
+        y_lengths = torch.clamp_min(torch.sum(w_ceil, [1, 2]), 1).long()
+        y_max_length = int(y_lengths.max())
+        y_max_length_ = fix_len_compatibility(y_max_length, num_downsamplings_in_unet)
+
+        # Using obtained durations `w` construct alignment map `attn`
+        y_mask = sequence_mask(y_lengths, y_max_length_).unsqueeze(1).to(x_mask.dtype)
+        attn_mask = x_mask.unsqueeze(-1) * y_mask.unsqueeze(2)
+        attn = generate_path(w_ceil.squeeze(1), attn_mask.squeeze(1)).unsqueeze(1)
+
+        # Align encoded text and get mu_y
+        cond_y = torch.matmul(attn.squeeze(1).transpose(1, 2).contiguous(), cond_x.transpose(1, 2).contiguous())
+        cond_y = cond_y.transpose(1, 2).contiguous()
+        encoder_outputs = cond_y[:, :, :y_max_length]
+
+        # TODO: Here is when the paper says that it does not start from pure noise
+
+        z = torch.randn_like(cond_y, device=cond_y.device) # UnitSpeech
+        # z = cond_y + torch.randn_like(cond_y, device=cond_y.device) / temperature # GradTTS - in adition we dont have temperature in UnitSpeech
+
+        # Generate sample by performing reverse dynamics
+        # TODO: what is the role of text and speaker gradient scale?
+        # Answer: they control the amount of gradient that is backpropagated to the text and speaker embeddings in classifier free guidance
+        # We dont really need them in inference by the looks of it
+        decoder_outputs = self.forward(z, y_mask, cond_y, spk_emb, n_timesteps)
+        decoder_outputs = decoder_outputs[:, :, :y_max_length]
+
+        return encoder_outputs, decoder_outputs, attn[:, :, :y_max_length]

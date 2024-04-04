@@ -96,24 +96,32 @@ def main(args, hps):
 
     # Load the reference audio and extract mel-spectrogram and speaker embeddings.
     wav, sr = librosa.load(args.reference_path)
-    wav = torch.FloatTensor(wav).unsqueeze(0)
+    wav = torch.FloatTensor(wav).unsqueeze(0) # Add batch dimension: (1, num_samples)
     mel = mel_spectrogram(wav, hps.data.n_fft, hps.data.n_feats, hps.data.sampling_rate, hps.data.hop_length,
                           hps.data.win_length, hps.data.mel_fmin, hps.data.mel_fmax, center=False)
-
+    # mel = (batch, n_mel, n_frames)
+    
     # Load the normalization parameters for mel-spectrogram normalization.
+    # TODO: search diff between normalizing between -1 and 1 and 0 and 1
     mel_min = mel.min(-1, keepdim=True)[0]
     mel_max = mel.max(-1, keepdim=True)[0]
+    # min and max value for each bin in the spectrogram: (batch, n_mel, min/max)
 
-    mel = (mel - mel_min) / (mel_max - mel_min) * 2 - 1
+    mel = (mel - mel_min) / (mel_max - mel_min) * 2 - 1 # Normalize mel-spectrogram: [-1, 1]
     mel = mel.cuda()
+    # Sr was at 22050, resample to 16000
     resample_fn = torchaudio.transforms.Resample(sr, 16000).cuda()
     wav = resample_fn(wav.cuda())
+    # Using EcapaTDNN extract speaker embedding, we set (batch=1, emb_dim=256)
     spk_emb = spk_embedder(wav)
-    spk_emb = spk_emb / spk_emb.norm()
+    spk_emb = spk_emb / spk_emb.norm() # Normalize speaker embedding: here [0, 1]
 
     # Extract the units and unit durations to be used for fine-tuning.
+    # Instead of transcripts we use units that are obtained directly from speech and plug them in place of the text encoder using the unit encoder
     encoded = unit_extractor(wav.to("cuda"))
 
+    # Process the unit and durations to resamble a spectrogram with set duratino and sample rate
+    # len(unit)=len(duration) ; at each idx unit[idx] is the unit and duration[idx] is the duration of the unit
     unit, duration = process_unit(encoded, hps.data.sampling_rate, hps.data.hop_length)
 
     # Initialize model and optimizer

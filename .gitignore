@@ -9,3 +9,12 @@ unitspeech/speaker_encoder/checkpts
 unitspeech/vocoder/checkpts
 
 unitspeech.egg-info
+outputs
+text/__pycache__
+unitspeech/__pycache__
+.mypy_cache
+__pycache__
+scripts/reference-speech.wav
+
+scripts/reference-speech.wav
+reference-speech.wav

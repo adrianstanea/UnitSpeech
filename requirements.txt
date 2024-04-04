@@ -1,0 +1,4 @@
+hydra-core
+tensorboardX
+tensorboard
+monotonic_align @ git+https://github.com/resemble-ai/monotonic_align.git

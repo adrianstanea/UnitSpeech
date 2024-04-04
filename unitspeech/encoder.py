@@ -252,8 +252,17 @@ class EncoderModule(BaseModule):
 
 class Encoder(BaseModule):
     def __init__(
-            self, n_vocab, n_feats, n_channels, filter_channels, n_heads, n_layers, kernel_size, p_dropout,
-            n_contentvec=0, window_size=None
+            self,
+            n_vocab,
+            n_feats,
+            n_channels,
+            filter_channels,
+            n_heads,
+            n_layers,
+            kernel_size,
+            p_dropout,
+            n_contentvec=0,
+            window_size=None
     ):
         super(Encoder, self).__init__()
         self.n_vocab = n_vocab
