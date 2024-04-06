@@ -71,12 +71,16 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
     source_dir_name = "DUMMY"
     target_path = os.path.join('/datasets', cfg.data.dataset_name)
     create_symlink(source_dir_name, target_path)
-    # TODO: create symlinks to checkpoints used in the config: on DGX save under generic place and symlink to it when running docker container
+
+    return 
+    # source_dir_name = "unitspeech/checkpoints"
+    # target_path = "/checkpoints"
+    # create_symlink(source_dir_name, target_path)
     # =============================================================================
     # TODO (OPTIONAL): HYPERPARAMTERES
     num_downsamplings_in_unet = len(cfg.decoder.dim_mults) - 1
     out_size = fix_len_compatibility(cfg.train.out_size_second * cfg.data.sampling_rate // cfg.data.hop_length,
-                                              num_downsamplings_in_unet=num_downsamplings_in_unet)
+                                    num_downsamplings_in_unet=num_downsamplings_in_unet)
     # =============================================================================
     logger.info("Initializing random seed...")
     torch.manual_seed(cfg.train.seed)
@@ -88,24 +92,24 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
     writer = SummaryWriter(log_dir=to_absolute_path(cfg.train.log_dir))
     # =============================================================================
     logger.info("Initializing the Speaker Encoder... ")
-    spkr_encoder = ECAPA_TDNN(feat_dim=cfg.spkr_encoder.feat_dim,
-                              channels=cfg.spkr_encoder.channels,
-                              emb_dim=cfg.spkr_encoder.spk_emb_dim,
-                              feat_type=cfg.spkr_encoder.feat_type,
-                              sr=cfg.spkr_encoder.sr,
-                              feature_selection=cfg.spkr_encoder.feature_selection,
-                              update_extract=cfg.spkr_encoder.update_extract,
-                              config_path=cfg.spkr_encoder.config_path)
-    if not os.path.exists(cfg.spkr_encoder.checkpoint):
-        raise FileNotFoundError(
-            f"Checkpoint for speaker embedding extractor not found: {cfg.spkr_encoder.checkpoint}")
-    state_dict = torch.load(cfg.spkr_encoder.checkpoint,
-                            map_location=lambda loc, storage: loc)
-    spkr_encoder.load_state_dict(state_dict["model"], strict=False)
-    # _ = spkr_encoder.to(device).eval()  # FREEZING SPEAKER EMBEDDER
-    _ = spkr_encoder.eval()  # FREEZING SPEAKER EMBEDDER
-    for param in spkr_encoder.parameters():
-        param.requires_grad = False
+    # spkr_encoder = ECAPA_TDNN(feat_dim=cfg.spkr_encoder.feat_dim,
+    #                           channels=cfg.spkr_encoder.channels,
+    #                           emb_dim=cfg.spkr_encoder.spk_emb_dim,
+    #                           feat_type=cfg.spkr_encoder.feat_type,
+    #                           sr=cfg.spkr_encoder.sr,
+    #                           feature_selection=cfg.spkr_encoder.feature_selection,
+    #                           update_extract=cfg.spkr_encoder.update_extract,
+    #                           config_path=cfg.spkr_encoder.config_path).to(device)
+    # if not os.path.exists(cfg.spkr_encoder.checkpoint):
+    #     raise FileNotFoundError(
+    #         f"Checkpoint for speaker embedding extractor not found: {cfg.spkr_encoder.checkpoint}")
+    # state_dict = torch.load(cfg.spkr_encoder.checkpoint,
+    #                         map_location=lambda loc, storage: loc)
+    # spkr_encoder.load_state_dict(state_dict["model"], strict=False)
+    # # _ = spkr_encoder.to(device).eval()  # FREEZING SPEAKER EMBEDDER
+    # _ = spkr_encoder.eval()  # FREEZING SPEAKER EMBEDDER
+    # for param in spkr_encoder.parameters():
+    #     param.requires_grad = False
     # =============================================================================
     # logger.info("Initializing UnitExtractor...")
     # unit_extractor = SpeechEncoder.by_name(dense_model_name=cfg.unit_extractor.dense_model_name,
@@ -118,7 +122,8 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
     logger.info("Initializing datasets...")
     train_dataset = TextMelSpeakerDataset(filelist_path=cfg.data.train_filelist_path,
                                           cmudict_path=cfg.data.cmudict_path,
-                                          spk_embedder=spkr_encoder,
+                                        #   spk_embedder=spkr_encoder,
+                                          spk_embedder=None,
                                           random_seed=cfg.train.seed,
                                           add_blank=cfg.data.add_blank,
                                           n_fft=cfg.data.n_fft,
@@ -127,7 +132,8 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
                                           hop_length=cfg.data.hop_length,
                                           win_length=cfg.data.win_length,
                                           f_min=cfg.data.mel_fmin,
-                                          f_max=cfg.data.mel_fmax)
+                                          f_max=cfg.data.mel_fmax,
+                                          load_preprocessed=True)
     batch_collate = TextMelSpeakerBatchCollate()
     train_loader = DataLoader(dataset=train_dataset,
                               batch_size=cfg.train.batch_size,
@@ -135,18 +141,19 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
                               drop_last=cfg.train.drop_last,
                               num_workers=cfg.train.num_workers,
                               shuffle=cfg.train.shuffle)
-    test_dataset = TextMelSpeakerDataset(filelist_path=cfg.data.test_filelist_path,
-                                          cmudict_path=cfg.data.cmudict_path,
-                                          spk_embedder=spkr_encoder,
-                                          random_seed=cfg.train.seed,
-                                          add_blank=cfg.data.add_blank,
-                                          n_fft=cfg.data.n_fft,
-                                          n_mels=cfg.data.n_feats,
-                                          sample_rate=cfg.data.sampling_rate,
-                                          hop_length=cfg.data.hop_length,
-                                          win_length=cfg.data.win_length,
-                                          f_min=cfg.data.mel_fmin,
-                                          f_max=cfg.data.mel_fmax)
+    # test_dataset = TextMelSpeakerDataset(filelist_path=cfg.data.test_filelist_path,
+    #                                       cmudict_path=cfg.data.cmudict_path,
+    #                                       spk_embedder=spkr_encoder,
+    #                                       random_seed=cfg.train.seed,
+    #                                       add_blank=cfg.data.add_blank,
+    #                                       n_fft=cfg.data.n_fft,
+    #                                       n_mels=cfg.data.n_feats,
+    #                                       sample_rate=cfg.data.sampling_rate,
+    #                                       hop_length=cfg.data.hop_length,
+    #                                       win_length=cfg.data.win_length,
+    #                                       f_min=cfg.data.mel_fmin,
+    #                                       f_max=cfg.data.mel_fmax,
+    #                                       load_preprocessed=True)
     # =============================================================================
     logger.info("Initializing model (GradTTS checkpoint)...")
     # UnitSpeech uses GradTTS as the decoder model: pretrain decoder prior to training the unit encoder
@@ -207,7 +214,7 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
         scaler = torch.cuda.amp.GradScaler()
 
     # logger.info("Logging test batch...")
-    test_batch = test_dataset.sample_test_batch(size=cfg.train.test_size)
+    # test_batch = test_dataset.sample_test_batch(size=cfg.train.test_size)
     # for i, item in enumerate(test_batch):
     #     # TODO: do we need te speaker id??
     #     mel, spk_emb = item['y'], item['spk_emb']
@@ -287,52 +294,54 @@ def hydra_main(cfg: TrainingUnitEncoderConfig):
         text_encoder.eval()
         duration_predictor.eval()
         decoder.eval()
-        with torch.no_grad():
-            for i, item in enumerate(test_batch):
-                x = item['x'].to(torch.long).unsqueeze(0).cuda() # phonemes
-                x_lengths = torch.LongTensor([x.shape[-1]]).cuda() # phoneme lengths
-                spk_emb = item['spk_emb'].cuda()
+        # with torch.no_grad():
+        #     for i, item in enumerate(test_batch):
+        #         x = item['x'].to(torch.long).unsqueeze(0).cuda() # phonemes
+        #         x_lengths = torch.LongTensor([x.shape[-1]]).cuda() # phoneme lengths
+        #         spk_emb = item['spk_emb'].cuda()
 
-                y_enc, y_dec, attn = decoder.execute_text_to_speech(phoneme = x,
-                                                                    phoneme_lengths=x_lengths,
-                                                                    spk_emb=spk_emb,
-                                                                    text_encoder=text_encoder,
-                                                                    duration_predictor=duration_predictor,
-                                                                    num_downsamplings_in_unet=num_downsamplings_in_unet,
-                                                                    n_timesteps=cfg.decoder.diffusion_steps)
-                writer.add_image(f'image_{i}/generated_enc',
-                                 plot_tensor(y_enc.squeeze().cpu()),
-                                 global_step=iteration, dataformats='HWC')
-                writer.add_image(f'image_{i}/generated_dec',
-                                 plot_tensor(y_dec.squeeze().cpu()),
-                                 global_step=iteration, dataformats='HWC')
-                writer.add_image(f'image_{i}/alignment',
-                                 plot_tensor(attn.squeeze().cpu()),
-                                 global_step=iteration, dataformats='HWC')
-                save_plot(y_enc.squeeze().cpu(),
-                          f'{cfg.train.log_dir}/generated_enc_{i}.png')
-                save_plot(y_dec.squeeze().cpu(),
-                          f'{cfg.train.log_dir}/generated_dec_{i}.png')
-                save_plot(attn.squeeze().cpu(),
-                          f'{cfg.train.log_dir}/alignment_{i}.png')
+        #         y_enc, y_dec, attn = decoder.execute_text_to_speech(phoneme = x,
+        #                                                             phoneme_lengths=x_lengths,
+        #                                                             spk_emb=spk_emb,
+        #                                                             text_encoder=text_encoder,
+        #                                                             duration_predictor=duration_predictor,
+        #                                                             num_downsamplings_in_unet=num_downsamplings_in_unet,
+        #                                                             n_timesteps=cfg.decoder.diffusion_steps)
+        #         writer.add_image(f'image_{i}/generated_enc',
+        #                          plot_tensor(y_enc.squeeze().cpu()),
+        #                          global_step=iteration, dataformats='HWC')
+        #         writer.add_image(f'image_{i}/generated_dec',
+        #                          plot_tensor(y_dec.squeeze().cpu()),
+        #                          global_step=iteration, dataformats='HWC')
+        #         writer.add_image(f'image_{i}/alignment',
+        #                          plot_tensor(attn.squeeze().cpu()),
+        #                          global_step=iteration, dataformats='HWC')
+        #         save_plot(y_enc.squeeze().cpu(),
+        #                   f'{cfg.train.log_dir}/generated_enc_{i}.png')
+        #         save_plot(y_dec.squeeze().cpu(),
+        #                   f'{cfg.train.log_dir}/generated_dec_{i}.png')
+        #         save_plot(attn.squeeze().cpu(),
+        #                   f'{cfg.train.log_dir}/alignment_{i}.png')
 
 
         logger.info(f"Saving checkpoints at epoch {epoch}...")
+        os.makedirs(f"{cfg.train.log_dir}/checkpoints_{epoch}",
+                    exist_ok=True)
 
-        text_encoder_ckpt = text_encoder.state_dict()
-        logger.debug(f"text_encoder_ckpt : {text_encoder_ckpt}")
+        text_encoder_ckpt = {"model": text_encoder.state_dict()}
+        logger.debug("Saving text encoder checkpoint")
         torch.save(text_encoder_ckpt,
-                   f=f"{cfg.train.log_dir}/checkpoints_{epoch}/text_encoder.pt")
+                   f"{cfg.train.log_dir}/checkpoints_{epoch}/text_encoder.pt")
 
-        duration_predictor_ckpt = duration_predictor.state_dict()
-        logger.debug(f"duration_predictor_ckpt: {duration_predictor_ckpt}")
+        duration_predictor_ckpt = {"model": duration_predictor.state_dict()}
+        logger.debug("Saving duration predictor checkpoint")
         torch.save(duration_predictor_ckpt,
-                   f=f"{cfg.train.log_dir}/checkpoints_{epoch}/duration_predictor.pt")
+                   f"{cfg.train.log_dir}/checkpoints_{epoch}/duration_predictor.pt")
 
-        pretrained_decoder_ckpt = decoder.state_dict()
-        logger.debug(f"pretrained_decoder_ckpt: {pretrained_decoder_ckpt}")
+        pretrained_decoder_ckpt = {"model": decoder.state_dict()}
+        logger.debug("Saving decoder checkpoint")
         torch.save(pretrained_decoder_ckpt,
-                   f=f"{cfg.train.log_dir}/checkpoints_{epoch}/pretrained_decoder.pt")
+                   f"{cfg.train.log_dir}/checkpoints_{epoch}/pretrained_decoder.pt")
 
 
 def compute_train_step_loss(cfg: TrainingUnitEncoderConfig,
@@ -439,8 +448,4 @@ def compute_train_step_loss(cfg: TrainingUnitEncoderConfig,
 
 
 if __name__ == "__main__":
-    try:
-        set_start_method('spawn')
-    except RuntimeError:
-        pass
     hydra_main()

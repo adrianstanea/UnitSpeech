@@ -16,10 +16,12 @@ class DataConfig:
     sampling_rate: int = 22050
     mel_fmin: float = 0.0
     mel_fmax: float = 8000.0
-    train_filelist_path: str = "resources/filelists/libri-tts/train.txt"
-    test_filelist_path: str = "resources/filelists/libri-tts/valid.txt"
+    # train_filelist_path: str = "resources/filelists/libri-tts/train.txt"
+    # test_filelist_path: str = "resources/filelists/libri-tts/valid.txt"
+    train_filelist_path: str = 'resources/filelists/ljspeech/train.txt'
+    test_filelist_path: str = 'resources/filelists/ljspeech/test.txt'
     cmudict_path: str = 'resources/cmu_dictionary'
-    dataset_name: str = 'LibriTTS'
+    dataset_name: str = 'LJSpeech/wavs'
     add_blank: bool = True
 
 
@@ -74,14 +76,14 @@ class TrainConfig:
     train_no_cuda: bool = False
     out_size_second: int = 2
     n_epochs: int = 1000
-    batch_size: int = 4#64
+    batch_size: int = 16
     drop_last: bool = True
-    num_workers : int = 4
+    num_workers : int = 0
     shuffle : bool = True
     fp16_run: bool = False
     seed: int = 42
     log_dir: str = 'logs/new_exp'
-    save_every: int = 50
+    save_every: int = 1 # TODO: change to 50
     test_size: int = 4
 
     # def __post_init__(self):

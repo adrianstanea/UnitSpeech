@@ -402,6 +402,7 @@ class UnitSpeech(BaseModule):
         t = torch.clamp(t, offset, 1.0 - offset)
         return self.loss_t(x0, mask, cond, t, spk_emb)
 
+    @torch.no_grad()
     def execute_text_to_speech(self, phoneme, phoneme_lengths, spk_emb,
                                text_encoder, duration_predictor,
                                num_downsamplings_in_unet,
