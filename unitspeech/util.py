@@ -48,7 +48,7 @@ def fix_len_compatibility(length, num_downsamplings_in_unet=3):
 
 
 def intersperse(lst, item):
-    # Adds blank symbol
+    # Adds blank symbol between each item in the list
     result = [item] * (len(lst) * 2 + 1)
     result[1::2] = lst
     return result

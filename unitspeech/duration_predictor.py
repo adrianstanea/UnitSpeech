@@ -45,12 +45,13 @@ class DurationPredictor(BaseModule):
         self.proj = torch.nn.Conv1d(filter_channels, 1, 1)
 
     def forward(self, x, x_mask, w=None, g=None, reverse=False):
+        # g => speaker embedding
         x = torch.detach(x)
         if g is not None:
-            # x = torch.cat([x, g.transpose(1, 2).repeat(1, 1, x.shape[-1])], dim=1)
+            x = torch.cat([x, g.transpose(1, 2).repeat(1, 1, x.shape[-1])], dim=1)
             # TODO: when changing phomeme generation make sure to adapt the dimensions here
             # NOTE: this is how is done in GradTTS
-            x = torch.cat([x, g.unsqueeze(-1).repeat(1, 1, x.shape[-1])], dim=1)
+            # x = torch.cat([x, g.unsqueeze(-1).repeat(1, 1, x.shape[-1])], dim=1)
         x = self.conv_1(x * x_mask)
         x = torch.relu(x)
         x = self.norm_1(x)

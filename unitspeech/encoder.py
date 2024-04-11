@@ -285,18 +285,25 @@ class Encoder(BaseModule):
         self.prenet = ConvReluNorm(n_channels, n_channels, n_channels,
                                    kernel_size=5, n_layers=3, p_dropout=0.5)
 
+        # Encoder: 6 Transformer blocks with multi-head self attention
         self.encoder = EncoderModule(n_channels, filter_channels, n_heads, n_layers,
                                      kernel_size, p_dropout, window_size=window_size)
-
+        # Final linear projection layer
         self.proj_m = torch.nn.Conv1d(n_channels, n_feats, 1)
 
     def forward(self, x, x_lengths):
-        x = self.emb(x) * math.sqrt(self.n_channels)
-        x = torch.transpose(x, 1, -1).contiguous()
-        x_mask = torch.unsqueeze(sequence_mask(x_lengths, x.size(2)), 1).to(x.dtype)
+        x = self.emb(x) * math.sqrt(self.n_channels) # (batch, max_phoneme_length_in_batch, n_channels) 
+        # n channels represents the number of dimensions in the vector space: a discrete ID of the phoneme is mapped into a continous representation in the embedding sapce of 192 directions
+        x = torch.transpose(x, 1, -1).contiguous() # (batch, n_channels, max_phoneme_length_in_batch) 
+        # Mask: used to ignore padding tokens -> has value of 0 across the padding tokens
+        # ex: We had x=3 sentences and in the end (32, 43, 68) total ID's that correspond to phonemes in each sample
+        # When batching we padd with 0 -> all samples have the same legnth but we keep the original x_lengths to know where the padding is
+        # Each ID is mapped into an embedding of 192 dimensions -> x = (32, 192, 68)
+        # When doing operations we want to hide the paddded tokes so we create a mask that has 1 up to the orignal length for each sample and 0 for the padding
+        x_mask = torch.unsqueeze(sequence_mask(x_lengths, x.size(2)), 1).to(x.dtype) # (batch, 1, portion to be masked: value of 1 means it is used and 0 means it is masked)
 
         x = self.prenet(x, x_mask)
 
         x = self.encoder(x, x_mask)
-        mu_x = self.proj_m(x) * x_mask
+        mu_x = self.proj_m(x) * x_mask # (batch, num_mels, max_phoneme_length_in_batch)
         return mu_x, x, x_mask

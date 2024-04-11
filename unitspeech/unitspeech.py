@@ -334,8 +334,9 @@ class UnitSpeech(BaseModule):
         alpha_cumprods = []
 
         for i in range(n_timesteps):
+            # Linearly decreasing time value
             t = (1.0 - (i + 0.5) * h) * torch.ones(z.shape[0], dtype=z.dtype, device=z.device)
-            time = t.unsqueeze(-1).unsqueeze(-1)
+            time = t.unsqueeze(-1).unsqueeze(-1) # (N, 1, 1) -> add two dimensions to the tensor at the end
             alpha_cumprods.append(torch.exp(-get_noise(time, self.beta_min, self.beta_max, cumulative=True)))
 
         alpha_cumprods = torch.cat(
@@ -386,6 +387,9 @@ class UnitSpeech(BaseModule):
         )
 
     def loss_t(self, x0, mask, cond, t, spk_emb):
+        # x0 => spectrogram
+        # xmask => valid indices from zero padded batch
+        # cond => features obtained from the encoder and aligner
         xt, z = self.forward_diffusion(x0, mask, t)
         time = t.unsqueeze(-1).unsqueeze(-1)
         cum_noise = get_noise(time, self.beta_min, self.beta_max, cumulative=True)

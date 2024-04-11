@@ -10,23 +10,22 @@ import torch
 from hydra.utils import get_original_cwd
 
 
-def create_symlink(source_dir_name: str, target_path: str):
+def create_symlink(local_dir_name: str, host_dataset_path: str):
     """
-    Creates a symbolic link from the source path to the target path.
+    Creates a symlink from a directory in the local instance to a directory in the host machine.
 
     Args:
-        source_dir_name (str): The name of the directory in the local instance.
-        target_path (str): The path in the host machine where a dataset is located.
+        local_dir_name (str): The name of the directory in the local instance.
+        host_dataset_path (str): The path in the host machine where a directory is located.
     """
-    source_path = Path(get_original_cwd()) / source_dir_name
+    local_path = Path(get_original_cwd()) / local_dir_name
 
-    logging.debug(f"Creating symlink from {source_path} to {target_path}")
+    logging.debug(f"Creating symlink from {local_path} to {host_dataset_path}")
 
     # Check if the symlink already exists
-    if not os.path.islink(source_path):
-        if os.path.exists(source_path):
-            logging.info(f"File or directory {source_path} already exists and is not a symlink.")
-        else:
-            os.symlink(target_path, str(source_path))
-    else:
-        logging.info(f"Symlink {source_path} already exists.")
+    if os.path.islink(local_path):
+        os.unlink(local_path)
+        logging.info(f"Removed existing symlink {local_path}")
+
+    os.symlink(host_dataset_path, str(local_path))
+    logging.info(f"Created symlink {local_path} -> {host_dataset_path}")

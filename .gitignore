@@ -18,3 +18,10 @@ scripts/reference-speech.wav
 
 scripts/reference-speech.wav
 reference-speech.wav
+DUMMY
+outputs
+data_preproces
+unitspeech/_checkpoints
+resources/manifests
+unitspeech/.checkpoints
+temp

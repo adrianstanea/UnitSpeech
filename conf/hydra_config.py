@@ -1,9 +1,15 @@
 from dataclasses import dataclass, field
 from optparse import Option
-from typing import List, Optional
+from typing import List, Any, Optional
+
+from omegaconf import MISSING
 
 from unitspeech.text.symbols import symbols
 from unitspeech.util import fix_len_compatibility
+
+# defaults = [
+#     {"dataset": "LJSpeech"},
+# ]
 
 
 @dataclass
@@ -16,18 +22,26 @@ class DataConfig:
     sampling_rate: int = 22050
     mel_fmin: float = 0.0
     mel_fmax: float = 8000.0
-    # train_filelist_path: str = "resources/filelists/libri-tts/train.txt"
-    # test_filelist_path: str = "resources/filelists/libri-tts/valid.txt"
-    train_filelist_path: str = 'resources/filelists/ljspeech/train.txt'
-    test_filelist_path: str = 'resources/filelists/ljspeech/test.txt'
     cmudict_path: str = 'resources/cmu_dictionary'
-    dataset_name: str = 'LJSpeech/wavs'
     add_blank: bool = True
 
+@dataclass
+class LJSPeechConfig:
+    train_filelist_path: str = 'resources/filelists/ljspeech/train.txt'
+    test_filelist_path: str = 'resources/filelists/ljspeech/test.txt'
+    # path: str = 'LJSpeech/wavs' # SERVER
+    path: str = 'LJSpeech' # LOCAL
+
+@dataclass
+class LibriTTSConfig:
+    train_filelist_path: str = 'resources/filelists/libri-tts/train.txt'
+    test_filelist_path: str = 'resources/filelists/libri-tts/valid.txt'
+    # path: str = 'LibriTTS/wavs' # Server
+    path: str = 'LibriTTS' # LOCAL
 
 
 @dataclass
-class UnitEncoderConfig:  # Text or Unit encoder
+class UnitEncoderConfig:
     n_channels: int = 192
     filter_channels: int = 768
     n_layers: int = 6
@@ -36,8 +50,9 @@ class UnitEncoderConfig:  # Text or Unit encoder
     n_heads: int = 2
     window_size: int = 4
 
+
 @dataclass
-class TextEncoderConfig:  # Text or Unit encoder
+class TextEncoderConfig:
     n_vocab: int = len(symbols)+1
     n_channels: int = 192
     filter_channels: int = 768
@@ -47,6 +62,7 @@ class TextEncoderConfig:  # Text or Unit encoder
     n_heads: int = 2
     window_size: int = 4
 
+
 @dataclass
 class DurationPredictorConfig:
     in_channels: int = 192
@@ -54,7 +70,7 @@ class DurationPredictorConfig:
     kernel_size: int = 3
     p_dropout: float = 0.1
     spk_emb_dim: int = 256
-    
+
 
 @dataclass
 class DecoderConfig:  # GradTTS -> diffusion model
@@ -73,7 +89,7 @@ class DecoderConfig:  # GradTTS -> diffusion model
 
 @dataclass
 class TrainConfig:
-    train_no_cuda: bool = False
+    cuda_device: bool = True
     out_size_second: int = 2
     n_epochs: int = 1000
     batch_size: int = 16
@@ -122,14 +138,31 @@ class UnitExtractorConfig:
     deduplicate : bool = True
     need_f0 : bool = False
 
+# Train Step 1 config => text encoder, duration predictor and decoder
 @dataclass
-class TrainingUnitEncoderConfig:
+class TrainingUnitEncoderConfig_STEP1:
     data: DataConfig = DataConfig()
+    dataset : LJSPeechConfig = LJSPeechConfig()
     optimizer: AdamConfig = AdamConfig()
     vocoder: VocoderConfig = VocoderConfig()
     spkr_encoder: SpeakerEncoderCfg = SpeakerEncoderCfg()
     duration_predictor: DurationPredictorConfig = DurationPredictorConfig()
     unit_extractor: UnitExtractorConfig = UnitExtractorConfig()
     encoder: TextEncoderConfig = TextEncoderConfig()
+    decoder: DecoderConfig = DecoderConfig()
+    train: TrainConfig = TrainConfig()
+
+
+# Train Step 2 config => Unit Encoder adaptation
+@dataclass
+class TrainingUnitEncoderConfig_STEP2:
+    data: DataConfig = DataConfig()
+    dataset : LJSPeechConfig = LJSPeechConfig()
+    optimizer: AdamConfig = AdamConfig()
+    vocoder: VocoderConfig = VocoderConfig()
+    spkr_encoder: SpeakerEncoderCfg = SpeakerEncoderCfg()
+    duration_predictor: DurationPredictorConfig = DurationPredictorConfig()
+    unit_extractor: UnitExtractorConfig = UnitExtractorConfig()
+    encoder: UnitEncoderConfig = UnitEncoderConfig() # Unit and Text encoders seem to have the same config
     decoder: DecoderConfig = DecoderConfig()
     train: TrainConfig = TrainConfig()
