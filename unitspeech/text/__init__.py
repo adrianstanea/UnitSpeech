@@ -2,12 +2,12 @@
 from unitspeech.text import cleaners
 from unitspeech.text.symbols import symbols
 
-
 # Mappings from symbol to numeric ID and vice versa:
 _symbol_to_id = {s: i for i, s in enumerate(symbols)}
 _id_to_symbol = {i: s for i, s in enumerate(symbols)}
 
 
+""" https://github.com/jaywalnut310/vits/blob/2e561ba/text/cleaners.py """
 def phonemize(text, global_phonemizer):
     text = cleaners.convert_to_ascii(text)
     text = cleaners.lowercase(text)

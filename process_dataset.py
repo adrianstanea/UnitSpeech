@@ -3,11 +3,11 @@ import os
 
 import hydra
 import numpy as np
-from regex import D
 import torch
 import torchaudio as ta
 from hydra.core.config_store import ConfigStore
 from hydra.utils import get_original_cwd, to_absolute_path
+from regex import D
 from tqdm import tqdm
 
 from conf.hydra_config import TrainingUnitEncoderConfig_STEP1
@@ -107,18 +107,18 @@ def main(cfg: TrainingUnitEncoderConfig_STEP1):
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     logging.info("Loading speaker embedder ...")
-    spkr_embedder = ECAPA_TDNN(feat_dim=cfg.spkr_encoder.feat_dim,
-                            channels=cfg.spkr_encoder.channels,
-                            emb_dim=cfg.spkr_encoder.spk_emb_dim,
-                            feat_type=cfg.spkr_encoder.feat_type,
-                            sr=cfg.spkr_encoder.sr,
-                            feature_selection=cfg.spkr_encoder.feature_selection,
-                            update_extract=cfg.spkr_encoder.update_extract,
-                            config_path=cfg.spkr_encoder.config_path).to(device)
-    if not os.path.exists(cfg.spkr_encoder.checkpoint):
+    spkr_embedder = ECAPA_TDNN(feat_dim=cfg.spkr_embedder.feat_dim,
+                            channels=cfg.spkr_embedder.channels,
+                            emb_dim=cfg.spkr_embedder.spk_emb_dim,
+                            feat_type=cfg.spkr_embedder.feat_type,
+                            sr=cfg.spkr_embedder.sr,
+                            feature_selection=cfg.spkr_embedder.feature_selection,
+                            update_extract=cfg.spkr_embedder.update_extract,
+                            config_path=cfg.spkr_embedder.config_path).to(device)
+    if not os.path.exists(cfg.spkr_embedder.checkpoint):
         raise FileNotFoundError(
-            f"Checkpoint for speaker embedding extractor not found: {cfg.spkr_encoder.checkpoint}")
-    state_dict = torch.load(cfg.spkr_encoder.checkpoint,
+            f"Checkpoint for speaker embedding extractor not found: {cfg.spkr_embedder.checkpoint}")
+    state_dict = torch.load(cfg.spkr_embedder.checkpoint,
                             map_location=lambda loc, storage: loc)
     spkr_embedder.load_state_dict(state_dict["model"], strict=False)
     _ = spkr_embedder.eval()  # FREEZING SPEAKER EMBEDDER
@@ -152,21 +152,21 @@ def main(cfg: TrainingUnitEncoderConfig_STEP1):
 
     generate_spkr_embeddings(filelist_path=cfg.dataset.train_filelist_path,
                              spkr_embedder=spkr_embedder,
-                             sample_rate=cfg.spkr_encoder.sr,
+                             sample_rate=cfg.spkr_embedder.sr,
                              device=device)
     generate_spkr_embeddings(filelist_path=cfg.dataset.test_filelist_path,
                              spkr_embedder=spkr_embedder,
-                             sample_rate=cfg.spkr_encoder.sr,
+                             sample_rate=cfg.spkr_embedder.sr,
                              device=device)
 
     generate_unit_duration_embeddings(filelist_path=cfg.dataset.train_filelist_path,
                                       unit_extractor=unit_extractor,
-                                      sample_rate=cfg.spkr_encoder.sr,
+                                      sample_rate=cfg.spkr_embedder.sr,
                                       hop_size=cfg.data.hop_length,
                                       device=device)
     generate_unit_duration_embeddings(filelist_path=cfg.dataset.test_filelist_path,
                                       unit_extractor=unit_extractor,
-                                      sample_rate=cfg.spkr_encoder.sr,
+                                      sample_rate=cfg.spkr_embedder.sr,
                                       hop_size=cfg.data.hop_length,
                                       device=device)
 

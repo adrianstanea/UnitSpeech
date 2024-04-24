@@ -4,13 +4,19 @@
 # LICENSE file in the root directory of this source tree.
 
 
+from typing import Callable, Dict, Optional
+
 import torch
 import torch.nn
 import torchaudio
-from typing import Optional, Callable, Dict
+
 from unitspeech.textlesslib.textless import dispatch_dense_model, dispatch_quantizer
-from unitspeech.textlesslib.textless import dispatch_dense_model
-from unitspeech.textlesslib.textless.data.f0_preprocess import get_f0, align_f0_to_durations, F0_FRAME_SPACE
+from unitspeech.textlesslib.textless.data.f0_preprocess import (
+    F0_FRAME_SPACE,
+    align_f0_to_durations,
+    get_f0,
+)
+
 from .collater_utils import wrap_bos_eos
 
 

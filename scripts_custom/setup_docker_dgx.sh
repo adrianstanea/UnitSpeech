@@ -1,24 +1,34 @@
 #!/bin/bash
 
-GPU_ID=6
+source ./variables.sh
 
-CONTAINER_NAME="UnitSpeech_1_0"
+GPU_ID=6
+PORT=42509
+IMAGE="nvcr.io/nvidia/pytorch:24.02-py3"
+
+CONTAINER_NAME="UnitSpeech-licenta"
 SOURCE_CODE_MOUNT="$(pwd)":/workspace/local
-# Mount: host_path:container_path
-LJSPEECH_MOUNT="/mnt/QNAP/staria/LJSpeech-1.1/wavs:/datasets/LJSpeech"
-OUTPUTS_MOUNT="/mnt/QNAP/staria/bogdan_outputs/UnitSpeech_Train1:/outputs"
-PRETRAINED_CHECKPTS="/mnt/QNAP/staria/bogdan_outputs/pretrained-checkpoints:/checkpoints"
+
+LJSPEECH_MOUNT="$LJSPEECH_HOST_PATH:$LJSPEECHT_CONTAINER_PATH"
+LIBRITTS_MOUNT="$LIBRITTS_HOST_PATH:$LIBRITTS_CONTAINER_PATH"
+OUTPUTS_MOUNT="$OUTPUTS_HOST_PATH:$OUTPUTS_CONTAINER_PATH"
+CHECKPOINTS_MOUNT="$CHECKPOINTS_HOST_PATH:$CHECKPOINTS_CONTAINER_PATH"
+
+UID=$(id -u)
+GID=$(id -g)
 
 docker container run -d \
                     -it \
                     --name $CONTAINER_NAME \
                     -v $SOURCE_CODE_MOUNT \
                     -v $LJSPEECH_MOUNT \
+                    -v $LIBRITTS_MOUNT \
                     -v $OUTPUTS_MOUNT \
-                    -v $PRETRAINED_CHECKPTS \
-                    -p 42509:42509 \
+                    -v $CHECKPOINTS_MOUNT \
+                    -p $PORT:$PORT \
+                    -u $UID:$GID \
                     --gpus=all \
-                    nvcr.io/nvidia/pytorch:24.02-py3
+                    $IMAGE
 
 docker exec -it -e CUDA_VISIBLE_DEVICES=$GPU_ID $CONTAINER_NAME /bin/bash
 

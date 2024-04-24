@@ -1,6 +1,6 @@
 from dataclasses import dataclass, field
 from optparse import Option
-from typing import List, Any, Optional
+from typing import Any, List, Optional
 
 from omegaconf import MISSING
 
@@ -10,6 +10,11 @@ from unitspeech.util import fix_len_compatibility
 # defaults = [
 #     {"dataset": "LJSpeech"},
 # ]
+
+@dataclass
+class InferenceConfigu:
+    speaker_id: int = 2
+    text: str = "Hello, my name is Bogdan. I am creating a demonstration sample."
 
 
 @dataclass
@@ -24,19 +29,33 @@ class DataConfig:
     mel_fmax: float = 8000.0
     cmudict_path: str = 'resources/cmu_dictionary'
     add_blank: bool = True
+    # During training we normalize spectrograms using channel-wise min/max
+    # NOTE: Typically, it is natural to use these min and max values even
+    # during fine-tuning. However, based on our experience, we have 
+    # observed that it is more effective to normalize using local 
+    # min and max obtained from the mel of the reference audio before fine-tuning.
+    embs_path: str = "unitspeech/checkpoints/spkr_embs/"
 
 @dataclass
 class LJSPeechConfig:
     train_filelist_path: str = 'resources/filelists/ljspeech/train.txt'
     test_filelist_path: str = 'resources/filelists/ljspeech/test.txt'
+    normalize_mels: bool = True
+    mel_min_path: str = "unitspeech/checkpoints/mel_normalization/LJSpeech/mel_min.pt"
+    mel_max_path: str = "unitspeech/checkpoints/mel_normalization/LJSpeech/mel_max.pt"
     # path: str = 'LJSpeech/wavs' # SERVER
+    name: str = 'LJSpeech'
     path: str = 'LJSpeech' # LOCAL
 
 @dataclass
 class LibriTTSConfig:
     train_filelist_path: str = 'resources/filelists/libri-tts/train.txt'
     test_filelist_path: str = 'resources/filelists/libri-tts/valid.txt'
+    normalize_mels: bool = True
+    mel_min_path: str = "unitspeech/checkpoints/mel_normalization/LibriTTS/mel_min.pt"
+    mel_max_path: str = "unitspeech/checkpoints/mel_normalization/LibriTTS/mel_max.pt"
     # path: str = 'LibriTTS/wavs' # Server
+    name: str = 'LibriTTS'
     path: str = 'LibriTTS' # LOCAL
 
 
@@ -61,6 +80,7 @@ class TextEncoderConfig:
     p_dropout: float = 0.1
     n_heads: int = 2
     window_size: int = 4
+    checkpoint: str = "unitspeech/checkpoints/text_encoder.pt"
 
 
 @dataclass
@@ -70,6 +90,7 @@ class DurationPredictorConfig:
     kernel_size: int = 3
     p_dropout: float = 0.1
     spk_emb_dim: int = 256
+    checkpoint: str = "unitspeech/checkpoints/duration_predictor.pt"
 
 
 @dataclass
@@ -83,28 +104,21 @@ class DecoderConfig:  # GradTTS -> diffusion model
     diffusion_steps: int = 50
     checkpoint: str = "unitspeech/checkpoints/pretrained_decoder.pt"
 
-    # def __post_init__(self):
-    #     self.num_downsamplings_in_unet = len(self.dim_mults) - 1
-
 
 @dataclass
 class TrainConfig:
-    cuda_device: bool = True
+    on_GPU: bool = True
     out_size_second: int = 2
-    n_epochs: int = 1000
-    batch_size: int = 16
+    n_epochs: int = 10  #1000
+    batch_size: int = 8
     drop_last: bool = True
     num_workers : int = 0
     shuffle : bool = True
-    fp16_run: bool = False
+    fp16_run: bool = False # Original
     seed: int = 42
     log_dir: str = 'logs/new_exp'
     save_every: int = 1 # TODO: change to 50
     test_size: int = 4
-
-    # def __post_init__(self):
-    #     self.out_size = fix_len_compatibility(self.out_size_second * DataConfig.sampling_rate // DataConfig.hop_length,
-    #                                           num_downsamplings_in_unet=DecoderConfig.num_downsamplings_in_unet)
 
 
 @dataclass
@@ -115,11 +129,12 @@ class VocoderConfig:
 
 @dataclass
 class AdamConfig:
-    learning_rate: float = 1e-4
+    learning_rate: float = 1e-4 # TRAIN
+    # learning_rate: float = 1e-5 # FINETUNE
 
 
 @dataclass
-class SpeakerEncoderCfg:
+class SpeakerEmbedderCfg:
     feat_dim: int = 1024
     feat_type: str = "wavlm_large"
     config_path: Optional[str] = None
@@ -142,27 +157,31 @@ class UnitExtractorConfig:
 @dataclass
 class TrainingUnitEncoderConfig_STEP1:
     data: DataConfig = DataConfig()
-    dataset : LJSPeechConfig = LJSPeechConfig()
+    dataset : LibriTTSConfig = LibriTTSConfig() # Multi-speaker
+    # dataset : LJSPeechConfig = LJSPeechConfig() # Single speaker
     optimizer: AdamConfig = AdamConfig()
     vocoder: VocoderConfig = VocoderConfig()
-    spkr_encoder: SpeakerEncoderCfg = SpeakerEncoderCfg()
+    spkr_embedder: SpeakerEmbedderCfg = SpeakerEmbedderCfg()
     duration_predictor: DurationPredictorConfig = DurationPredictorConfig()
     unit_extractor: UnitExtractorConfig = UnitExtractorConfig()
     encoder: TextEncoderConfig = TextEncoderConfig()
     decoder: DecoderConfig = DecoderConfig()
     train: TrainConfig = TrainConfig()
+    inference: InferenceConfigu = InferenceConfigu()
 
 
 # Train Step 2 config => Unit Encoder adaptation
 @dataclass
 class TrainingUnitEncoderConfig_STEP2:
     data: DataConfig = DataConfig()
-    dataset : LJSPeechConfig = LJSPeechConfig()
+    dataset : LibriTTSConfig = LibriTTSConfig() # Multi-speaker
+    # dataset : LJSPeechConfig = LJSPeechConfig() # Single speaker
     optimizer: AdamConfig = AdamConfig()
     vocoder: VocoderConfig = VocoderConfig()
-    spkr_encoder: SpeakerEncoderCfg = SpeakerEncoderCfg()
+    spkr_embedder: SpeakerEmbedderCfg = SpeakerEmbedderCfg()
     duration_predictor: DurationPredictorConfig = DurationPredictorConfig()
     unit_extractor: UnitExtractorConfig = UnitExtractorConfig()
     encoder: UnitEncoderConfig = UnitEncoderConfig() # Unit and Text encoders seem to have the same config
     decoder: DecoderConfig = DecoderConfig()
     train: TrainConfig = TrainConfig()
+    inference: InferenceConfigu = InferenceConfigu()

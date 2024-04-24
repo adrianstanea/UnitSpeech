@@ -1,12 +1,12 @@
 """ from https://github.com/jaywalnut310/glow-tts """
 
 import math
+
 import torch
 
+from unitspeech.util import convert_pad_shape, sequence_mask
+
 from .base import BaseModule
-
-
-from unitspeech.util import sequence_mask, convert_pad_shape
 
 
 class LayerNorm(BaseModule):

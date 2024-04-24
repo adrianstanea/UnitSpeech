@@ -1,8 +1,10 @@
 """ from https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS """
 
-import torch
+import os
+
 import matplotlib.pyplot as plt
 import numpy as np
+import torch
 
 
 def sequence_mask(length, max_length=None):
@@ -95,11 +97,13 @@ def duration_loss(logw, logw_, lengths):
     return loss
 
 
-def save_plot(tensor, savepath):
+def save_plot(tensor, savepath, title=None):
     plt.style.use('default')
     fig, ax = plt.subplots(figsize=(12, 3))
     im = ax.imshow(tensor, aspect="auto", origin="lower", interpolation='none')
     plt.colorbar(im, ax=ax)
+    if title:
+        plt.title(title)
     plt.tight_layout()
     fig.canvas.draw()
     plt.savefig(savepath)
@@ -123,6 +127,27 @@ def plot_tensor(tensor):
     data = save_figure_to_numpy(fig)
     plt.close()
     return data
+
+def load_speaker_embs(embs_path: str, normalize=True):
+    """Load mean speaker embeddings from .pt files in a directory.
+
+    Args:
+        embs_path (str): Folder with .pt files containing speaker embeddings for the current dataset
+
+    Returns:
+        torch.Tensor: Tensor containing all speaker embeddings
+    """
+    embs = []
+    for spk_id in sorted(os.listdir(embs_path)):
+        if spk_id.endswith('.pt'):
+            spkr_emb = torch.load(os.path.join(embs_path, spk_id))
+
+            if normalize:
+                spkr_emb = spkr_emb / spkr_emb.norm()
+            embs.append(spkr_emb.squeeze(0))
+        # else:
+        #     raise ValueError(f"Speaker embedding file {spk_id} is not a .pt file.")
+    return torch.stack(embs)
 
 
 class HParams():

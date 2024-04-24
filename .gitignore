@@ -1,9 +1,11 @@
+
 .idea
 
 .ipynb_checkpoints
 notebooks/.ipynb_checkpoints
+notebooks/PS-*
 
-unitspeech/checkpoints
+unitspeech/checkpoints*
 unitspeech/outputs
 unitspeech/speaker_encoder/checkpts
 unitspeech/vocoder/checkpts
@@ -18,10 +20,12 @@ scripts/reference-speech.wav
 
 scripts/reference-speech.wav
 reference-speech.wav
-DUMMY
 outputs
 data_preproces
 unitspeech/_checkpoints
 resources/manifests
 unitspeech/.checkpoints
 temp
+resources/LibriTTS
+resources/filelists - ORIGINAL
+_text

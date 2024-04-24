@@ -1,9 +1,11 @@
+# DEPRECATED !!
 import logging
-import hydra
-from hydra.utils import get_original_cwd
 import os
 
+import hydra
 from hydra.core.config_store import ConfigStore
+from hydra.utils import get_original_cwd
+
 from conf.hydra_config import TrainingUnitEncoderConfig_STEP1
 from utils import create_symlink
 

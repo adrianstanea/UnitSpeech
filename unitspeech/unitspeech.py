@@ -1,6 +1,7 @@
 """ from https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS """
 
 import math
+
 import torch
 from einops import rearrange
 
@@ -408,14 +409,17 @@ class UnitSpeech(BaseModule):
 
     @torch.no_grad()
     def execute_text_to_speech(self, phoneme, phoneme_lengths, spk_emb,
-                               text_encoder, duration_predictor,
-                               num_downsamplings_in_unet,
-                               n_timesteps):
+                            text_encoder, duration_predictor,
+                            num_downsamplings_in_unet,
+                            diffusion_steps=50,
+                            length_scale=1.0,
+                            text_gradient_scale=1.0,
+                            spk_gradient_scale=1.0):
         cond_x, x, x_mask = text_encoder(phoneme, phoneme_lengths)
         logw = duration_predictor(x, x_mask, w=None, g=spk_emb, reverse=True)
 
         w = torch.exp(logw) * x_mask
-        w_ceil = torch.ceil(w) * self.pe_scale
+        w_ceil = torch.ceil(w) * length_scale
 
         y_lengths = torch.clamp_min(torch.sum(w_ceil, [1, 2]), 1).long()
         y_max_length = int(y_lengths.max())
@@ -440,7 +444,10 @@ class UnitSpeech(BaseModule):
         # TODO: what is the role of text and speaker gradient scale?
         # Answer: they control the amount of gradient that is backpropagated to the text and speaker embeddings in classifier free guidance
         # We dont really need them in inference by the looks of it
-        decoder_outputs = self.forward(z, y_mask, cond_y, spk_emb, n_timesteps)
+        decoder_outputs = self.forward(z, y_mask, cond_y, spk_emb,
+                                       n_timesteps=diffusion_steps,
+                                       text_gradient_scale=text_gradient_scale,
+                                       spk_gradient_scale=spk_gradient_scale)
         decoder_outputs = decoder_outputs[:, :, :y_max_length]
 
         return encoder_outputs, decoder_outputs, attn[:, :, :y_max_length]

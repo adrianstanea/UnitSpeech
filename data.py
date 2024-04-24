@@ -8,127 +8,28 @@
 import logging
 import os
 import random
-import sys
-from venv import logger
-import numpy as np
 
+import numpy as np
+import phonemizer
 import phonemizer.logger
 import torch
 import torchaudio as ta
 
-import phonemizer
+# import librosa
 from phonemizer.logger import get_logger
 
 from unitspeech.text import cleaned_text_to_sequence, phonemize, symbols
-
-
-# from text import text_to_sequence
-# from text.symbols import symbols
-from unitspeech.textlesslib.textless.data.speech_encoder import SpeechEncoder
-from unitspeech.util import fix_len_compatibility, parse_filelist, process_unit, intersperse
-
+from unitspeech.util import (
+    fix_len_compatibility,
+    intersperse,
+    parse_filelist,
+)
 from unitspeech.vocoder.meldataset import mel_spectrogram
 
-
-import random
-# import librosa
-import numpy as np
-
-import torch
-import torchaudio as ta
-
-# from unitspeech.textlesslib.textless.data.speech_encoder import SpeechEncoder
-
-# class TextMelDataset(torch.utils.data.Dataset):
-#     def __init__(self,
-#                  filelist_path,
-#                  cmudict_path,
-#                  random_seed=42,
-#                  add_blank=True,
-#                  n_fft=1024,
-#                  n_mels=80,
-#                  sample_rate=22050,
-#                  hop_length=256,
-#                  win_length=1024,
-#                  f_min=0.,
-#                  f_max=8000):
-#         self.filepaths_and_text = parse_filelist(filelist_path)
-#         self.cmudict = cmudict.CMUDict(cmudict_path)
-#         self.add_blank = add_blank
-#         self.n_fft = n_fft
-#         self.n_mels = n_mels
-#         self.sample_rate = sample_rate
-#         self.hop_length = hop_length
-#         self.win_length = win_length
-#         self.f_min = f_min
-#         self.f_max = f_max
-#         random.seed(random_seed)
-#         random.shuffle(self.filepaths_and_text)
-
-#     def get_pair(self, filepath_and_text):
-#         filepath, text = filepath_and_text[0], filepath_and_text[1]
-#         text = self.get_text(text, add_blank=self.add_blank)
-#         mel = self.get_mel(filepath)
-#         return (text, mel)
-
-#     def get_mel(self, filepath):
-#         audio, sr = ta.load(filepath)
-#         assert sr == self.sample_rate
-#         mel = mel_spectrogram(audio, self.n_fft, self.n_mels, self.sample_rate, self.hop_length,
-#                               self.win_length, self.f_min, self.f_max, center=False).squeeze()
-#         return mel
-
-#     def get_text(self, text, add_blank=True):
-#         text_norm = text_to_sequence(text, dictionary=self.cmudict)
-#         if self.add_blank:
-#             text_norm = intersperse(text_norm, len(symbols))  # add a blank token, whose id number is len(symbols)
-#         text_norm = torch.IntTensor(text_norm)
-#         return text_norm
-
-#     def __getitem__(self, index):
-#         text, mel = self.get_pair(self.filepaths_and_text[index])
-#         item = {'y': mel, 'x': text}
-#         return item
-
-#     def __len__(self):
-#         return len(self.filepaths_and_text)
-
-#     def sample_test_batch(self, size):
-#         idx = np.random.choice(range(len(self)), size=size, replace=False)
-#         test_batch = []
-#         for index in idx:
-#             test_batch.append(self.__getitem__(index))
-#         return test_batch
-
-
-# class TextMelBatchCollate(object):
-#     def __call__(self, batch):
-#         B = len(batch)
-#         y_max_length = max([item['y'].shape[-1] for item in batch])
-#         y_max_length = fix_len_compatibility(y_max_length)
-#         x_max_length = max([item['x'].shape[-1] for item in batch])
-#         n_feats = batch[0]['y'].shape[-2]
-
-#         y = torch.zeros((B, n_feats, y_max_length), dtype=torch.float32)
-#         x = torch.zeros((B, x_max_length), dtype=torch.long)
-#         y_lengths, x_lengths = [], []
-
-#         for i, item in enumerate(batch):
-#             y_, x_ = item['y'], item['x']
-#             y_lengths.append(y_.shape[-1])
-#             x_lengths.append(x_.shape[-1])
-#             y[i, :, :y_.shape[-1]] = y_
-#             x[i, :x_.shape[-1]] = x_
-
-#         y_lengths = torch.LongTensor(y_lengths)
-#         x_lengths = torch.LongTensor(x_lengths)
-#         return {'x': x, 'x_lengths': x_lengths, 'y': y, 'y_lengths': y_lengths}
 
 class TextMelSpeakerDataset(torch.utils.data.Dataset):
     def __init__(self,
                  filelist_path,
-                 language='en-us',
-                 spk_embedder=None,
                  random_seed=42,
                  add_blank=True,
                  n_fft=1024,
@@ -138,11 +39,12 @@ class TextMelSpeakerDataset(torch.utils.data.Dataset):
                  win_length=1024,
                  f_min=0.,
                  f_max=8000,
-                 device='cuda',
-                 load_preprocessed=False):
+                 normalize_mels=True,
+                 mel_min_path=None,
+                 mel_max_path=None,
+                 ):
         super().__init__()
         self.filelist = parse_filelist(filelist_path, split_char='|')
-        self.spk_embedder = spk_embedder
         self.n_fft = n_fft
         self.n_mels = n_mels
         self.sample_rate = sample_rate
@@ -152,55 +54,51 @@ class TextMelSpeakerDataset(torch.utils.data.Dataset):
         self.f_max = f_max
         self.add_blank = add_blank
 
-        self.device=torch.device(device)
-        self.load_preprocessed = load_preprocessed
         random.seed(random_seed)
         random.shuffle(self.filelist)
 
-        if language not in ('en-us'):
-            raise ValueError("Only English is supported for now.")
+        self.normalize_mels = normalize_mels
+        if normalize_mels:
+            assert mel_min_path is not None, "Mel min path is required for normalization"
+            assert mel_max_path is not None, "Mel max path is required for normalization"
+            self.mel_min = torch.load(mel_min_path).unsqueeze(-1)
+            self.mel_max= torch.load(mel_max_path).unsqueeze(-1)
 
         phonemizer_logger = get_logger(verbosity='quiet')
         # TODO: check if the mismatch warnining on WARNING log level is relevant
         # https://github.com/lifeiteng/vall-e/issues/5 => CONFIRMS IT SHOULD BE FINE
         phonemizer_logger.setLevel(logging.ERROR)
-        self.global_phonemizer = phonemizer.backend.EspeakBackend(language=language,
+        self.global_phonemizer = phonemizer.backend.EspeakBackend(language='en-us',
                                                                   preserve_punctuation=True,
                                                                   with_stress=True,
                                                                   words_mismatch='ignore',
                                                                   logger=phonemizer_logger)
 
-        if spk_embedder is None and not load_preprocessed:
-            raise ValueError("If spk_embedder is not provided we need to preprocess the data.")
-
     def get_triplet(self, line):
-        filepath, text = line[0], line[1]
-
-        if self.load_preprocessed:
-            base_dir = os.path.dirname(filepath)
-
-            text = self.get_text(text, add_blank=self.add_blank)
-            mel_path = os.path.join(base_dir, 'mels', os.path.basename(filepath).replace('.wav', '.npy'))
-            mel = torch.from_numpy(np.load(mel_path))
-            spk_emb_path = os.path.join(base_dir, 'speaker_embeddings', os.path.basename(filepath).replace('.wav', '.npy'))
-            spk_emb = torch.from_numpy(np.load(spk_emb_path))
-        else:
-            text = self.get_text(text, add_blank=self.add_blank)
-            mel = self.get_mel(filepath)
-            spk_emb = self.get_speaker_emb(filepath)
-
-        return (text, mel, spk_emb)
+        filepath, text, speaker_id = line[0], line[1], line[2]
+        mel = self.get_mel(filepath)
+        text = self.get_text(text,add_blank=self.add_blank)
+        spk_id = self.get_speaker_id(speaker_id)
+        return (text, mel, spk_id)
 
     def get_mel(self, filepath):
         audio, sr = ta.load(filepath)
 
         if sr != self.sample_rate:
-            resample_fn = ta.transforms.Resample(sr, self.sample_rate).to(self.device)
+            resample_fn = ta.transforms.Resample(sr, self.sample_rate)
             audio = resample_fn(audio)
-            sr = self.sample_rate
 
-        mel = mel_spectrogram(audio, self.n_fft, self.n_mels, self.sample_rate, self.hop_length,
-                              self.win_length, self.f_min, self.f_max, center=False).squeeze()
+        mel = mel_spectrogram(audio,
+                              self.n_fft,
+                              self.n_mels,
+                              self.sample_rate,
+                              self.hop_length,
+                              self.win_length,
+                              self.f_min,
+                              self.f_max,
+                              center=False).squeeze()
+        if self.normalize_mels:
+            mel = (mel - self.mel_min) / (self.mel_max - self.mel_min) * 2 - 1 # Normalize mel-spectrogram: [-1, 1]
         return mel
 
     def get_text(self, text, add_blank=True):
@@ -208,34 +106,19 @@ class TextMelSpeakerDataset(torch.utils.data.Dataset):
         phoneme = phonemize(text, self.global_phonemizer)
         phoneme = cleaned_text_to_sequence(phoneme)
         if add_blank:
-            phoneme = intersperse(phoneme, len(symbols))  # add a blank token, whose id number is len(symbols)
+             # add a blank token, whose id number is len(symbols)
+            phoneme = intersperse(phoneme, len(symbols))
         phoneme = torch.LongTensor(phoneme)
-        
-        # This phonemizer was used in orignal GradTTS
-        # text_norm = text_to_sequence(text, dictionary=self.cmudict)
-        # if self.add_blank:
-        #     text_norm = intersperse(text_norm, len(symbols))  # add a blank token, whose id number is len(symbols)
-        # text_norm = torch.LongTensor(text_norm)
         return phoneme
 
-    def get_speaker_emb(self, filepath):
-        audio, sr = ta.load(filepath)
-        audio = audio.to(self.device)
-
-        # The spk_embedder is configured to use 16kHz as input sample rate
-        if sr != 16_000:
-            resample_fn = ta.transforms.Resample(sr, 16_000).to(self.device)
-            # resample_fn = ta.transforms.Resample(sr, 16_000)
-            audio = resample_fn(audio)
-
-        spk_emb = self.spk_embedder(audio)
-        # TODO: should the spk embedding be normalized at train time???
-        # spk_emb = spk_emb / spk_emb.norm()
-        return spk_emb.cpu()
+    def get_speaker_id(self, speaker):
+        # use key to extract speaker embedding from a dictionary
+        speaker = torch.LongTensor([int(speaker)])
+        return speaker
 
     def __getitem__(self, index):
-        text, mel, spk_emb = self.get_triplet(self.filelist[index])
-        item = {'y': mel, 'x': text, 'spk_emb': spk_emb}
+        text, mel, spk_id = self.get_triplet(self.filelist[index])
+        item = {'y': mel, 'x': text, 'spk_id': spk_id}
         return item
 
     def __len__(self):
@@ -260,27 +143,31 @@ class TextMelSpeakerBatchCollate(object):
         y = torch.zeros((B, n_feats, y_max_length), dtype=torch.float32)
         x = torch.zeros((B, x_max_length), dtype=torch.long)
         y_lengths, x_lengths = [], []
-        spk_emb = []
+        spk_id = []
 
         for i, item in enumerate(batch):
-            y_, x_, spk_emb_ = item['y'], item['x'], item['spk_emb']
+            y_, x_, spk_id_ = item['y'], item['x'], item['spk_id']
             y_lengths.append(y_.shape[-1])
             x_lengths.append(x_.shape[-1])
+            # Copy data an pad with 0 up to max length
             y[i, :, :y_.shape[-1]] = y_
             x[i, :x_.shape[-1]] = x_
-            spk_emb.append(spk_emb_)
+            spk_id.append(spk_id_)
 
         y_lengths = torch.LongTensor(y_lengths)
         x_lengths = torch.LongTensor(x_lengths)
-        spk_emb = torch.cat(spk_emb, dim=0)
-        return {'x': x, 'x_lengths': x_lengths, 'y': y, 'y_lengths': y_lengths, 'spk_emb': spk_emb}
+        spk_id = torch.cat(spk_id, dim=0)
+        return {'x': x,
+                'x_lengths': x_lengths,
+                'y': y,
+                'y_lengths': y_lengths,
+                'spk_id': spk_id
+                }
 
 
 class UnitDurationMelSPeakerDataset(torch.utils.data.Dataset):
     def __init__(self,
                  filelist_path,
-                 unit_extractor: SpeechEncoder,
-                 spk_embedder=None,
                  random_seed=42,
                  add_blank=True,
                  n_fft=1024,
@@ -290,8 +177,10 @@ class UnitDurationMelSPeakerDataset(torch.utils.data.Dataset):
                  win_length=1024,
                  f_min=0.,
                  f_max=8000,
-                 device='cuda',
-                 load_preprocessed=False):
+                 normalize_mels=True,
+                 mel_min_path=None,
+                 mel_max_path=None,
+                 ):
         super().__init__()
         self.filelist = parse_filelist(filelist_path, split_char='|')
         self.n_fft = n_fft
@@ -303,81 +192,68 @@ class UnitDurationMelSPeakerDataset(torch.utils.data.Dataset):
         self.f_max = f_max
         self.add_blank = add_blank
 
-        self.device=torch.device(device)
-        self.load_preprocessed = load_preprocessed
         random.seed(random_seed)
         random.shuffle(self.filelist)
 
-        self.unit_extractor = unit_extractor
-
-        if spk_embedder is None and not load_preprocessed:
-            raise ValueError("If spk_embedder is not provided we need to preprocess the data.")
-        self.spk_embedder = spk_embedder
+        self.normalize_mels = normalize_mels
+        if normalize_mels:
+            assert mel_min_path is not None, "Mel min path is required for normalization"
+            assert mel_max_path is not None, "Mel max path is required for normalization"
+            self.mel_min = torch.load(mel_min_path)
+            self.mel_max= torch.load(mel_max_path)
 
     def get_quadruple(self, line):
-        filepath, _ = line[0], line[1]
-        
-        if self.load_preprocessed:
-            base_dir = os.path.dirname(filepath)
-            unit_path = os.path.join(base_dir, 'units', os.path.basename(filepath).replace('.wav', '.npy'))
-            unit = torch.from_numpy(np.load(unit_path))
-            duration_path = os.path.join(base_dir, 'durations', os.path.basename(filepath).replace('.wav', '.npy'))
-            duration = torch.from_numpy(np.load(duration_path))
-            mel_path = os.path.join(base_dir, 'mels', os.path.basename(filepath).replace('.wav', '.npy'))
-            mel = torch.from_numpy(np.load(mel_path))
-            spk_emb_path = os.path.join(base_dir, 'speaker_embeddings', os.path.basename(filepath).replace('.wav', '.npy'))
-            spk_emb = torch.from_numpy(np.load(spk_emb_path))
-        else:
-            unit, duration = self.get_unit_and_duration(filepath)
-            mel = self.get_mel(filepath)
-            spk_emb = self.get_speaker_emb(filepath)
-        return (unit, duration, mel, spk_emb)
+        filepath, _, speaker_id = line[0], line[1], line[2]
 
+        unit, duration = self.get_unit_duration(filepath)
+        mel = self.get_mel(filepath)
+        spk_id = self.get_speaker_id(speaker_id)
+        return (unit, duration, mel, spk_id)
 
     def get_mel(self, filepath):
         audio, sr = ta.load(filepath)
 
         if sr != self.sample_rate:
-            resample_fn = ta.transforms.Resample(sr, self.sample_rate).to(self.device)
+            resample_fn = ta.transforms.Resample(sr, self.sample_rate)
             audio = resample_fn(audio)
-            sr = self.sample_rate
 
-        mel = mel_spectrogram(audio, self.n_fft, self.n_mels, self.sample_rate, self.hop_length,
-                              self.win_length, self.f_min, self.f_max, center=False).squeeze()
+        mel = mel_spectrogram(audio,
+                              self.n_fft,
+                              self.n_mels,
+                              self.sample_rate,
+                              self.hop_length,
+                              self.win_length,
+                              self.f_min,
+                              self.f_max,
+                              center=False).squeeze()
+        if self.normalize_mels:
+            mel = (mel - self.mel_min) / (self.mel_max - self.mel_min) * 2 - 1 # Normalize mel-spectrogram: [-1, 1]
         return mel
 
-    def get_unit_and_duration(self, filepath):
-        audio, sr = ta.load(filepath)
-        audio = audio.to(self.device)
+    def get_unit_duration(self, filepath):
+        # Loads preprocessed units and durations scaled to 22.05KHz
+        parent_dir = os.path.dirname(filepath)
+        filename = os.path.basename(filepath)
+        basename, extension = os.path.splitext(filename)
 
-        # NOTE: in the finetune.py example they resample the audio to 16Khz prior to unit extraction
-        if sr != 16_000:
-            resample_fn = ta.transforms.Resample(sr, 16_000).to(self.device)
-            # resample_fn = ta.transforms.Resample(sr, 16_000)
-            audio = resample_fn(audio)
+        unit_base = f"{basename}_unit.pt"
+        duration_base = f"{basename}_duration.pt"
 
-        encoded = self.unit_extractor(audio)
-        unit, duration = process_unit(encoded, self.sample_rate, self.hop_length)
+        unit = torch.load(os.path.join(parent_dir, unit_base))
+        duration = torch.load(os.path.join(parent_dir, duration_base))
         return (unit, duration)
 
-    def get_speaker_emb(self, filepath):
-        audio, sr = ta.load(filepath)
-        audio = audio.to(self.device)
-
-        # The spk_embedder is configured to use 16kHz as input sample rate
-        if sr != 16_000:
-            resample_fn = ta.transforms.Resample(sr, 16_000).to(self.device)
-            # resample_fn = ta.transforms.Resample(sr, 16_000)
-            audio = resample_fn(audio)
-
-        spk_emb = self.spk_embedder(audio)
-        # TODO: should the spk embedding be normalized at train time???
-        spk_emb = spk_emb / spk_emb.norm()
-        return spk_emb.cpu()
+    def get_speaker_id(self, speaker):
+        # use key to extract speaker embedding from a dictionary
+        speaker = torch.LongTensor([int(speaker)])
+        return speaker
 
     def __getitem__(self, index):
-        unit, duration, mel, spk_emb = self.get_quadruple(self.filelist[index])
-        item = {'y': mel, 'x': unit, 'x_duration': duration, 'spk_emb': spk_emb}
+        unit, duration, mel, spk_id = self.get_quadruple(self.filelist[index])
+        item = {'y': mel,
+                'x': unit,
+                'x_duration': duration,
+                'spk_id': spk_id}
         return item
 
     def __len__(self):
@@ -404,10 +280,10 @@ class UnitDurationMelSpeakerBatchCollate(object):
         x = torch.zeros((B, x_max_length), dtype=torch.long)
         x_duration = torch.zeros((B, x_duration_max_length), dtype=torch.long)
         y_lengths, x_lengths, x_duration_lengths = [], [], []
-        spk_emb = []
+        spk_id = []
 
         for i, item in enumerate(batch):
-            y_, x_, x_duration_, spk_emb_ = item['y'], item['x'], item['x_duration'], item['spk_emb']
+            y_, x_, x_duration_, spk_id_ = item['y'], item['x'], item['x_duration'], item['spk_id']
             # Track original lengths before batch
             y_lengths.append(y_.shape[-1])
             x_lengths.append(x_.shape[-1])
@@ -416,215 +292,13 @@ class UnitDurationMelSpeakerBatchCollate(object):
             y[i, :, :y_.shape[-1]] = y_
             x[i, :x_.shape[-1]] = x_
             x_duration[i, :x_duration_.shape[-1]] = x_duration_
-            spk_emb.append(spk_emb_)
+            spk_id.append(spk_id_)
 
         y_lengths = torch.LongTensor(y_lengths)
         x_lengths = torch.LongTensor(x_lengths)
         x_duration_lengths = torch.LongTensor(x_duration_lengths)
-        spk_emb = torch.cat(spk_emb, dim=0)
+        spk_id = torch.cat(spk_id, dim=0)
         return {'x': x, 'x_lengths': x_lengths,
                 'x_duration': x_duration, 'x_duration_lengths': x_duration_lengths,
                 'y': y, 'y_lengths': y_lengths,
-                'spk_emb': spk_emb}
-
-
-# class TextMelSpeakerDataset(torch.utils.data.Dataset):
-#     def __init__(self,
-#                  filelist_path,
-#                  cmudict_path,
-#                  random_seed=42,
-#                  add_blank=True,
-#                  n_fft=1024,
-#                  n_mels=80,
-#                  sample_rate=22050,
-#                  hop_length=256,
-#                  win_length=1024,
-#                  f_min=0.,
-#                  f_max=8000):
-#         super().__init__()
-#         self.filelist = parse_filelist(filelist_path, split_char='|')
-#         self.cmudict = cmudict.CMUDict(cmudict_path)
-#         self.n_fft = n_fft
-#         self.n_mels = n_mels
-#         self.sample_rate = sample_rate
-#         self.hop_length = hop_length
-#         self.win_length = win_length
-#         self.f_min = f_min
-#         self.f_max = f_max
-#         self.add_blank = add_blank
-#         random.seed(random_seed)
-#         random.shuffle(self.filelist)
-
-#     def get_triplet(self, line):
-#         filepath, text, speaker = line[0], line[1], line[2]
-#         text = self.get_text(text, add_blank=self.add_blank)
-#         mel = self.get_mel(filepath)
-#         speaker = self.get_speaker(speaker)
-#         return (text, mel, speaker)
-
-#     def get_mel(self, filepath):
-#         audio, sr = ta.load(filepath)
-#         assert sr == self.sample_rate
-#         mel = mel_spectrogram(audio, self.n_fft, self.n_mels, self.sample_rate, self.hop_length,
-#                               self.win_length, self.f_min, self.f_max, center=False).squeeze()
-#         return mel
-
-#     def get_text(self, text, add_blank=True):
-#         text_norm = text_to_sequence(text, dictionary=self.cmudict)
-#         if self.add_blank:
-#             text_norm = intersperse(text_norm, len(symbols))  # add a blank token, whose id number is len(symbols)
-#         text_norm = torch.LongTensor(text_norm)
-#         return text_norm
-
-#     def get_speaker(self, speaker):
-#         speaker = torch.LongTensor([int(speaker)])
-#         return speaker
-
-#     def __getitem__(self, index):
-#         text, mel, speaker = self.get_triplet(self.filelist[index])
-#         item = {'y': mel, 'x': text, 'spk': speaker}
-#         return item
-
-#     def __len__(self):
-#         return len(self.filelist)
-
-#     def sample_test_batch(self, size):
-#         idx = np.random.choice(range(len(self)), size=size, replace=False)
-#         test_batch = []
-#         for index in idx:
-#             test_batch.append(self.__getitem__(index))
-#         return test_batch
-
-
-# class TextMelSpeakerBatchCollate(object):
-#     def __call__(self, batch):
-#         B = len(batch)
-#         y_max_length = max([item['y'].shape[-1] for item in batch])
-#         y_max_length = fix_len_compatibility(y_max_length)
-#         x_max_length = max([item['x'].shape[-1] for item in batch])
-#         n_feats = batch[0]['y'].shape[-2]
-
-#         y = torch.zeros((B, n_feats, y_max_length), dtype=torch.float32)
-#         x = torch.zeros((B, x_max_length), dtype=torch.long)
-#         y_lengths, x_lengths = [], []
-#         spk = []
-
-#         for i, item in enumerate(batch):
-#             y_, x_, spk_ = item['y'], item['x'], item['spk']
-#             y_lengths.append(y_.shape[-1])
-#             x_lengths.append(x_.shape[-1])
-#             y[i, :, :y_.shape[-1]] = y_
-#             x[i, :x_.shape[-1]] = x_
-#             spk.append(spk_)
-
-#         y_lengths = torch.LongTensor(y_lengths)
-#         x_lengths = torch.LongTensor(x_lengths)
-#         spk = torch.cat(spk, dim=0)
-#         return {'x': x, 'x_lengths': x_lengths, 'y': y, 'y_lengths': y_lengths, 'spk': spk}
-
-
-
-# class UnitMelSpeakerDataset(torch.utils.data.Dataset):
-#     def __init__(self,
-#                  filelist_path,
-#                  unit_extractor: SpeechEncoder,
-#                  n_fft=1024,
-#                  n_mels=80,
-#                  sample_rate=22050,
-#                  hop_length=256,
-#                  win_length=1024,
-#                  f_min=0.,
-#                  f_max=8000,
-#                  random_seed=42):
-#         super().__init__()
-#         self.filelist = parse_filelist(filelist_path, split_char='|')
-#         self.n_fft = n_fft
-#         self.n_mels = n_mels
-#         self.sample_rate = sample_rate
-#         self.hop_length = hop_length
-#         self.win_length = win_length
-#         self.f_min = f_min
-#         self.f_max = f_max
-
-#         self.random_seed = random_seed
-#         random.seed(random_seed)
-#         random.shuffle(self.filelist)
-
-#         if not isinstance(unit_extractor, SpeechEncoder):
-#             raise ValueError("Unit extractor is required.")
-#         self.unit_extractor = unit_extractor
-
-#     def get_triplet(self, line):
-#         filepath, text, speaker_id = line[0], line[1], line[2]
-#         unit = self.get_unit()
-#         mel = self.get_mel(filepath)
-#         speaker_id = self.get_speaker(speaker_id)
-#         return (unit, mel, speaker_id)
-
-#     def get_unit(self, filepath):
-#         wav, sr = librosa.load(filepath, sr=self.sample_rate)
-#         wav = torch.FloatTensor(wav.to("cuda")) # .unsqueeze(0) # Add batch dimension? Is it needed if we are dataloader?
-#         encoded = self.unit_extractor(wav)
-#         unit, duration = process_unit(encoded, self.sample_rate, self.hop_length)
-
-#     def get_mel(self, filepath):
-#         # TODO: does it matter if we load with librosa or with torchaudio?
-#         # TODO: do we add normalization here to mel_spectrogram?
-#         wav, sr = librosa.load(filepath, sr=self.sample_rate)
-#         mel = mel_spectrogram(y=wav,
-#                               n_fft=self.n_fft,
-#                               num_mels=self.n_mels,
-#                               sampling_rate=self.sample_rate,
-#                               hop_size=self.hop_length,
-#                               win_size=self.win_length,
-#                               fmin=self.f_min,
-#                               fmax=self.f_max)
-#         return mel
-
-#     def get_speaker(self, speaker):
-#         speaker = torch.LongTensor([int(speaker)])
-#         return speaker
-
-#     def __getitem__(self, index):
-#         unit, mel, speaker = self.get_triplet(self.filelist[index])
-#         item = {'y': mel, 'x': unit, 'spkr': speaker}
-#         return item
-
-#     def __len__(self):
-#         return len(self.filelist)
-
-#     def sample_test_batch(self, size):
-#         idx = np.random.choice(range(len(self)), size=size, replace=False)
-#         test_batch = []
-#         for index in idx:
-#             test_batch.append(self.__getitem__(index))
-#         return test_batch
-
-# # TODO: combe back and adapt for units !!
-
-
-# class UnitMelSpeakerBatchCollate(object):
-#     def __call__(self, batch):
-#         B = len(batch)
-#         y_max_length = max([item['y'].shape[-1] for item in batch])
-#         # y_max_length = fix_len_compatibility(y_max_length)
-#         x_max_length = max([item['x'].shape[-1] for item in batch])
-#         n_feats = batch[0]['y'].shape[-2]
-
-#         y = torch.zeros((B, n_feats, y_max_length), dtype=torch.float32)
-#         x = torch.zeros((B, x_max_length), dtype=torch.long)
-#         y_lengths, x_lengths = [], []
-#         spk = []
-
-#         for i, item in enumerate(batch):
-#             y_, x_, spk_ = item['y'], item['x'], item['spk']
-#             y_lengths.append(y_.shape[-1])
-#             x_lengths.append(x_.shape[-1])
-#             y[i, :, :y_.shape[-1]] = y_
-#             x[i, :x_.shape[-1]] = x_
-#             spk.append(spk_)
-
-#         y_lengths = torch.LongTensor(y_lengths)
-#         x_lengths = torch.LongTensor(x_lengths)
-#         spk = torch.cat(spk, dim=0)
-#         return {'x': x, 'x_lengths': x_lengths, 'y': y, 'y_lengths': y_lengths, 'spk': spk}
+                'spk_id': spk_id}
