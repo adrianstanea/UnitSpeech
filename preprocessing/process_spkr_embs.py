@@ -6,6 +6,7 @@ import os
 import librosa
 import torch
 import torchaudio
+from tqdm import tqdm
 
 from conf.hydra_config import (
     TrainingUnitEncoderConfig_STEP1,
@@ -21,6 +22,9 @@ def main(args):
 
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
+
+    os.environ['CUDA_VISIBLE_DEVICES'] = cfg.train.CUDA_VISIBLE_DEVICES
+    logger.info(f"Using CUDA_VISIBLE_DEVICES: {os.environ.get('CUDA_VISIBLE_DEVICES')}")
 
     spkr_embedder = ECAPA_TDNN(feat_dim=cfg.spkr_embedder.feat_dim,
                         channels=cfg.spkr_embedder.channels,
@@ -40,11 +44,12 @@ def main(args):
     filelist = parse_filelist(args.filelist_path, split_char='|')
     print(f"Loading filelist from {args.filelist_path}")
 
-    if not os.path.exists(args.embs_save_path):
-        print(f"Created directory {args.embs_save_path}")
-        os.makedirs(args.embs_save_path)
+    embs_save_path = os.path.join(cfg.data.embs_path, cfg.dataset.name)
+    if not os.path.exists(embs_save_path):
+        print(f"Created directory {embs_save_path}")
+        os.makedirs(embs_save_path)
     else:
-        print(f"Directory {args.embs_save_path} already exists")
+        print(f"Directory {embs_save_path} already exists")
     
     crnt_speaker = -1
     num_samples = 0
@@ -53,12 +58,12 @@ def main(args):
     is_first_sample = True
 
     print(f"Number of samples: {len(filelist)}")
-    for idx, line in enumerate(filelist, start=1):
+    for idx, line in tqdm(enumerate(filelist, start=1), total=len(filelist)):
         with torch.no_grad():
             filepath, text, spk_id = line[0], line[1], line[2]
         
-            if idx % 100 == 0 or idx == 0:
-                print(f"Processing line ({idx}|{len(filelist)})")
+#            if idx % 100 == 0 or idx == 0:
+#                print(f"Processing line ({idx}|{len(filelist)})")
             
             # START FROM SPK_ID => used to skip to a specific speaker (currently this script crashes due to RAM overflow) 
             # if crnt_speaker == -1 and spk_id !="204":
@@ -73,7 +78,7 @@ def main(args):
                 # Save data from old speaker - expect samples to be contiguous
                 print(f"Number of samples: {num_samples} for speaker {crnt_speaker}")
                 # Save previous speaker's mean embedding
-                save_path = os.path.join(args.embs_save_path, f"{crnt_speaker}.pt")
+                save_path = os.path.join(embs_save_path, f"{crnt_speaker}.pt")
                 torch.save(crnt_spkr_mean, save_path)
 
                 # Reset for new speaker ID
@@ -117,6 +122,11 @@ if __name__ == '__main__':
     # parser.add_argument('--embs_save_path',
     #                 type=str,
     #                 default='unitspeech/checkpoints/spkr_embs/LJSpeech/')
+
+    # SWARA - metainfo from all posible utterances
+    parser.add_argument('--filelist_path',
+                        type=str,
+                        default='resources/filelists/swara/metadata_SWARA1.0_text.csv')
 
     args = parser.parse_args()
     main(args)

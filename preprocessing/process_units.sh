@@ -12,10 +12,16 @@ cd ..
 # )
 
 # LibriTTS
+# file_paths=(
+#     "resources/filelists/libri-tts/train.txt"
+#     "resources/filelists/libri-tts/valid.txt"
+# )
+
+# SWARA
 file_paths=(
-    "resources/filelists/libri-tts/train.txt"
-    "resources/filelists/libri-tts/valid.txt"
+    "resources/filelists/swara/metadata_SWARA1.0_text.csv"
 )
+
 
 echo "Processing units for the following file paths:"
 for file_path in "${file_paths[@]}"; do

@@ -34,8 +34,10 @@ def main():
     spk_uncond = None
     pretrained_embs = load_speaker_embs(embs_path =os.path.join(cfg.data.embs_path, cfg.dataset.name),
                                         normalize=False)
+    pretrained_embs = torch.stack(list(pretrained_embs.values()), dim=0)
     print(f"{pretrained_embs.shape=}")
-    spk_uncond = torch.mean(pretrained_embs, dim=0, keepdim=True).unsqueeze(0)
+    # resize to network shape (1, 1, 256)
+    spk_uncond = torch.mean(pretrained_embs, dim=0, keepdim=True).unsqueeze(0) 
     print(f"{spk_uncond.shape=}")
 
     print(f"Saving spk_uncond to {cfg.dataset.spk_uncond_path}")

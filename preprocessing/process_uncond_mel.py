@@ -17,8 +17,11 @@ from unitspeech.util import parse_filelist
 from unitspeech.vocoder.meldataset import mel_spectrogram
 
 
+count = 0
+
 def get_channel_wise_mel_normalization(filelist_path, text_uncond, cfg: TrainingUnitEncoderConfig_STEP1):
     filelist = parse_filelist(filelist_path, split_char='|')
+    global count
 
     for idx, line in tqdm(enumerate(filelist, start=1), total=len(filelist)):
         filepath = line[0]
@@ -39,8 +42,9 @@ def get_channel_wise_mel_normalization(filelist_path, text_uncond, cfg: Training
         if text_uncond is None:
             text_uncond = crnt_mel_mean
         else:
-            text_uncond = torch.cat((text_uncond, crnt_mel_mean), dim=-1)
-            text_uncond = torch.mean(text_uncond, dim=-1, keepdim=True)
+            # Give equal weight to all samples when computing the mean of the mel spectrogram
+            text_uncond = (text_uncond * count + crnt_mel_mean) / (count + 1)
+        count += 1
     return text_uncond
 
 def main():
@@ -59,15 +63,28 @@ def main():
 
     text_uncond = None
 
-    print(f"Loading filelist from {cfg.dataset.test_filelist_path}")
-    text_uncond = get_channel_wise_mel_normalization(cfg.dataset.test_filelist_path, text_uncond, cfg)
+    try:
+        print(f"Loading filelist from {cfg.dataset.test_filelist_path}")
+        text_uncond = get_channel_wise_mel_normalization(cfg.dataset.test_filelist_path, text_uncond, cfg)
+    except AttributeError:
+        print(f"Could not find test_filelist_path in the config file, skipping test_filelist_path")
 
-    print(f"Loading filelist from {cfg.dataset.train_filelist_path}")
-    text_uncond = get_channel_wise_mel_normalization(cfg.dataset.train_filelist_path, text_uncond, cfg)
+    try:
+        print(f"Loading filelist from {cfg.dataset.train_filelist_path}")
+        text_uncond = get_channel_wise_mel_normalization(cfg.dataset.train_filelist_path, text_uncond, cfg)
+    except AttributeError:
+        print(f"Could not find train_filelist_path in the config file, skipping train_filelist_path")
 
+    try: 
+        print(f"Loading filelist from {cfg.dataset.validation_filelist_path}")
+        text_uncond = get_channel_wise_mel_normalization(cfg.dataset.validation_filelist_path, text_uncond, cfg)
+    except AttributeError:
+        print(f"Could not find validation_filelist_path in the config file, skipping validation_filelist_path")
 
-    # TODO: might need to scale at the end with the mel_normalization params in the range [-1 ... 1]
+    # Leave the mean unscaled: original code does not scale the mean
     print(f"Saving text_uncond to {cfg.dataset.text_uncond_path}")
+    print(f"Global count was: {count}")
+    print(f"{text_uncond.shape=}")
     torch.save(text_uncond, cfg.dataset.text_uncond_path)
 
 
