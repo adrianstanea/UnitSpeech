@@ -199,8 +199,8 @@ class UnitDurationMelSPeakerDataset(torch.utils.data.Dataset):
         if normalize_mels:
             assert mel_min_path is not None, "Mel min path is required for normalization"
             assert mel_max_path is not None, "Mel max path is required for normalization"
-            self.mel_min = torch.load(mel_min_path)
-            self.mel_max= torch.load(mel_max_path)
+            self.mel_min = torch.load(mel_min_path).unsqueeze(-1)
+            self.mel_max= torch.load(mel_max_path).unsqueeze(-1)
 
     def get_quadruple(self, line):
         filepath, _, speaker_id = line[0], line[1], line[2]

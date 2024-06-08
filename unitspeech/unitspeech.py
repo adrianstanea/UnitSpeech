@@ -436,9 +436,10 @@ class UnitSpeech(BaseModule):
         encoder_outputs = cond_y[:, :, :y_max_length]
 
         # TODO: Here is when the paper says that it does not start from pure noise
-
-        z = torch.randn_like(cond_y, device=cond_y.device) # UnitSpeech
+        z = torch.randn_like(cond_y, device=cond_y.device) # UnitSpeech - sample from normal distribution
         # z = cond_y + torch.randn_like(cond_y, device=cond_y.device) / temperature # GradTTS - in adition we dont have temperature in UnitSpeech
+        # z = cond_y + torch.randn_like(cond_y, device=cond_y.device) # GradTTS - sample from normal distribution with mean cond_y
+
 
         # Generate sample by performing reverse dynamics
         # TODO: what is the role of text and speaker gradient scale?

@@ -14,7 +14,8 @@ from unitspeech.util import fix_len_compatibility
 @dataclass
 class InferenceConfigu:
     speaker_id: int = 2
-    text: str = "Hello, my name is Bogdan. I am creating a demonstration sample."
+    # text: str = "I have some great news for you. My baby has said his first words today. He said 'Mama' and I am so happy!"
+    text: str = "The quick brown fox jumped over the lazy dog."
 
 
 @dataclass
@@ -29,11 +30,6 @@ class DataConfig:
     mel_fmax: float = 8000.0
     cmudict_path: str = 'resources/cmu_dictionary'
     add_blank: bool = True
-    # During training we normalize spectrograms using channel-wise min/max
-    # NOTE: Typically, it is natural to use these min and max values even
-    # during fine-tuning. However, based on our experience, we have 
-    # observed that it is more effective to normalize using local 
-    # min and max obtained from the mel of the reference audio before fine-tuning.
     embs_path: str = "unitspeech/checkpoints/spkr_embs/"
 
 @dataclass
@@ -43,6 +39,10 @@ class LJSPeechConfig:
     normalize_mels: bool = True
     mel_min_path: str = "unitspeech/checkpoints/mel_normalization/LJSpeech/mel_min.pt"
     mel_max_path: str = "unitspeech/checkpoints/mel_normalization/LJSpeech/mel_max.pt"
+
+    text_uncon_path: str = "unitspeech/checkpoints/CFG/LJSpeech/text_uncond.pt"
+    spk_uncond_path: str = "unitspeech/checkpoints/CFG/LJSpeech/spk_uncond.pt"
+
     # path: str = 'LJSpeech/wavs' # SERVER
     name: str = 'LJSpeech'
     path: str = 'LJSpeech' # LOCAL
@@ -54,6 +54,10 @@ class LibriTTSConfig:
     normalize_mels: bool = True
     mel_min_path: str = "unitspeech/checkpoints/mel_normalization/LibriTTS/mel_min.pt"
     mel_max_path: str = "unitspeech/checkpoints/mel_normalization/LibriTTS/mel_max.pt"
+
+    text_uncond_path: str = "unitspeech/checkpoints/CFG/LibriTTS/text_uncond.pt"
+    spk_uncond_path: str = "unitspeech/checkpoints/CFG/LibriTTS/spk_uncond.pt"
+
     # path: str = 'LibriTTS/wavs' # Server
     name: str = 'LibriTTS'
     path: str = 'LibriTTS' # LOCAL
@@ -68,6 +72,7 @@ class UnitEncoderConfig:
     p_dropout: float = 0.1
     n_heads: int = 2
     window_size: int = 4
+    train_checkpoint: str = "unitspeech/checkpoints/train/unit_encoder.pt"
 
 
 @dataclass
@@ -81,6 +86,7 @@ class TextEncoderConfig:
     n_heads: int = 2
     window_size: int = 4
     checkpoint: str = "unitspeech/checkpoints/text_encoder.pt"
+    train_checkpoint: str = "unitspeech/checkpoints/train/text_encoder.pt"
 
 
 @dataclass
@@ -91,6 +97,7 @@ class DurationPredictorConfig:
     p_dropout: float = 0.1
     spk_emb_dim: int = 256
     checkpoint: str = "unitspeech/checkpoints/duration_predictor.pt"
+    train_checkpoint: str = "unitspeech/checkpoints/train/duration_predictor.pt"
 
 
 @dataclass
@@ -101,24 +108,27 @@ class DecoderConfig:  # GradTTS -> diffusion model
     beta_min: float = 0.05
     beta_max: float = 20.0
     spk_emb_dim: int = 256
-    diffusion_steps: int = 50
+    diffusion_steps: int = 500
     checkpoint: str = "unitspeech/checkpoints/pretrained_decoder.pt"
+    train_checkpoint: str = "unitspeech/checkpoints/train/pretrained_decoder.pt"
 
 
 @dataclass
 class TrainConfig:
+    CUDA_VISIBLE_DEVICES: str = "5"
     on_GPU: bool = True
     out_size_second: int = 2
-    n_epochs: int = 10  #1000
-    batch_size: int = 8
+    n_epochs: int = 2000
+    batch_size: int = 32
     drop_last: bool = True
-    num_workers : int = 0
+    num_workers : int = 4
     shuffle : bool = True
-    fp16_run: bool = False # Original
+    fp16_run: bool = False
     seed: int = 42
     log_dir: str = 'logs/new_exp'
-    save_every: int = 1 # TODO: change to 50
+    save_every: int = 1 # TODO: change to 5
     test_size: int = 4
+    from_checkpoint: bool = False
 
 
 @dataclass
@@ -167,7 +177,6 @@ class TrainingUnitEncoderConfig_STEP1:
     encoder: TextEncoderConfig = TextEncoderConfig()
     decoder: DecoderConfig = DecoderConfig()
     train: TrainConfig = TrainConfig()
-    inference: InferenceConfigu = InferenceConfigu()
 
 
 # Train Step 2 config => Unit Encoder adaptation
@@ -184,4 +193,3 @@ class TrainingUnitEncoderConfig_STEP2:
     encoder: UnitEncoderConfig = UnitEncoderConfig() # Unit and Text encoders seem to have the same config
     decoder: DecoderConfig = DecoderConfig()
     train: TrainConfig = TrainConfig()
-    inference: InferenceConfigu = InferenceConfigu()

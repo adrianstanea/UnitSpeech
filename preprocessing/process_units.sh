@@ -2,6 +2,8 @@
 
 echo "Current working directory: $(pwd)"
 
+cd ..
+
 # LJSpeech
 # file_paths=(
 #     "resources/filelists/ljspeech/train.txt"

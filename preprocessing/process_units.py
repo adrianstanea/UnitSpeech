@@ -20,6 +20,9 @@ def main(args):
     logger = logging.getLogger()
     logger.setLevel(logging.INFO)
 
+    os.environ['CUDA_VISIBLE_DEVICES'] = cfg.train.CUDA_VISIBLE_DEVICES
+    logger.info(f"Using CUDA_VISIBLE_DEVICES: {os.environ.get('CUDA_VISIBLE_DEVICES')}")
+
     logging.info("Loading unit extractor...")
     unit_extractor = SpeechEncoder.by_name(dense_model_name=cfg.unit_extractor.dense_model_name,
                                            quantizer_model_name=cfg.unit_extractor.quantizer_name,

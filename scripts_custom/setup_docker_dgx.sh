@@ -2,9 +2,10 @@
 
 source ./variables.sh
 
+cd ..
+
 GPU_ID=6
-PORT=42509
-IMAGE="nvcr.io/nvidia/pytorch:24.02-py3"
+IMAGE="nvcr.io/nvidia/pytorch:23.06-py3"
 
 CONTAINER_NAME="UnitSpeech-licenta"
 SOURCE_CODE_MOUNT="$(pwd)":/workspace/local
@@ -25,8 +26,6 @@ docker container run -d \
                     -v $LIBRITTS_MOUNT \
                     -v $OUTPUTS_MOUNT \
                     -v $CHECKPOINTS_MOUNT \
-                    -p $PORT:$PORT \
-                    -u $UID:$GID \
                     --gpus=all \
                     $IMAGE
 
