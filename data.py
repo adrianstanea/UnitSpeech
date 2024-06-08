@@ -16,7 +16,6 @@ import torch
 import torchaudio as ta
 
 # import librosa
-from phonemizer.logger import get_logger
 
 from unitspeech.text import cleaned_text_to_sequence, phonemize, symbols
 from unitspeech.util import (
@@ -42,6 +41,7 @@ class TextMelSpeakerDataset(torch.utils.data.Dataset):
                  normalize_mels=True,
                  mel_min_path=None,
                  mel_max_path=None,
+                 global_phonemizer=None,
                  ):
         super().__init__()
         self.filelist = parse_filelist(filelist_path, split_char='|')
@@ -64,15 +64,9 @@ class TextMelSpeakerDataset(torch.utils.data.Dataset):
             self.mel_min = torch.load(mel_min_path).unsqueeze(-1)
             self.mel_max= torch.load(mel_max_path).unsqueeze(-1)
 
-        phonemizer_logger = get_logger(verbosity='quiet')
-        # TODO: check if the mismatch warnining on WARNING log level is relevant
-        # https://github.com/lifeiteng/vall-e/issues/5 => CONFIRMS IT SHOULD BE FINE
-        phonemizer_logger.setLevel(logging.ERROR)
-        self.global_phonemizer = phonemizer.backend.EspeakBackend(language='en-us',
-                                                                  preserve_punctuation=True,
-                                                                  with_stress=True,
-                                                                  words_mismatch='ignore',
-                                                                  logger=phonemizer_logger)
+        if global_phonemizer is None:
+            raise ValueError("Phonemizer is required for TextMelSpeakerDataset")
+        self.global_phonemizer = global_phonemizer
 
     def get_triplet(self, line):
         filepath, text, speaker_id = line[0], line[1], line[2]

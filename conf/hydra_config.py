@@ -62,6 +62,19 @@ class LibriTTSConfig:
     name: str = 'LibriTTS'
     path: str = 'LibriTTS' # LOCAL
 
+@dataclass
+class SWARAConfig:
+    train_filelist_path: str = 'resources/filelists/swara/train.txt'
+    test_filelist_path: str =  'resources/filelists/swara/test.txt'
+    normalize_mels: bool = True
+    mel_min_path: str = "unitspeech/checkpoints/mel_normalization/SWARA/mel_min.pt"
+    mel_max_path: str = "unitspeech/checkpoints/mel_normalization/SWARA/mel_max.pt"
+
+    text_uncond_path: str = "unitspeech/checkpoints/CFG/SWARA/text_uncond.pt"
+    spk_uncond_path: str = "unitspeech/checkpoints/CFG/SWARA/spk_uncond.pt"
+
+    name: str = 'SWARA'
+    path: str = 'SWARA' 
 
 @dataclass
 class UnitEncoderConfig:
@@ -167,7 +180,8 @@ class UnitExtractorConfig:
 @dataclass
 class TrainingUnitEncoderConfig_STEP1:
     data: DataConfig = DataConfig()
-    dataset : LibriTTSConfig = LibriTTSConfig() # Multi-speaker
+    dataset : SWARAConfig = SWARAConfig() # Multi-speaker
+    # dataset : LibriTTSConfig = LibriTTSConfig() # Multi-speaker
     # dataset : LJSPeechConfig = LJSPeechConfig() # Single speaker
     optimizer: AdamConfig = AdamConfig()
     vocoder: VocoderConfig = VocoderConfig()
@@ -183,7 +197,8 @@ class TrainingUnitEncoderConfig_STEP1:
 @dataclass
 class TrainingUnitEncoderConfig_STEP2:
     data: DataConfig = DataConfig()
-    dataset : LibriTTSConfig = LibriTTSConfig() # Multi-speaker
+    dataset : SWARAConfig = SWARAConfig() # Multi-speaker
+    # dataset : LibriTTSConfig = LibriTTSConfig() # Multi-speaker
     # dataset : LJSPeechConfig = LJSPeechConfig() # Single speaker
     optimizer: AdamConfig = AdamConfig()
     vocoder: VocoderConfig = VocoderConfig()
