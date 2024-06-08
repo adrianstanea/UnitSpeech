@@ -1,0 +1,1066 @@
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_492.wav|Suntem una dintre cele mai vechi familii din Eforie.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_116.wav|Am vie de douăzeci de ani, de când s-a făcut strada asta.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_293.wav|Mâna pictorului face o magie și transformă culoarea.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_300.wav|Acesta se referă însă doar la proprietățile din capitală.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_029.wav|Steaua este o echipă de calitate, cu mare tradiție în cupele europene.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_212.wav|Fără cameramani și pază de corp.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_249.wav|Toți jucătorii de la echipă lucrează la finalizare.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_142.wav|Deocamdată nu simțim ca în alte județe efectele, spune acesta.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_189.wav|În foarte multe.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_381.wav|De asemenea, îmi plac mult arta și muzica, aici sunt destul de eclectică.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_093.wav|Activitățile de aici sunt o relaxare pentru noi.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_493.wav|Așa că autoritățile au dat puțin câte puțin și sportivilor.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_388.wav|Rețeta e similară, numai că în aluat a pus și iaurt și le-a dat altă formă.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_288.wav|Are rivali puternici în SUA și Turcia.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_459.wav|Presa din Italia a făcut publice fotografiile de la eveniment.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_130.wav|Mașina nu accelerează vânzările de case.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_260.wav|Unitățile nu au primit autorizație pentru că nu au apă curentă, canalizare, iar grupurile sanitare sunt neconforme.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_180.wav|Polițiștii au luat probe aseară de la locul incidentului.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_078.wav|Din delegația României a mai făcut parte Cătălin Brătulescu.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_081.wav|Dar adevărata plăcere este neprețuită spun reprezentanții familiei.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_238.wav|În plus condițiile de muncă sunt precare.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_214.wav|Am simțit că pot să apăr acel penalty.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_333.wav|Există o nouă lege a educației și o nouă grilă de salarizare pentru profesori.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_297.wav|Pumori este situat la granița dintre Nepal și Tibet.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_085.wav|Consecințele ar fi catastrofale pentru sportul francez, a spus Michel Brun, vicepreședintele ce ne o se fe.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_200.wav|Televiziunea publică mai curând oficială decât publică, susținea interesele puterii.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_389.wav|Ocupația nu îi ajută însă să scadă cheltuielile cu mâncarea.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_343.wav|De asemenea, mă deranjează lipsa de educație, violența limbajului și cea televizată.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_207.wav|Baie comună pe fiecare palier.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_436.wav|Am acasă un cuptor în care bag produsele după ce le pictez.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_043.wav|Irlanda respinge prin referendum ratificarea tratatului.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_094.wav|Unii patroni închid unitățile, alții caută soluții de redresare.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_221.wav|La fiecare zgomot tresăream, de câte ori auzeam sirene mă ascundeam.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_314.wav|A fost un actor foarte talentat.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_306.wav|Cei trei angajați implicați în eveniment au fost audiați și ieri.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_464.wav|Apoi mi-a fost și mai rău.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_042.wav|Două dintre echipele românești au avut reproșuri la adresa arbitrajelor.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_296.wav|După numai un an, a câștigat, prin concurs, una dintre cele două burse oferite de Universitatea București studenți.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_160.wav|Am fost luat prin surprindere de oferta Stelei.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_386.wav|Antrenorii italieni știu să scoată maximul din jucători.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_070.wav|Publicul, în jur de cinci mii, a creat o atmosferă incredibilă.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_291.wav|Cred că eu și Oana Manea ne completăm foarte bine.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_207.wav|Cultura germană postbelică pacifistă a primit o lovitură puternică.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_357.wav|Firmele pot fi afectate dacă procesele se amână cu lunile.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_310.wav|Dacă există suspiciuni, el trebuie să anunțe imediat poliția pentru a confirma controlul în trafic.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_003.wav|Acum am fost penalizați și cu penalty.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_066.wav|Dar e greu cu Bergodi.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_210.wav|Din păcate, în acești ani, statul a devenit tot mai slab.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_018.wav|Ion Tirinescu deține funcția de șef al poliției rutiere Hunedoara din anul două mii cinci.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_273.wav|Îmi place foarte mult literatura, istoria și muzica.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_054.wav|Nu va fi primit, va fi returnat și judecat la Berlin.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_002.wav|El crede că dublarea nu este neapărat un dezavantaj pentru italieni.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_339.wav|Unii studenți sunt dispuși să cheltuiască atâția bani.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_320.wav|Borcanele le închidem cu un capac, ermetic, și le așezăm în pivniță.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_166.wav|Atunci vânătorul și-a dat seama că este în fața unui record.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_483.wav|Indiferent de categoria de vârstă, meciurile au fost aprig disputate.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_310.wav|Dacă există suspiciuni, el trebuie să anunțe imediat poliția pentru a confirma controlul în trafic.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_273.wav|Acesta visează să ajungă în finala cupei româniei.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_392.wav|Își dorește să viziteze Spania și Dubai.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_254.wav|Filmul rulează în avanpremieră începând de mâine, la cinema Odeon din Polus Center.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_384.wav|Am auzit un zgomot foarte puternic și mult praf, moment în care am vrut să trag semnalul de alarmă.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_099.wav|În București era chiar mai rău, doisprezece avorturi la o naștere.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_095.wav|S-a făcut beznă în vagon, au căzut bagajele, a declarat pentru Realitatea te ve, unul dintre martori.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_344.wav|Animalele aparțin cetățenilor de etnie rromă care locuiesc în zonă.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_264.wav|Am adoptat un stil de viață naturist, am eliminat până și carnea.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_345.wav|Poate vor veni meciuri când o să îi intre și lui.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_461.wav|Detest foarte mult la oameni lipsa de respect și de caracter a unora.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_022.wav|Arădenii sunt din ce în ce mai speriați la gândul că trebuie să circule pe drumul Arad Șiria.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_232.wav|De zece ani exportăm în Cehia.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_421.wav|Toată lumea credea că Bergodi face în continuare performanță.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_334.wav|Nu oricine ajunge să dubleze vocile actorilor într-un film.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_174.wav|M-au luat cu forța și nu mi-au dat decât apă.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_395.wav|De mâine, unu octombrie, localul se închide.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_452.wav|Suporterii adevărați se văd mai ales la greu.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_318.wav|El mi-a spus odată că are o firmă de pază.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_223.wav|Nu știu ce a apreciat Gigi Becali la mine, nu l-am întrebat.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_170.wav|Am învățat să ne înțelegem și observ că facem progrese de la un spectacol la altul.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_157.wav|Când ajungi în capătul scărilor, te întâmpină statuia străjer.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_436.wav|După optsprezece luni a reușit să scape de cincizeci de kilograme.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_285.wav|Zona este foarte greu accesibilă, nu există nici semnal la mobil.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_163.wav|Prin urmare, multe asociații au făcut adrese către primărie, cerând să fie scoase din program.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_005.wav|Gâtul a necesitat intervenție de lungă durată.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_434.wav|De asemenea ei solicită demiterea ministrului justiției.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_463.wav|Eu am lucrat mulți ani la serviciul de lansare.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_301.wav|Elena Cârstea va avea nevoie de două zile de recuperare fizică.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_226.wav|Un bărbat și două femei din comuna Moara nu s-au lăsat păcăliți.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_167.wav|Anul acesta niciun părinte nu a fost decăzut.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_009.wav|Pot să spun că mi-a schimbat viața.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_065.wav|Au venit peste noi și ne-au lovit cu bâte de baseball.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_349.wav|Nu mai sunt bani.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_160.wav|Avem în medie cam treizeci de spectacole pe an.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_277.wav|Acolo au doi antrenori de excepție.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_202.wav|Se întâmplă cam o dată pe lună, minim.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_471.wav|Oamenii sunt însă liniștiți.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_338.wav|Era o fată bună.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_236.wav|Specialiștii din domeniu le vor oferi și sfaturi pentru alegerea corectă.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_198.wav|Cinci mii patru sute șaizeci și șapte euro.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_036.wav|Au trecut mulți ani de când am lucrat împreună.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_448.wav|Termenul pentru depunerea lucrărilor este zece octombrie, la galeria Foto Art, din piața întâi decembrie.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_222.wav|Anul acesta de exemplu a fost un an foarte bun.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_090.wav|Timpul a consumat ce era de consumat.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_010.wav|Primul meu antrenor de tenis a fost profesorul Geantă.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_198.wav|Unul dintre motive îl reprezintă aglomerația din spitale.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_066.wav|Poate vom vorbi de hidrați de gaz în viitor.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_263.wav|Astăzi lucrau pe pod doar doi muncitori, cu lopeți.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_254.wav|Cinci din Râmnicu Vâlcea vor pleca vineri, optsprezece septembrie la Milano.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_351.wav|Nu-mi explic ce s-a întâmplat.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_203.wav|Trebuie să știi clar, încotro mergi.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_216.wav|În schimb, oamenii de afaceri, mai ales cei din Moscova, au investit în construcția de hoteluri și cazinouri.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_170.wav|Anul trecut am pierdut foarte multe puncte cu echipele mici.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_112.wav|În acest an doi și-au pierdut serviciul din acest motiv.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_196.wav|S-au înregistrat însă și două excepții, Iași și Constanța.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_173.wav|Chiar în aceste condiții, Florin t.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_100.wav|Ea a fost o mămică tânără și se laudă cu asta.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_350.wav|Becali a gustat din plin momentul.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_318.wav|El mi-a spus odată că are o firmă de pază.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_280.wav|Vinul spumant se produce pe baza acelorași tehnologii folosite și la șampanie.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_025.wav|Vechile cabinete erau la o distanță de o sută cincizeci de metri de spital și nu corespundeau reglementărilor Ministerului Sănătății.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_266.wav|Ambele meciuri se vor disputa pe stadionul din Urziceni.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_046.wav|Până la urmă rămâi oricum doar cu amintirile plăcute, oboseala trece cu un somn bun.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_271.wav|Au promis că vor activa comisia constituțională în Parlament.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_120.wav|Până în luna septembrie alte peste treizeci de autorizații au fost eliberate pentru construcțiile rezidențiale din Banat.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_344.wav|Massmedia ne face probleme cu opinia publică.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_202.wav|Se întâmplă cam o dată pe lună, minim.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_121.wav|Suntem în grafic cu angajamentele asumate în protocolul semnat cu Ministerul Transportului și ce ne a de ne re la începutul anului.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_117.wav|Eu lucrez din o mie nouă sute nouăzeci și doi în domeniu, dar nu am mai întâlnit așa ceva.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_097.wav|Politicianul a fost arestat în decembrie două mii opt.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_223.wav|Familia este hotărâtă să ceară despăgubiri de la Carmen Bejan și Sergiu Florea.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_280.wav|Și un succes la diferență de un gol ne-ar mulțumi.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_342.wav|Baschet, după care a făcut bezele publicului ca un star de cinema.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_013.wav|În două mii unu a obținut titlul de Master Series, la Montreal.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_002.wav|Drumul a fost blocat mai multe ore.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_097.wav|În autoturism se afla o familie, mama, tata și doi adolescenți.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_295.wav|Serbia este o echipă sub a Franței, ca organizare și valoare individuală.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_492.wav|Nu am lucrat niciodată la mașini și nu am avut îndemânare.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_437.wav|Împreună cu el am elaborat trei culegeri ale tinerilor poeți, membrii ai Cenaclului Semenicul.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_363.wav|Din nou la jumătatea lunii octombrie pentru a discuta situația secției de petrochimie.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_356.wav|Bujanovaci și Presevo sunt două comune cu populație majoritar albaneză.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_477.wav|Iar peste toate, sunt și păcăliți de logodnicele lor.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_404.wav|Nu s-a stabilit încă dacă noul proiect va fi denumit la fel.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_464.wav|Apoi mi-a fost și mai rău.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_311.wav|Festivalul de teatru internațional este prioritatea noastră, a mai adăugat Ion Dumitrel.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_335.wav|Pentru Virgil Melente, a fost altfel.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_447.wav|Dintre acestea, aproximativ cincizeci sunt pentru agenți de vânzări stradali.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_030.wav|De asemenea este organizat și campionatul național de car-audio.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_294.wav|Autoritățile locale așteaptă precizări de la nivel central.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_097.wav|Pentru mine pictura este ca o tabletă de inimă, mă relaxează, mă face să mă simt minunat.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_483.wav|Altfel, rămânem doar cu prosteala televizată.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_074.wav|Arhiepiscopia este titlul onorific.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_259.wav|O altă explicație este legată de raportările pe care le fac firmele.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_327.wav|Căminul Poligrafie are camere cu patru paturi și două băi comune pe fiecare palier.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_123.wav|Oamenii s-au trezit de nenumărate ori cu un cal sau o vacă în fața mașinii.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_154.wav|Pentru probele scrise înscrierile se vor face după data de unsprezece iunie.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_093.wav|Am gătit pentru mii de persoane până acum, poate zeci de mii.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_065.wav|Au venit peste noi și ne-au lovit cu bâte de baseball.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_341.wav|Erica are douăzeci și trei de ani și este secretară.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_038.wav|Am jucat bine, dar nu vreau să mă mai avânt.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_172.wav|Cu cel mai bun scor din istorie, liberalii revin la guvernare, după unsprezece ani de opoziție.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_334.wav|Am peste patruzeci de meciuri în cupele europene.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_173.wav|Cei trei tineri sunt arestați pentru douăzeci și patru de ore preventiv.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_423.wav|Ar fi o propunere pentru o altă coaliție.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_275.wav|A luat însă câteva măsuri din mers și a continuat investițiile începute.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_119.wav|Nu știam de care să mă atârn se amuză nea Tudor.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_456.wav|Nimeni nu poate aprecia numărul delfinilor care mai trăiesc în Marea Neagră.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_163.wav|Cele două au urcat în premieră pe un podium la ce me.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_484.wav|Autoritățile lasă criminalii liberi pe stradă cu bună știință.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_370.wav|A fost lovit la cap, iar picioarele îi erau fracturate.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_461.wav|Este vorba de o răzbunare politică pusă la cale împotriva mea.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_419.wav|Toți elevii de la Lombardo Radice vorbesc fluent limba italiană.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_224.wav|Hai, vino, că altfel nu se poate.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_013.wav|În două mii unu a obținut titlul de Master Series, la Montreal.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_431.wav|Prefectul Loredana Alexandru a fost premiată de comisia internațională pentru protecția fluviului Dunărea.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_182.wav|Bucuria lor este atunci când papagalul începe să vorbească, ne-a spus Alina Turcu, proprietar de magazin.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_055.wav|Ar trebui să mai angajeze preoți.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_136.wav|Este o operație riscantă, dar ne rugăm să scape.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_330.wav|Replica arabilor, a venit miercuri, prin vocea președintelui clubului, Khalifah Suleiman.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_068.wav|Nu-mi plac oamenii care nu au cuvânt.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_394.wav|De asemenea, s-a analizat modul de funcționare al administrației publice locale și județene și absorbția fondurilor europene.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_185.wav|S-ar putea vedea această înfrângere la sfârșitul campionatului.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_201.wav|Necazurile îi fac pe oameni să solicite inclusiv ajutoare nerambursabile.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_118.wav|După aceea s-a gândit să creeze un nou document.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_103.wav|În opinia a numeroși comentatori, aceasta este cea mai mare nerealizare a coaliției.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_402.wav|Corupția din spitale e ca cea națională.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_270.wav|Tot timpul am fost ca frații, românii cu ungurii.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_275.wav|Repet, am fost ocupat cu i me me-urile.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_197.wav|Filat promite reglementarea limbii române.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_030.wav|Familia Lăcătuș și-a făcut un trecut în domeniul vânzării castanelor.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_401.wav|A învățat singură să citească, însușindu-și cunoștințe elementare de matematică de la tatăl ei, un american înstărit.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_393.wav|Panait Sârbu din București.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_440.wav|Nu îmi plac oamenii răi, care îi dușmănesc pe ceilalți.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_082.wav|Poliția rutieră a amplasat, astăzi, radare pe de ne șase.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_403.wav|Tinerii vin în bar doar seara și în weekend.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_139.wav|De ce eu am scăpat, nu știu nici azi.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_140.wav|Au spus rudele împușcatului.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_485.wav|În Polonia, cota este de șaptezeci de procente.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_344.wav|Animalele aparțin cetățenilor de etnie rromă care locuiesc în zonă.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_393.wav|Fiecare cameră dispune de grup sanitar în cameră.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_195.wav|A urmat apoi calculatorul și jocurile electronice.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_337.wav|Iată clasamentul în partea lui superioară.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_209.wav|Rezistați să consumați numai fructe, legume și miere.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_057.wav|Numai că lotul de jucători era mai numeros decât numărul de tricouri.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_439.wav|În cazul neconfirmării la timp a locului obținut, locurile neocupate vor fi redistribuite.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_192.wav|Cultivă porumb și grâu și începe să vâneze.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_201.wav|El coboară din mașină și dă actele, inclusiv ale șoferului, la control.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_375.wav|Acolo, la o expoziție de artă modernă, era prezentat prototipul unei lucrări a maestrului Angelo Rovența, fostul meu student.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_281.wav|Un frigider făcut la noi a ținut și treizeci de ani declară Dan Tănăsescu.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_390.wav|Noi am lipit pe uși afișe cu metodologia cazărilor, ca să nu mai existe neclarități, a completat Iordache.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_032.wav|Comitetul de implementare are rolul de a supraveghea îndeplinirea obligațiilor ce revin părților la convenție.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_074.wav|Arhiepiscopia este titlu onorific.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_336.wav|În România activează peste patru mii de societăți cipriote, inclusiv două bănci comerciale.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_147.wav|După ansamblul meciului totuși, cred că meritam victoria.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_095.wav|Când a coborât însă, i-au pus arma la tâmplă.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_017.wav|Prețul unei ore de joacă sub supravegherea personalului angajat costă șapte lei.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_184.wav|În Italia, preferă mâncărurile rafinate.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_228.wav|Mă simt mai puternic, am mai multă energie.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_179.wav|Sala a fost găsită în zona arheologică Domus Aurea.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_346.wav|Nu mi-am mai luat viză, pentru că am auzit pe la radio că nu ar mai trebui.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_459.wav|Probabil că parțial aș avea avea dreptate.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_367.wav|Mai mult nu vreau să comentez a opinat acesta.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_044.wav|În blocul șase, două scări, adică aproximativ treizeci de apartamente, erau terminate când au venit actele de la primărie.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_053.wav|Ești într-o stare de vis și realitate.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_258.wav|Am visat mereu ca o Europă întreagă să asculte și să fredoneze melodia compusă și produsă de mine.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_306.wav|În mod normal, ar trebui interzis accesul în curtea castelului cu mașini.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_157.wav|Când ajungi în capătul scărilor, te întâmpină statuia străjer.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_284.wav|De dragul copilului o să mă apuc de muncă cinstită spune Tudor.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_398.wav|Când o să tragem linie, la final, nu cred că vom scoate mare lucru.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_006.wav|Astfel se răspândește ghinionul.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_146.wav|Manevra de redresare a mașinii a fost fatală.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_382.wav|Din nou sunt disfuncționalități.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_386.wav|Antrenorii italieni știu să scoată maximul maximum din jucători.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_091.wav|Îi place dreptatea, punctualitatea și seriozitatea.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_306.wav|Cei trei angajați implicați în eveniment au fost audiați și ieri.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_047.wav|Așa că am reușit să strâng mai multe bucăți din același manual.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_256.wav|A mers acolo vineri ne-a spus directorul grădinii, Vasile Cristea.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_165.wav|Ea era tot timpul pe minge.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_090.wav|Un procent de cincizeci la sută din populație trăiește la țară.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_390.wav|E de ultima speță.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_340.wav|Pentru acest succes handbalistele noastre au fost premiate cu douăzeci și cinci de mii de euro.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_076.wav|Acesta ar urma să devină operațional la începutul lui două mii unsprezece, potrivit Agerpres.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_335.wav|Cât durează până câștigă, nu poate spune.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_460.wav|Va fi și administratorul prezent la discuții.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_030.wav|Familia Lăcătuș și-a făcut un trecut în domeniul vânzării castanelor.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_329.wav|Niciodată nu-mi plăcea să pierd.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_475.wav|Pe el nu-l răpunea până pe la șapte, mai spune Ema.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_446.wav|Întrebarea nu are deocamdată răspuns.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_413.wav|Desemnarea orașului gazdă, va avea loc pe doi octombrie, la Copenhaga.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_139.wav|Stilul baroc este evidențiat de elementele structurale.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_349.wav|Mihaela și Iulian făcuseră cununia civilă în urmă cu trei luni.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_439.wav|Nu toți taurii însă se pot ridica la un anumit nivel.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_458.wav|Am salvat șaizeci de mii de locuri de muncă, în mod direct și indirect.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_445.wav|N-am mai zburat niciodată, dar cred că o să încerc acum.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_417.wav|Oamenii au declarat, că au văzut moartea cu ochii.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_418.wav|Citiți întreg articolul cum leii falși s-au înmulțit în criză.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_072.wav|Clipul a fost regizat de celebrul fotograf GIuliano Bekor.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_212.wav|Fără cameramani și pază de corp.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_468.wav|Angajații Opel vor deține zece procente din capitalul companiei.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_274.wav|Abundența încălțămintelor de calitate aproape că i-a pus în umbră pe meserIași.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_164.wav|Nimănui, în afară de ea, nu-i pasă de mine.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_377.wav|A declarat Mihai Stoichiță într-o conferință de presă.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_364.wav|Pojarul și scarlatina oricărui colecționar se cheamă filatelie.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_309.wav|Domeniile în care activează sunt producția, construcțiile, imobiliar.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_317.wav|Prima proteză a fost tot din sponsorizare, din Spania.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_398.wav|Nu, e același, doar că nu se mai vede atât de pregnant.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_065.wav|Deocamdată lista este deschisă spune Magda Georgescu, purtător de cuvânt al a je o fe me Maramureș.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_492.wav|Nu am lucrat niciodată la mașini și nu am avut îndemânare.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_245.wav|Totodată, în zilele de vineri și sâmbătă.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_233.wav|Am decis deja să pun un preț pe capul lui.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_324.wav|Două luni mai târziu au început filmările pentru serial.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_371.wav|Petrecerea va avea loc în club Seven Sins din Piața Centrală.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_440.wav|Sunt o persoană care trăiește în prezent, nu în viitor.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_061.wav|În magazin jucătorii găsesc tot ce au nevoie.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_369.wav|Erau epuizați, stresați, nemâncați.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_093.wav|Activitățile de aici sunt o relaxare pentru noi.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_027.wav|În primele zile nu facem nici douăzeci de lei arată Rozalia.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_127.wav|Am văzut că îi place să cânte și să danseze.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_199.wav|Acum este pensionară și trăiește în sua, în apropiere de New York.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_065.wav|Deocamdată lista este deschisă spune Magda Georgescu, purtător de cuvânt al a je o fe me Maramureș.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_020.wav|A fost foarte greu pentru ea în ultima vreme.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_408.wav|Guvernul britanic a comandat șaizeci de milioane de doze.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_182.wav|Bucuria lor este atunci când papagalul începe să vorbească, ne-a spus Alina Turcu, proprietar de magazin.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_373.wav|Pericolul imens era ca întreaga economie să se prăbușească.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_135.wav|Mai vin și acum credincioși care rămân și peste noapte la noi.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_411.wav|Regia este semnată de maestrul Cezar Ghioca.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_479.wav|El a intervenit și atunci când, după demisia mea, s-a forțat creșterea.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_046.wav|Artistului nu-i place neseriozitatea persoanelor cu care lucrează.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_491.wav|Dacă sunt adevărate, prioritățile nu depind de conjuncturi.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_176.wav|Sunt dependentă de pictură.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_086.wav|Nu mai avem nimic de ascuns.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_260.wav|Pe mulți nu îi interesează să apară la te ve.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_405.wav|Jiul va primi pe teren propriu vizita celor de la Oțelul Galați.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_279.wav|Problema cu Sergiu Toader este una personală.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_254.wav|Cinci din Râmnicu Vâlcea vor pleca vineri, optsprezece septembrie la Milano.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_276.wav|Nu s-a schimbat nimic în ultima vreme.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_441.wav|Creștinismul are legătură directă cu stilul de viață, nu poți să trăiești împotriva felului în care ești proiectat.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_393.wav|Panait Sârbu din București.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_223.wav|Nu știu ce a apreciat Gigi Becali la mine, nu l-am întrebat.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_271.wav|Evenimentul va avea loc în holul complexului muzeal Iulian Antonescu cu începere de la ora nouă.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_463.wav|Eu am lucrat mulți ani la serviciul de lansare.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_210.wav|Apoi, ușor ușor, câinii au găsit drumul reabilitării.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_033.wav|Locația a fost stabilită de către inspectoratul școlar Arad, la grădinița cu program prelungit, situată în centrul orașului.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_482.wav|Raportul nu absolvă Rusia de responsabilitatea sa în acest conflict.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_400.wav|La fel au pățit și părinții Mariei Lungu, care este și acum în spital.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_112.wav|Vânzarea cailor lipițani a scăzut considerabil anul acesta.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_068.wav|Nu-mi plac oamenii care nu au cuvânt.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_089.wav|Folk-ul ține de starea de spirit a fiecăruia dintre noi.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_050.wav|Eșecul statului federal în fața cicloanelor rămâne unul din cele mai profunde stigmate ale președinției lui George.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_014.wav|Sabău spune că stilul de joc al lăncierilor este același ca și pe vremea când juca el în Olanda.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_474.wav|Am zis să fie ceva care să ne reprezinte.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_134.wav|La Casa de Cultură a Studenților, poate fi urmărit, de la ora douăzeci și unu.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_424.wav|În general iau lunar cam două sute de lei.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_362.wav|Oamenii au sărit cu gălețile ca să recupereze din motorină speriați, localnicii au sunat la unu unu doi.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_368.wav|Pe sensul Ploiești Brașov, precum și pe străzi laterale.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_175.wav|Trebuie să știu să fac de toate.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_390.wav|Noi am lipit pe uși afișe cu metodologia cazărilor, ca să nu mai existe neclarități, a completat Iordache.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_265.wav|Pentru a măsura talentul acestora, specialiștii i-au pus să răspundă la o serie de întrebări neobișnuite.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_065.wav|Au venit peste noi și ne-au lovit cu bâte de baseball.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_450.wav|Există o suspiciune de epizootie.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_368.wav|S-a petrecut de ziua orașului Oradea.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_040.wav|Încă de la prima accesare m-a atras foarte mult.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_367.wav|Polițiștii l-au prins după ce au găsit numărul lui de telefon în agenda îndrăgitei cântărețe.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_074.wav|Știu chiar înainte de a trece printr-un control medical de specialitate cum vor să nască.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_013.wav|O păstrez ca amintire la loc de cinste își amintește informaticianul.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_443.wav|Eu cred cu toată convingerea că este cântecul care mă definește.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_286.wav|Baloanele sunt foarte frumoase.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_100.wav|Ea a fost o mămică tânără și se laudă cu asta.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_356.wav|N-are nicio legătură unul cu altul.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_495.wav|Pentru mine, întoarcerea la școală era un calvar.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_438.wav|La spital au venit cu sufletul la gură și câteva mămici.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_270.wav|Noi cu aceste echipe ne batem, nu cu granzii.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_276.wav|Aceștia au suferit arsuri ușoare la mâini, față și cap.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_455.wav|Sper să joc și la București la fel de bine.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_244.wav|Costă aproximativ o mie de euro.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_318.wav|El mi-a spus odată că are o firmă de pază.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_397.wav|Deocamdată nu se cunoaște valoarea prejudiciului.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_031.wav|El reprezintă districtul treisprezece, care include cartierul Queens.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_335.wav|Pentru Virgil Melente, a fost altfel.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_483.wav|Altfel, rămânem doar cu prosteala televizată.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_442.wav|Tinerii cu aceste deprinderi vin la școală.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_005.wav|Dincolo de efectele economice și comerciale, greva ne face să avem și lipsă de încredere în justiție.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_058.wav|Se întâmplă cam în epoca fe ne i Caritas Bancorex.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_383.wav|Am avut un club.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_416.wav|Ea poate fi atacată cu apel la curtea federală de apel.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_051.wav|Cel mai mare succes la vânzări l-a avut imediat după debut.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_216.wav|În schimb, oamenii de afaceri, mai ales cei din Moscova, au investit în construcția de hoteluri și cazinouri.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_460.wav|Sportiv poate, pentru că și fratele meu a făcut box.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_003.wav|Pe ce personaje mizați în noul sezon, toate personajele sunt o miză.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_180.wav|Am terminat facultatea de marketing și nu am unde să mă angajez.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_431.wav|Revenirea președintelui ales al Hondurasului, Manuel Zelaya provoacă reacții internaționale.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_083.wav|Îmi plac cartofii prăjiți foarte mult, a spus Gabriel Safta.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_475.wav|Pe el nu-l răpunea până pe la șapte, mai spune Ema.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_128.wav|Preferam să mâncăm în cameră.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_135.wav|În consecință, prima înfățișare va avea loc în luna octombrie.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_392.wav|Alți patru au fost eliberați.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_419.wav|Toți elevii de la Lombardo Radice vorbesc fluent limba italiană.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_045.wav|Szekely, douăzeci și cinci.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_483.wav|Comisia de disciplină a hotărât vinovații.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_242.wav|Credeți că există vreo diferență între meseriașii de acum și cei de altădată.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_047.wav|Așa că am reușit să strâng mai multe bucăți din același manual.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_492.wav|Suntem una dintre cele mai vechi familii din Eforie.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_218.wav|Apreciază punctualitatea.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_310.wav|Dacă există suspiciuni, el trebuie să anunțe imediat poliția pentru a confirma controlul în trafic.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_040.wav|Încă de la prima accesare m-a atras foarte mult.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_366.wav|Și atunci, principalii pierzători sunt cei foarte buni.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_398.wav|Returul este programat la doi decembrie, la Timișoara.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_431.wav|Prefectul Loredana Alexandru a fost premiat de comisia internațională pentru protecția fluviului Dunărea.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_415.wav|Jucătorii n-au înțeles indicațiile tactice date de Bergodi.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_439.wav|Este cel mai plăcut mod de ați petrece timpul liber.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_459.wav|Probabil că parțial avea dreptate.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_366.wav|Și atunci, principalii pierzători sunt cei foarte buni.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_394.wav|De asemenea, s-a analizat modul de funcționare al administrației publice locale și județene și absorbția fondurilor europene.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_004.wav|Această partidă se poate compara cu meciul de la Donețk.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_161.wav|Se pare că un rol important în declanșarea migrenelor îl are neuro-transmițătorul serotonină.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_218.wav|Acum spune că îi mulțumește tatălui pentru decizia de atunci.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_418.wav|Ei nu pot face clandestin această activitate, ne-a declarat șeful administrației piețelor agroalimentare Galați.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_109.wav|Datorită acestui procedeu tradițional, produsul rezultat este unul dulce și sănătos.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_143.wav|Neimpozitarea profitului reinvestit este altă măsură adoptată recent.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_074.wav|Știu chiar înainte de a trece printr-un control medical de specialitate cum vor să nască.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_391.wav|Învățământul e la pământ.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_200.wav|Televiziunea publică mai curând oficială decât publică, susținea interesele puterii.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_195.wav|Însă evoluția economică negativă impune măsuri suplimentare de reducere a cheltuielilor.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_001.wav|Ne doare pe toți, încă de a doua zi dimineață.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_426.wav|Vor fi create cel puțin cinci mii de locuri de muncă.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_427.wav|În caz contrar, firește, vom trebui să reducem numărul comisarilor.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_310.wav|Dacă există suspiciuni, el trebuie să anunțe imediat poliția pentru a confirma controlul în trafic.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_306.wav|Acolo m-am format și sunt mândră de asta spune ea.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_340.wav|Harry Caine este pseudonimul cu care își lansează scrierile.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_035.wav|Uneori suntem chiar mai bune decât ei.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_404.wav|Lumea internetului a adus și o nouă forță estetică.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_235.wav|Suma nu include salarii, ci doar drepturi conferite prin legi speciale.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_189.wav|Doar trei zero procent din producția Lafarge Agregate merge către infrastructură.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_283.wav|Acesta va mai reprezenta u e în deplasările în străinătate.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_331.wav|Este vorba despre bun simț și bunăvoință a declarat Grigorov.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_389.wav|De asemenea, Covei a fost iertat de magistrați și în alte rânduri.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_285.wav|Suntem înainte de toate profund îngrijorați.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_400.wav|La fel au pățit și părinții Mariei Lungu, care este și acum în spital.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_381.wav|Pictura este pe primul plan.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_411.wav|Regia este semnată de maestrul Cezar Ghioca.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_246.wav|E un om deosebit.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_226.wav|Acum, după un an de tratamente și operații, doar câteva pete mai amintesc de teribila boală.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_148.wav|Cu toate bâlbele noastre în defensivă, am băgat regulamentar mingea în plasă.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_283.wav|Acesta va mai reprezenta u e în deplasările în străinătate.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_114.wav|Voi căuta în tot orașul pentru că nu vreau să-mi știrbesc colecția a spus tânăra.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_084.wav|M-au pândit până au oprit mașinile la semafor, apoi au venit spre mine trei bărbați și trei femei.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_444.wav|Prima ocazie de gol le aparține ieșenilor.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_109.wav|Cele de acum sunt lucruri făcute să se strice a mai spus acesta.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_202.wav|Problemele din aceste domenii mă delectează.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_274.wav|Abundența încălțămintelor de calitate aproape că i-a pus în umbră pe meserIași.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_127.wav|Georgică Cornu, frații Cristescu sau Romeo Dunca sunt cei care analizează această opțiune.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_221.wav|La fiecare zgomot tresăream, de câte ori auzeam sirene mă ascundeam.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_468.wav|Nu a mai venit însă la serviciu de patru luni.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_290.wav|Aici a avut loc disputa kaiaciștilor, pe râurile Drau și Isel.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_166.wav|Atunci vânătorul și-a dat seama că este în fața unui record.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_001.wav|De asemenea, contează și dacă imobilul este la stradă sau nu.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_002.wav|Drumul a fost blocat mai multe ore.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_032.wav|Într-un cuvânt, Rusia dintotdeauna.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_023.wav|Pe toate rutele din județul Vâlcea se fac, începând de săptămâna aceasta, controale care vizează activitățile de transport persoane.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_253.wav|Dar și asta pare acum prea puțin, povestește Ema.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_267.wav|Știința a arătat o cu totul altă față în comparație cu precedentele deplasări.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_185.wav|S-ar putea vedea această înfrângere la sfârșitul campionatului.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_270.wav|Tot timpul am fost ca frații, românii cu ungurii.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_139.wav|Stilul baroc este evidențiat de elementele structurale.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_149.wav|Lumea deja m-a îngropat, spune dezamăgit Constantin.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_433.wav|Păcatul său este că nu le inspiră teamă celorlalți fotbaliști, lucru care se reflectă și pe teren.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_196.wav|Știe rețeta de când era doar o copilă.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_037.wav|Am fost cu mama și cu sora mea.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_254.wav|Filmul rulează în avanpremieră începând de mâine, la cinema Odeon din Polus Center.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_064.wav|Artiștii armâni, îmbrăcați în costume populare tradiționale au susținut și un spectacol cu melodii tradiționale populare din zona Monosco Moscopole.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_211.wav|Am intrat în u e înaintea României.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_063.wav|Și polițiștii se vor alătura colegilor lor, care vor protesta în fața Palatului Parlamentului.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_425.wav|Muniția era de proveniență germană.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_006.wav|Îmi dezvoltă o anumită minuțiozitate.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_370.wav|Patronatele din construcții sunt însă sceptice în legătură cu aceste date.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_139.wav|Barroso și-a schimbat de mai multe ori poziția politică.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_338.wav|Nu eu mă ocup de distribuția camerelor, ci o comisie de cazare.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_180.wav|Polițiștii au luat probe aseară de la locul incidentului.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_163.wav|Cele două au urcat în premieră pe un podium la ce me.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_371.wav|Am mai strâns bani pentru oameni care erau la ananghie, în general pentru bolnavi mărturisește el.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_156.wav|În primul rând trebuie să-ți placă ce faci.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_410.wav|Consolidarea terasamentului de aici a fost impusă ca urmare a inundațiilor din o mie nouă sute nouăzeci și nouă.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_385.wav|Acesta va fi amplasat în parcul din portul turistic.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_025.wav|Vechile cabinete erau la o distanță de o sută cincizeci metri de spital și nu corespundeau reglementărilor Ministerului Sănătății.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_027.wav|Dorim să atragem finanțarea printr-un program transfrontalier cu Republica Moldova.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_206.wav|Turul este programat pentru data de întâi octombrie, la București.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_407.wav|Cred că au fost afectați că au luat șapte goluri.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_082.wav|În urma impactului muncitorul a decedat pe loc.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_286.wav|În ce privește reabilitarea monumentului, există două teorii.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_284.wav|De dragul copilului o să mă apuc de muncă cinstită spune Tudor.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_496.wav|Toți sunt jucători utili, dar niciunul indispensabil.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_285.wav|Partea care rămâne pentru educație și cultură este foarte mică, insuficientă pentru un trai decent.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_338.wav|Nu eu mă ocup de distribuția camerelor, ci o comisie de cazare.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_250.wav|Uriașe evenimente, ample transformări, crize atinse de metastază ne sucesc mințile.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_473.wav|Mi-am ales o armă foarte grea, o armă tehnică.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_228.wav|O simțim și noi din greu.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_483.wav|Indiferent de categoria de vârstă, meciurile au fost aprig disputate.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_038.wav|Din prima până în ultima secundă, convorbirea telefonică e o beșteleală de cartier aplicată cu toată impetuozitatea sărmanului cetățean.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_140.wav|Lipsesc cincizeci de lei.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_401.wav|Am trecut cu bine peste pasul acesta, mulțumim lui Dumnezeu.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_399.wav|Am văzut doar niște fraze generale, fără niciun indicator a spus Dodon.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_462.wav|Acum a ajuns în imposibilitatea de a le mai achita.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_051.wav|Cel mai mare succes la vânzări l-a avut imediat după debut.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_146.wav|Mai întâi, Dorian Popa a fost tehnician în telecomunicații.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_386.wav|Se obține de pe stratul frunzelor de pădure.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_028.wav|La ora actuală oamenii sunt preocupați de a avea și nu mai sunt preocupați de a fi.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_429.wav|Ne vedem atât de rar.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_059.wav|Învinuiși au fost învinuiții au fost luați joi și duși la audieri la București.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_145.wav|Cum nu aveau oferte multe, se înghesuiau să participe.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_029.wav|Steaua este o echipă de calitate, cu mare tradiție în cupele europene.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_021.wav|Atât autotrenul cât și cantitatea de țigări au fost predate inspectorilori vamali.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_005.wav|Gâtul a necesitat intervenție de lungă durată.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_432.wav|Așa cum este sindicatul fotbaliștilor, să fie și unul al antrenorilor.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_215.wav|În cadrul proiectului, liceul Silvic va pune la dispoziția cercetătorilor terenul din curtea școlii.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_256.wav|A mers acolo vineri ne-a spus directorul grădinii, Vasile Cristea.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_216.wav|Mi-am cumpărat pământ și mi-am făcut o grădină.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_458.wav|Am salvat șaizeci de mii de locuri de muncă, în mod direct și indirect.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_190.wav|Vă dați seama ce a ieșit, își amintește Alin Trică.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_430.wav|Singura bucurie a femeii suferinde era Eugen, unicul fiu.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_412.wav|Noi trebuie să luptăm pentru locuri fruntașe în clasament.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_353.wav|Pe scena Casei de Cultură a Sindicatelor din Pitești.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_082.wav|Poliția rutieră a amplasat, astăzi, radare pe de ne șase.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_274.wav|Pe marginea filmului au avut loc și discuții între polițiști și elevi.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_110.wav|Echipa elevi a concurat în trei probe.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_494.wav|Începe să consume droguri, alcool și recurge la tentative de suicid.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_359.wav|Toate marile orașe acordă gratuitate elevilor.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_149.wav|Pe masa procurorilor parchetului de pe lângă judecătoria Constanța.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_112.wav|Cu toate că străzile sunt pline de cerșetori, autoritățile susțin că au rezultate notabile în lupta împotriva cerșetoriei.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_398.wav|Returul este programat la doi decembrie, la Timișoara.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_442.wav|Noi obținem rezultate împotriva cursului, nu sunt concordante cu condițiile de lucru.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_465.wav|Ador călătoriile, să scriu poezii și să merg în parc.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_292.wav|Noi nu avem posibilitatea de a-i controla așa cum ne-am dori.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_148.wav|Bărbatul este cercetat penal de polițiștii din Ardud pentru lovire și alte violențe.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_351.wav|Nu-mi explic ce s-a întâmplat.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_454.wav|Știu doar că au în lot mulți portughezi.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_061.wav|În magazin jucătorii găsesc tot ce au nevoie.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_026.wav|Fără aceste două elemente de bază nu ai cum să lucrezi cu niciun copil.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_403.wav|Da, pe lângă muzică, te ocupi și de radio.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_351.wav|La mine a lucrat ca hostess.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_477.wav|Scopul campaniei a fost de a reduce infracționalitatea de toate tipurile.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_340.wav|Dar nu avem ce face, am soțul în spital.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_215.wav|În cadrul proiectului, liceul Silvic va pune la dispoziția cercetătorilor terenul din curtea școlii.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_033.wav|Finalul a fost dramatic pentru scandinav.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_494.wav|Rezultatele nu au fost cele scontate.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_066.wav|Poate vom vorbi de hidrați de gaz în viitor.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_156.wav|Mă descurc, n-am probleme, spune Valentin ușor îmbujorat.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_154.wav|Acesta trecuse legal frontiera pe la Giurgiu.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_433.wav|Păcatul său este că nu le inspiră teamă celorlalți fotbaliști, lucru care se reflectă și pe teren.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_221.wav|Când a venit ocazia, n-am mai putut.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_152.wav|Porterii ne așteptau cu floricele de porumb proaspăt făcute și ceai cald.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_247.wav|Am putea pierde zece procente anul acesta.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_434.wav|De asemenea ei solicită demiterea ministrului justiției.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_092.wav|Șaisprezece ani într-o companie multinațională, dintre care doisprezece ani pe poziția de director general, este prea mult.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_161.wav|Așezarea pasagerilor față în față nu este o soluție ideală.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_465.wav|Ador călătoriile, să scriu poezii și să merg în parc.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_175.wav|Trebuie să încercăm mereu să ne redescoperim, să luptăm.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_008.wav|Vreau să continuu în acest domeniu până la sfârșitul vieții spune cu o mină foarte serioasă micuța.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_418.wav|Citiți întreg articolul cum leii falși s-au înmulțit în criză.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_037.wav|După o vară plină de tensiune, învățământul românesc trece într-o altă etapă.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_489.wav|Nicolae bacalbașa, purtătorul de cuvânt al spitalului de urgență Galați.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_482.wav|Bărbatul nu are carnet, se urca la volan fără teamă că cineva îl va opri.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_415.wav|Jucătorii n-au înțeles indicațiile tactice date de Bergodi.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_414.wav|Am plecat în altă parte.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_160.wav|Irimescu și Nicola au fost foarte buni.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_348.wav|El a fost apreciat ca jucător și vrem să rămână a mai spus Cornel Șfaițer.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_272.wav|Mă deranjează foarte mult amânarea.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_181.wav|Constantin Rădulescu, cu începere de la ora douăzeci.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_153.wav|Antrenorul este lăsat să-și facă treaba și se văd roadele muncii sale.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_050.wav|Asociația nu avea statut legal atunci când am devenit eu președinte.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_233.wav|Aveam chiar și clase de cincizeci de elevi.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_085.wav|Călătorii circulă pe linia opt de tramvaie, cu autobuze.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_041.wav|Cât durează până câștigă, nu poate spune.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_362.wav|Oamenii au sărit cu gălețile ca să recupereze din motorină speriați, localnicii au sunat la unu unu doi.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_064.wav|În primul rând este gradul de educație.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_098.wav|Primele minute au fost mai grele până când mi-am intrat în ritm.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_126.wav|Sindicatul liber din învățământ Maramureș, a înființat asociația pensionarilor din învățământ.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_162.wav|Ulterior, investigația a fost extinsă pentru a include întreg grupul american Google.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_244.wav|Costă aproximativ o mie de euro.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_364.wav|Consiliul județean Timiș și consiliul local Timișoara s-au aliat pentru atragerea banilor europeni necesari renovării centrului orașului.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_022.wav|Arădenii sunt din ce în ce mai speriați la gândul că trebuie să circule pe drumul Arad Șiria.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_103.wav|I fe ce, divizia de investiții private a băncii mondiale, pune cărțile pe masă.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_091.wav|Îi place dreptatea, punctualitatea și seriozitatea.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_279.wav|Când domnii își petrec timpul împreună, efectul nu este tocmai benefic.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_107.wav|Avem dificultăți cu jucătorii de afară.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_289.wav|Sper să reușesc să-i mobilizez pe băieți, să-i responsabilizez și să câștigăm.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_173.wav|Chiar în aceste condiții, Florin.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_148.wav|În acest caz nu se poate spune de o schimbare.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_346.wav|Nu mi-am mai luat viză, pentru că am auzit pe la radio că nu ar mai trebui.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_120.wav|În centrul ei, situația din Statele Unite ale Americii.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_399.wav|Principalul factor care te ajută să supraviețuiești este credința fermă în câteva valori.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_275.wav|Repet, am fost ocupat cu i me me-urile.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_146.wav|Manevra de redresare a mașinii a fost fatală.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_200.wav|Televiziunea publică mai curând oficială decât publică, susținea interesele puterii.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_290.wav|Aici a avut loc disputa kaiaciștilor, pe râurile Drau și Isel.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_066.wav|Dar e greu cu Bergodi.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_131.wav|Pentru a fi mai operativi, unii au împărțit rândurile cu părinții.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_444.wav|Atmosfera de la școală e groaznică.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_473.wav|Acum, negociază pentru achiziționarea unei a doua mori, afacerile luând amploare.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_196.wav|Am trecut în Moldova și acum mă întorc acasă.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_099.wav|Aceste insule sunt denumite Teritoriile de Nord de către Japonia și Kurile de Sud de către ruși.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_444.wav|A fost o persoană reprezentativă pentru regimul comunist.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_395.wav|De mâine, unu octombrie, localul se închide.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_436.wav|După optsprezece luni a reușit să scape de cincizeci de kilograme.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_285.wav|Partea care rămâne pentru educație și cultură este foarte mică, insuficientă pentru un trai decent.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_230.wav|Pe vremea mea, îi băteam mai mereu pe rapidiști la Craiova.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_460.wav|Va fi și administratorul prezent la discuții.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_049.wav|Viorica Crișan, directorul muzeului, stă zilnic peste program la serviciu.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_256.wav|A mers acolo vineri ne-a spus directorul grădinii, Vasile Cristea.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_345.wav|Poate vor veni meciuri când o să îi intre și lui.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_011.wav|Apoi au venit foarte multe delegări în toată țara.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_464.wav|Meritam un egal după cum s-a jucat.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_388.wav|Potrivit directorului medical al spitalului de pediatrie Galați.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_254.wav|Cinci din Râmnicu Vâlcea vor pleca vineri, optsprezece septembrie la Milano.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_254.wav|Filmul rulează în avanpremieră începând de mâine, la cinema Odeon din Polus Center.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_382.wav|Din nou sunt disfuncționalități.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_021.wav|Sunt unii care au descoperit pe aceste rețele foști colegi de școală.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_265.wav|Pentru a măsura talentul acestora, specialiștii i-au pus să răspundă la o serie de întrebări neobișnuite.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_226.wav|Acum, după un an de tratamente și operații, doar câteva pete mai amintesc de teribila boală.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_490.wav|S-a văzut de ce Brașovul este lider în campionat.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_033.wav|Locația a fost stabilită de către inspectoratul școlar Arad, la grădinița cu program prelungit, situată în centrul orașului.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_493.wav|Nu a murit, dar a rămas mutilată și asta m-a marcat.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_154.wav|Acesta trecuse legal frontiera pe la Giurgiu.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_052.wav|Scandalul a început de la unele neînțelegeri legate de niște datorii neachitate.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_290.wav|Lazic avea drept de joc și putea fi folosit de antrenor fără niciun fel de problemă.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_429.wav|Ne vedem atât de rar.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_417.wav|La eveniment participă câte douăzeci și cinci de operatori de turism din România și Ucraina.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_413.wav|Va avea loc un seminar dedicat eficienței energetice din sectorul privat.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_327.wav|Căminul Poligrafie are camere cu patru paturi și două băi comune pe fiecare palier.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_011.wav|Apoi au venit foarte multe delegări în toată țara.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_284.wav|Investitorii care au ales drept plasamente indicii bursieri, în intervalul analizat, au avut și ei de câștigat.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_329.wav|Doar mici intervenții de reparații, printre care înlocuirea cărămizii Nevada cu termopane.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_221.wav|Când a venit ocazia, n-am mai putut.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_002.wav|Drumul a fost blocat mai multe ore.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_346.wav|Sindicaliștii au anunțat aseară că vor bloca activitatea de la nouă octombrie.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_186.wav|Domnul Bergodi era bine venit la meci, chiar dacă dumnealui nu mai face parte din staff.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_269.wav|Se lasă pozat și răsfățat.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_202.wav|Problemele din aceste domenii mă delectează.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_217.wav|Vom face tot posibilul să existe mai multă înțelegere, cooperare și încredere reciprocă a adăugat el.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_287.wav|Ambiția a ajutat o să devină cunoscută, deși este încă foarte tânără.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_255.wav|Cele două familii sunt în conflict de mai multă vreme.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_039.wav|În localitate există șase polițiști, dintre care unul este în concediu și unul are mâna ruptă.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_368.wav|Raportat la tehnica procesului tehnologic, proiectul de amploare a fost foarte greu de dus la bun sfârșit.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_267.wav|Știința a arătat o cu totul altă față în comparație cu precedentele deplasări.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_333.wav|Există o nouă lege a educației și o nouă grilă de salarizare pentru profesori.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_447.wav|Dintre acestea, aproximativ cincizeci sunt pentru agenți de vânzări stradali.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_422.wav|Până atunci nu am mai practicat niciun sport.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_216.wav|În schimb, oamenii de afaceri, mai ales cei din Moscova, au investit în construcția de hoteluri și cazinouri.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_471.wav|Oamenii sunt însă liniștiți.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_267.wav|Cu ce mașină intrați pe pistă acum.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_461.wav|Este vorba de o răzbunare politică pusă la cale împotriva mea.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_080.wav|E un punct pe care nu-l dai.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_050.wav|Este vorba despre a ge de.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_096.wav|Nu există nici un dubiu.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_371.wav|Acum va trebui să mă întorc acasă.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_021.wav|Atât autotrenul cât și cantitatea de țigări au fost predate inspectorilori vamali.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_390.wav|Noi am lipit pe uși afișe cu metodologia cazărilor, ca să nu mai existe neclarități, a completat Iordache.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_073.wav|Este foarte bine pentru Pandurii că vom merge cu un moral bun la jocul cu Steaua.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_006.wav|Îmi dezvoltă o anumită minuțiozitate.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_220.wav|Pentru că vorbim de mii de studenți, operațiunea va dura aproximativ două săptămâni.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_483.wav|Indiferent de categoria de vârstă, meciurile au fost aprig disputate.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_180.wav|Ne așteptam ca acest lucru să fie cumva sofisticat.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_131.wav|După o săptămână de pauză, fostul antrenor principal Ștefan Apostol a revenit la echipă.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_362.wav|Investiția coreenilor este estimată la opt milioane de euro.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_367.wav|Așa și-a descoperit înclinația spre frumos și decorațiuni.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_405.wav|Cineva care să facă și meseria de pirotehnist, spune Cătălin Nedelcu.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_360.wav|În consecință, prima înfățișare va avea loc în luna octombrie.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_064.wav|Artiștii armâni, îmbrăcați în costume populare tradiționale au susținut și un spectacol cu melodii tradiționale populare din zona Moscopole.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_385.wav|Acesta va fi amplasat în parcul din portul turistic.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_455.wav|Sper să joc și la București la fel de bine.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_034.wav|Precizează Gheorghe Crivac, unul dintre prorectorii Universității Pitești.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_418.wav|Citiți întreg articolul cum leii falși s-au înmulțit în criză.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_062.wav|Ei au făcut recurs și au solicitat judecătorilor curții de apel Timișoara să fie eliberați.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_171.wav|Bergodi a făcut un gest urât, sfidător la adresa mea.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_150.wav|Asta le-am cerut fotbaliștilor mei pentru acest joc a spus Cristian Dulca.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_052.wav|Am avut nevoie de un an ca să renovez locul.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_073.wav|Este foarte bine pentru Pandurii că vom merge cu un moral bun la jocul cu Steaua.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_480.wav|Mihail Stănculescu a apelat și el la acest sistem.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_071.wav|Clădirea este plină de parlamentari.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_464.wav|Apoi mi-a fost și mai rău.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_034.wav|E un sentiment aparte când îi vezi pe toți că dansează.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_154.wav|Pentru probele scrise înscrierile se vor face după data de unsprezece iunie.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_224.wav|Hai, vino, că altfel nu se poate.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_459.wav|Probabil că parțial avea dreptate.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_325.wav|Am prins de curând în cămin studenți care locuiau clandestin.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_146.wav|Mai întâi, Dorian Popa a fost tehnician în telecomunicații.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_299.wav|Nu orice rețetă pentru preparatele culinare, ci rețetele pentru prăjituri.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_113.wav|Mi-ai cerut voie să mă filmezi, l-a întrebat isteric tehnicianul.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_310.wav|În consecință, conform cedo, decretul de revocare a grațierii individuale.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_103.wav|Robert Klein a fost înjunghiat duminică seara în jurul orei doi.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_406.wav|Înmormântarea artistului va avea loc sâmbătă, la Eforie Sud, localitatea sa natală.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_402.wav|Corupția din spitale e ca cea națională.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_408.wav|Ei deja nici nu mai ascund asemenea acțiuni.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_215.wav|În cadrul proiectului, liceul Silvic va pune la dispoziția cercetătorilor terenul din curtea școlii.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_365.wav|Compania nu a precizat când va fi pus spre vânzare acest sistem.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_411.wav|Regia este semnată de maestrul Cezar Ghio Ghioca.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_106.wav|În București nu cunoșteam pe nimeni, în Portugalia și Germania la fel.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_443.wav|Eu cred cu toată convingerea că este cântecul care mă definește.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_046.wav|Artistului nu-i place neseriozitatea persoanelor cu care lucrează.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_192.wav|Știe rețeta de când era doar o copilă.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_409.wav|Și asta din cauză că în ambele sisteme lucrează aceIași oameni.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_290.wav|Dacă reapar show-urile de profil, înseamnă că publicul le cere.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_032.wav|Într-un cuvânt, Rusia dintotdeauna.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_201.wav|Necazurile îi fac pe oameni să solicite inclusiv ajutoare nerambursabile.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_079.wav|Eu primesc de la medicii de familie rapoarte zilnice, în care îmi spun că toți suspecții sunt monitorizați.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_361.wav|Dinamo și fe ce Timișoara nu au nicio șansă.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_462.wav|Acum a ajuns în imposibilitatea de a le mai achita.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_211.wav|Șoferul tirului a scăpat fără nicio leziune.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_045.wav|A fost testat alcooltest, rezultatul fiind negativ.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_050.wav|Asociația nu avea statut legal atunci când am devenit eu președinte.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_044.wav|În acest caz, nu se poate spune de o schimbare.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_143.wav|Dar nu în industria auto.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_496.wav|Transportatorul a dat vina pe furnizor și viceversa.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_421.wav|Turcia s-a opus includerii ge de ef, gigantul francez al gazelor în proiectul Nabucco.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_238.wav|Lambu a alergat spre mine.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_317.wav|În Statele Unite, istoricește vorbind, dezvoltarea a fost alta.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_148.wav|Cu toate bâlbele noastre în defensivă, am băgat regulamentar mingea în plasă.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_321.wav|Atunci placa electronică se strică, explică meșterul.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_132.wav|Caii prinși, au fost adoptați de olandezi, nu este posibil așa ceva.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_084.wav|M-au pândit până au oprit mașinile la semafor, apoi au venit spre mine trei bărbați și trei femei.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_295.wav|Pe locurile patru și cinci se situează cartierele Berceni, respectiv Militari.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_287.wav|Ambiția a ajutat o să devină cunoscută, deși este încă foarte tânără.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_171.wav|Între timp a fost solicitată urmărirea pensionarului, prin sistemul automat.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_354.wav|În primul an, am și jucat un campionat întreg.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_116.wav|Răzvan Cociș a evoluat optzeci și cinci de minute la oaspeți.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_123.wav|Oamenii s-au trezit de nenumărate ori cu un cal sau o vacă în fața mașinii.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_355.wav|În urma accidentului, ambele mașini au fost serios avariate.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_092.wav|Șaisprezece ani întro companie multinațională, dintre care doisprezece ani pe poziția de director general, este prea mult.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_375.wav|Pe ansamblu, sunt prea multe incertitudini.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_336.wav|În România activează peste patru mii de societăți cipriote, inclusiv două bănci comerciale.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_068.wav|Scifo însă a declinat ieri propunerea moldovenilor, din motive financiare.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_265.wav|Au o apărare foarte bună, în care se remarcă căpitanul Tarknișvili.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_213.wav|De aici și până la vreo lege e cale lungă.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_362.wav|Investiția coreenilor este estimată la opt milioane de euro.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_462.wav|Acum a ajuns în imposibilitatea de a le mai achita.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_196.wav|Am trecut în Moldova și acum mă întorc acasă.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_270.wav|Tot timpul am fost ca frații, românii cu ungurii.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_102.wav|Purtătorul de cuvânt al centrului de informații.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_206.wav|În localitatea doljeană Sadova mai sunt aproape o sută de dogari.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_181.wav|Spune cu franchețe și cumpătare salvamontistul sportiv, fost vicecampion mondial la karate.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_287.wav|Ambii au părăsit ieri cantonamentul pentru a nu răspândi virusul în rândul celorlalți fotbaliști.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_441.wav|Creștinismul are legătură directă cu stilul de viață, nu poți să trăiești împotriva felului în care ești proiectat.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_375.wav|Acolo, la o expoziție de artă modernă, era prezentat prototipul unei lucrări a maestrului Angelo Rovența, fostul meu student.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_313.wav|Șotronul, lapte gros, coarda și chiar fotbal.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_430.wav|Victima este de naționalitate maghiară, de specializare lăcătuș mecanic.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_326.wav|Au căpătat chiar un tic nervos ridică din umeri la minut.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_092.wav|Cotidianul The Daily Telegraph, a alcătuit un top al plângerilor ciudate.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_246.wav|A jucat teatru, s-a prefăcut că i-a venit rău.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_206.wav|În localitatea doljeană Sadova mai sunt aproape o sută de dogari.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_268.wav|Nu au voie să se mute dintr-un sector al stadionului în altul.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_368.wav|Pe sensul Ploiești Brașov, precum și pe străzile laterale.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_019.wav|De altfel, am vrut să mă și retrag.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_182.wav|Am avut două penaltyuri, iar Constantinescu nu trebuia eliminat.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_307.wav|Judecătorii vor continua protestele până la cinci octombrie.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_473.wav|Acum, negociază pentru achiziționarea unei a doua mori, afacerile luând amploare.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_117.wav|Viața mea a fost o luptă pentru a face bine oamenilor.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_139.wav|De ce eu am scăpat, nu știu nici azi.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_361.wav|Dinamo și fe ce Timișoara nu au nicio șansă.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_113.wav|Dar, cu toate acestea, i-am zis să vorbească.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_388.wav|Rețeta e similară, numai că în aluat a pus și iaurt și le-a dat altă formă.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_045.wav|A fost testat alcooltest, rezultatul fiind negativ.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_358.wav|Tot tradiționale sunt și salatele turcești.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_190.wav|Ancheta a început în ianuarie și s-a finalizat în iulie, a spus procurorul Mihaela Pop.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_450.wav|Din bani o să luăm tot rechizite.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_050.wav|Este vorba despre a ge de.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_125.wav|Îmi place meseria pe care o practic cu multă pasiune.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_040.wav|Încă de la prima accesare m-a atras foarte mult.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_280.wav|Pericolul imens era ca întreaga economie să se prăbușească.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_132.wav|Tarife decente sunt oferite pentru revelion la mai multe pensiuni din Maramureș, Bucovina, Albac, Arieșeni, Azuga și Bușteni.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_156.wav|Nu aveau ei cum să intre pe stadion, chiar dacă vroiau.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_120.wav|Nu bea, nu fuma, o iubea pe mama lui foarte mult.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_012.wav|Departajarea se face pe probe de cincizeci de metri care trebuiesc parcurse în zece secunde.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_193.wav|În schimb, agenții economici au achitat acest impozit doar în proporție de trei nouă procent.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_225.wav|Pentru ca tratatul să intre în vigoare mai trebuie ratificat în încă nouă state.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_349.wav|Nu mai sunt bani.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_376.wav|La competiție se pot înscrie persoane cu vârsta cuprinsă între optsprezece și optzeci de ani.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_213.wav|Am simțit cum trenul a sărit de pe șine și s-a răsturnat.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_009.wav|Căzăturile sunt la ordinea zilei, am picioarele negre, sunt ca un dalmațian.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_106.wav|În București nu cunoșteam pe nimeni, în Portugalia și Germania la fel.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_332.wav|Nu este bucurie mai mare a spus Orlando.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_237.wav|Cercetările vizează, de asemenea, rețete eliberate pentru bolnavi de cancer.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_065.wav|Au venit peste noi și ne-au lovit cu bâte de baseball.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_059.wav|A uitat că nu mai este propagandist de partid, ci reprezentant al statului român.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_380.wav|Îmi place foarte mult sportul auto și sportul în general.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_122.wav|Arta înseamnă sacrificiu.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_484.wav|El a trăit mai mult pe la București.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_134.wav|Nu era obligatoriu să facă asta.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_359.wav|Toate marile orașe acordă gratuitate elevilor.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_342.wav|Acționarul majoritar al companiei este Ministerul Economiei.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_257.wav|Este o perioadă grea pentru toată lumea.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_174.wav|Ei confundă emisiunile te ve cu propaganda.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_021.wav|Atât autotrenul cât și cantitatea de țigări au fost predate inspectorilori vamali.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_328.wav|A fost, în schimb, însoțită de râsete frecvente și de ropote de aplauze.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_231.wav|Dacă cineva trebuie înlăturat, se folosesc toate instrumentele represive posibile.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_356.wav|N-are nicio legătură unul cu altul.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_114.wav|Voi căuta în tot orașul pentru că nu vreau să-mi știrbesc colecția a spus tânăra.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_341.wav|Sunt restanțe la acordarea salariilor de merit, la acol acordarea tichetelor de masă.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_153.wav|Medicii, polițiștii și judecătorii respectă cu sfințenie dreptul persoanelor cu afecțiuni psihice de a se plimba printre noi.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_280.wav|Și un succes la diferență de un gol ne-ar mulțumi.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_243.wav|A pornit de la a face câte un costum pe lună și a le închiria.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_227.wav|În plus, acțiunea preventivă urmează să se desfășoare și în zilele următoare.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_494.wav|Începe să consume droguri, alcool și recurge la tentative de suicid.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_324.wav|La eliminarea lui Mera, un galben era de ajuns.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_291.wav|Nu mi-a venit să cred că în comuna noastră trăiesc astfel de persoane, a afirmat Mariana Gâju.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_410.wav|Evident, niște miniștri au răsuflat ușurați.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_315.wav|Pentru a învinge Steaua trebuie să fim hotărâți, agresivi, în sensul bun al cuvântului, și să mușcăm din adversar.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_244.wav|Costă aproximativ o mie de euro.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_275.wav|A luat însă câteva măsuri din mers și a continuat investițiile începute.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_219.wav|La vernisaj vor lua cuvântul criticul de artă Pavel Șușară și Horia Roman Patapievici, președintele i ce re.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_136.wav|Este o operație riscantă, dar ne rugăm să scape.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_209.wav|Tot ce este verde.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_259.wav|O altă explicație este legată de raportările pe care le fac firmele.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_090.wav|Un procent de cinci zero procent din populație trăiește la țară.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_450.wav|Directorii nu organizaseră niciun concurs.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_204.wav|De asemenea, vom lucra și la regulamentul de ordine.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_162.wav|Ai impresia că dormi într-o cramă.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_421.wav|Toată lumea credea că Bergodi face în continuare performanță.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_243.wav|Mie mi s-a reproșat adesea că distrug prestigiul universității, atacând găștile universitare.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_294.wav|Au fost fete care s-au lăsat de handbal.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_251.wav|Deocamdată nu se cunosc cauzele.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_237.wav|Cercetările vizează, de asemenea, rețete eliberate pentru bolnavi de cancer.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_150.wav|Asta le-am cerut fotbaliștilor mei pentru acest joc a spus Cristian Dulca.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_478.wav|La acest spectacol sunt valabile și abonamentele de premieră.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_417.wav|Oamenii au declarat, că au văzut moartea cu ochii.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_142.wav|Regret că nu am fost lângă el la operație.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_478.wav|Atacantul din republica Moldova îi ia locul lui Cristi Constantin.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_179.wav|Conform surselor citate, acestea sunt ipoteze de lucru preliminare.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_202.wav|Se întâmplă cam o dată pe lună, minim.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_451.wav|Dintr-o dată, mingea a căzut în curtea unui localnic.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_228.wav|O simțim și noi din greu.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_377.wav|Când timpul îi permite lucrează goblenuri.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_338.wav|Nu eu mă ocup de distribuția camerelor, ci o comisie de cazare.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_125.wav|Îmi place meseria pe care o practic cu multă pasiune.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_385.wav|Acesta va fi amplasat în parcul din portul turistic.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_207.wav|Cultura germană postbelică pacifistă a primit o lovitură puternică.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_085.wav|Călătorii circulă pe linia opt de tramvaie, cu autobuze.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_008.wav|Dacă nu s-a intervenit la timp, normal că acum sunt grămezi uriașe.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_491.wav|Dacă sunt adevărate, prioritățile nu depind de conjuncturi.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_421.wav|Toată lumea credea că Bergodi face în continuare performanță.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_388.wav|Am avut probleme foarte mari.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_355.wav|În urma accidentului, ambele mașini au fost serios avariate.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_363.wav|Vânzătorii au găsit oameni așteptând cuminți ca tarabele să fie deschise.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_152.wav|Astăzi, publicul va putea asista, în piața primăriei, la pregătirile pentru cursă.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_443.wav|Arătau foarte bine mașinile în special cele cu motoare foarte puternice.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_149.wav|Pe masa procurorilor parchetului de pe lângă judecătoria Constanța.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_410.wav|A trebuit să învăț să comunic și să mă adaptez noilor situații.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_469.wav|Îi place să confecționeze instrumente muzicale, printre care și nai.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_348.wav|Curtea lăcașului sfânt a devenit neîncăpătoare.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_298.wav|În vârstă de douăzeci și cinci de ani, care conducea un autoturism înmatriculat în Republica Moldova.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_060.wav|Această activitate este considerată comerț ilicit de produse care atrage de la sine sancțiuni date de polițiștii comunitari.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_192.wav|Știe rețeta de când era doar o copilă.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_359.wav|Aceștia își vor pierde locul de muncă.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_163.wav|Prin urmare, multe asociații au făcut adrese către primărie, cerând să fie scoase din program.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_104.wav|Premierul britanic Gordon Brown, a spus că sprijină cu putere această decizie.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_350.wav|Becali a gustat din plin momentul.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_428.wav|Federer nu s-a regăsit, a dus dorul unui prim serviciu solid și astfel argentinianul a făcut cinci la doi.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_254.wav|Apoi, la doar un minut, Ceahlăul a beneficiat și de un penalty.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_233.wav|Pe de le și pe se de se vor lupta multă vreme de aici înainte.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_156.wav|Nu aveau ei cum să intre pe stadion, chiar dacă vroiau.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_445.wav|Alt domeniu ar fi turismul.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_078.wav|Nu suntem îndreptățiți să mai luăm și alte măsuri.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_457.wav|Acest lucru nu s-a mai întâmplat niciodată.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_095.wav|S-a făcut beznă în vagon, au căzut bagajele, a declarat pentru Realitatea te ve, unul dintre martori.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_192.wav|Cultivă porumb și grâu și începe să vâneze.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_125.wav|Asta până când tatăl lui s-a îmbolnăvit de cancer.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_203.wav|Dar eu am continuat, deși era destul de ciudată pentru ei alegerea mea.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_473.wav|Prefer sporturile legate de orice are motor, a spus Oliver.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_206.wav|Turul este programat pentru data de întâi octombrie, la București.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_284.wav|De dragul copilului o să mă apuc de muncă cinstită spune Tudor.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_206.wav|Turul este programat pentru data de unu octombrie, la București.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_484.wav|Autoritățile lasă criminalii liberi pe stradă cu bună știință.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_030.wav|Familia Lăcătuș și-a făcut un trecut în domeniul vânzării castanelor.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_159.wav|Sunt în asistențe și pe lângă mașini, de foarte mult timp.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_353.wav|Anunțul a fost făcut la sfârșitul săptămânii trecute, meapene precizând că a organizat o licitație deschisă.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_419.wav|Cine vrea ceva cu adevărat, toata viața trudește.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_112.wav|Vânzarea cailor lipițani a scăzut considerabil anul acesta.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_215.wav|În cadrul proiectului, liceul Silvic va pune la dispoziția cercetătorilor terenul din curtea școlii.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_138.wav|Preferata sa este mierea de mană.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_098.wav|Primele minute au fost mai grele până când mi-am intrat în ritm.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_216.wav|În schimb, oamenii de afaceri, mai ales cei din Moscova, au investit în construcția de hoteluri și cazinouri.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_377.wav|A declarat Mihai Stoichiță într-o conferință de presă.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_117.wav|Eu lucrez din o mie nouă sute nouăzeci și doi în domeniu, dar nu am mai întâlnit așa ceva.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_456.wav|Trei dintre bărbați au fost prinși, dar cel de-al patrulea, un urmărit local, a reușit să scape.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_191.wav|În replică, membrii trupei au negat că Satriani ar fi scris vreo melodie care să-i fi influențat.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_234.wav|Polițiștii atrag atenția cetățenilor să nu le mai dea bani milogilor.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_228.wav|O simțim și noi din greu.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_360.wav|Ambele meciuri se vor disputa pe stadionul din Urziceni.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_376.wav|La competiție se pot înscrie persoane cu vârsta cuprinsă între optsprezece și optzeci de ani.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_201.wav|Necazurile îi fac pe oameni să solicite inclusiv ajutoare nerambursabile.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_105.wav|Dacă nu ne vom înțelege, eu nu mă voi agăța de nimic.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_281.wav|Un frigider făcut la noi a ținut și treizeci de ani declară Dan Tănăsescu.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_420.wav|Neamțul s-a întâlnit ieri cu Copos și susține că a ajuns la un acord în privința preluării Rapidului.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_436.wav|Am acasă un cuptor în care bag produsele după ce le pictez.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_350.wav|Becali a gustat din plin momentul.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_009.wav|Căzăturile sunt la ordinea zilei, am picioarele negre, sunt ca un dalmațian.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_423.wav|Ar fi o propunere pentru o altă coaliție.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_346.wav|Sindicaliștii au anunțat aseară că vor bloca activitatea de la nouă octombrie.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_489.wav|În această perioadă au început însă să crească solicitările.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_192.wav|Știe rețeta de când era doar o copilă.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_448.wav|Dacă scandalul se oprește aici, nu vor exista efecte nefaste.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_158.wav|Banca de alimente reprezintă o soluție imediată de ajutorare a persoanelor fără venituri sau cu venituri foarte mici.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_319.wav|De atunci mă uit de trei ori înainte să trec strada.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_452.wav|Intrarea la concertul de diseară va costa cinsprezece lei.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd2_297.wav|Pumori este situat la granița dintre Nepal și Tibet.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_305.wav|Toate acestea au fost confiscate și distruse.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_243.wav|A pornit de la a face câte un costum pe lună și a le închiria.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_029.wav|Românii din străinătate nu există pentru autoritățile române de acolo, a oftat mama bărbatului.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_293.wav|Mâna pictorului face o magie și transformă culoarea.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_381.wav|De asemenea, îmi plac mult arta și muzica, aici sunt destul de eclectică.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_168.wav|Nu ne-a afectat cu nimic ciclul săptămânal sau conținutul antrenamentelor.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_191.wav|În replică, membrii trupei au negat că Satriani ar fi scris vreo melodie care să-i fi influențat.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_460.wav|O lună este enorm, sunt ca terminat spune micul muzician.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_016.wav|El a reușit să-l imobilizeze pe bărbat.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_306.wav|Cei trei angajați implicați în eveniment au fost audiați și ieri.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_379.wav|Practic, ea întâmpina clienții și îi organiza pe terasă.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_340.wav|Dar nu avem ce face, am soțul în spital.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_422.wav|Până atunci nu am mai practicat niciun sport.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_282.wav|Animația cuprinde strada la doar câteva minute după închiderea circulației.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd2_287.wav|Ambiția a ajutat o să devină cunoscută, deși este încă foarte tânără.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_406.wav|Deoarece la categoria lui de vârstă nu mai are concurență, Alecu se pregătește acum pentru festivalurile internaționale.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_143.wav|Ion Buică s-a despărțit de soția lui în urmă cu doi ani.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_410.wav|Evident, niște miniștri au răsuflat ușurați.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_311.wav|Festivalul de trea teatru internațional este prioritatea noastră, a mai adăugat Ion Dumitrel.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_321.wav|Nici directorul adjunct Levente Borșoș nu este de găsit.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_360.wav|În consecință, prima înfățișare va avea loc în luna octombrie.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_395.wav|Toți cei care se vor implica în această campanie participă la o tombolă cu premii.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_003.wav|Acum am fost penalizați și cu penalty.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_415.wav|În vârstă de patruzeci și șase de ani.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_112.wav|Vânzarea cailor lipițani a scăzut considerabil anul acesta.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_464.wav|La sfârșitul lunii august, în România erau peste șase sute unu mii de șomeri.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_032.wav|Comitetul de implementare are rolul de a supraveghea îndeplinirea obligațiilor ce revin părților la convenție.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_279.wav|Georgeta mai avea o fetiță de șase ani.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_372.wav|Prima clădire a ansambului arhitectural datează de la începutul secolului optsprezece.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_064.wav|Artiștii armâni, îmbrăcați în costume populare tradiționale au susținut și un spectacol cu melodii tradiționale populare din zona Moscopole.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_463.wav|Cu cât sunt mai mici și mai multe, cu atât băutura este mai rafinată.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_327.wav|Căminul Poligrafie are camere cu patru paturi și două băi comune pe fiecare palier.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_149.wav|Lumea deja m-a îngropat, spune dezamăgit Constantin.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_325.wav|Am prins de curând în cămin studenți care locuiau clandestin.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_445.wav|Alt domeniu ar fi turismul.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_312.wav|Dacă e mai uzată, prețul scade și e negociabil.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_015.wav|Dacă fura, vă dați seama că nu îmi mai cerea mie bani.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_418.wav|Tamaș spune că eforturile au meritat însă practic.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_114.wav|Voi căuta în tot orașul pentru că nu vreau să-mi știrbesc colecția a spus tânăra.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_465.wav|Milanezii au avut viață grea în Rusia, pe terenul campioanei Rubin Kazan.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_191.wav|Nu-mi place răutatea și prostia.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_229.wav|Protestele francezilor sunt susținute de producători de lapte din opt țări europene.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_317.wav|Prima proteză a fost tot din sponsorizare, din Spania.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_130.wav|Mașina nu accelerează vânzările de case.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_381.wav|De asemenea, îmi plac mult arta și muzica, aici sunt destul de eclectică.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_104.wav|Premierul britanic Gordon Brown, a spus că sprijină cu putere această decizie.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_177.wav|Incomplet și imperfect, manuscrisul greu descifrabil avea doar o sută patruzeci și patru de pagini.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_391.wav|Învățământul e la pământ.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_337.wav|Potrivit Agerpres, șase soldați afgani au fost vătămați.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_441.wav|Creștinismul are legătură directă cu stilul de viață, nu poți să trăiești împotriva felului în care ești proiectat.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_158.wav|Au aflat că primăria vrea mutarea micuților la liceul Mircea Cristea.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_293.wav|Practic, eu nu mă pot folosi de el a spus târnoveanca.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_218.wav|Acum spune că îi mulțumește tatălui pentru decizia de atunci.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_328.wav|A fost, în schimb, însoțită de râsete frecvente și de ropote de aplauze.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_393.wav|Panait Sârbu din București.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_269.wav|Nu toți însă se pot ridica la un anumit nivel.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_409.wav|Băieții sunt pregătiți psihic pentru un meci tare.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_273.wav|Acesta visează să ajungă în finala cupei româniei.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd1_220.wav|Pentru că vorbim de mii de studenți, operațiunea va dura aproximativ două săptămâni.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_043.wav|Irlanda respinge prin referendum retificarea tratatului.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_159.wav|Sunt în asistențe și pe lângă mașini, de foarte mult timp.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_211.wav|Șoferul tirului a scăpat fără nicio leziune.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd1_069.wav|Explicația cu necorelarea vitezelor este una simplistă.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_025.wav|Sunt doar din ce în ce mai mulți.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_373.wav|Pe deasupra, el se confruntă și cu răutățile și respingerea celorlalți copii.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_237.wav|Meciul se va juca în memoria lui Marian Cozma, ucis în luna februarie a acestui an, la Vezprem.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_369.wav|Erau epuizați, stresați, nemâncați.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_341.wav|Sunt restanțe la acordarea salariilor de merit, la acordarea tichetelor de masă.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_122.wav|Detestă snobismul și lipsa bunului simț.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_164.wav|Trăim într-o sărăcie intelectuală, în favoarea goanei materialiste.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_495.wav|Reprezentanții ce ne a se spun că această creștere a numărului de concedii medicale poate avea mai multe cauze.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_072.wav|A traversat strada, moment în care șase persoane s-au năpustit asupra ei.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_138.wav|Or, mi s-a părut scandalos.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_330.wav|Replica arabilor, a venit miercuri, prin vocea președintelui clubului, Khalifah Suleiman.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_025.wav|Sunt doar din ce în ce mai mulți.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_280.wav|Și un succes la diferență de un gol ne-ar mulțumi.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_237.wav|Voi planifica pentru la anul viitor o vacanță de sărbători în Grecia.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_356.wav|Bujanovaci și Presevo sunt două comune cu populație majoritar albaneză.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_228.wav|O simțim și noi din greu.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_024.wav|Atunci nu aveam timp de vizite, jucam și dormeam.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_251.wav|Deocamdată nu se cunosc cauzele.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_114.wav|Acesta a fost audiat marți de polițiști.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_468.wav|Nu a mai venit însă la serviciu de patru luni.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_041.wav|Înainte, am fost fierar betonist la primărie, povestește bărbatul.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_050.wav|Asociația nu avea statut legal atunci când am devenit eu președinte.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_080.wav|E un punct pe care nu-l dai.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_278.wav|În tur, piteștenii se impuseseră pe teren propriu, cu optzeci la șaizeci și patru.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_343.wav|Fără jeturi de apă și spumă din abundență.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_017.wav|Prețul unei ore de joacă sub supravegherea personalului angajat costă șapte lei.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_275.wav|Repet, am fost ocupat cu i me me-urile.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_010.wav|Pe de altă parte, conform rezultatelor obținute.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_382.wav|Ce drum ai dori să urmezi în viață.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_321.wav|Vecinii se tem să mai iasă din casă din cauza rromilor care îi amenință și îi iau la bătaie.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd2_137.wav|Nici măcar nu s-a pomenit numele lui.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_378.wav|Decanul a declarat că nu cunoaște cazul Ioanei Vișan.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_128.wav|Preferam să mâncăm în cameră.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_108.wav|Am mers în jos.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_122.wav|Chiar ieri mi-a scris o prietenă din Anglia.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_120.wav|Până în luna septembrie alte peste treizeci de autorizații au fost eliberate pentru construcțiile rezidențiale din Banat.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_224.wav|Hai, vino, că altfel nu se poate.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_484.wav|El a trăit mai mult pe la București.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_014.wav|Sabău spune că stilul de joc al lăncierilor este același ca și pe vremea când juca el în Olanda.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_364.wav|Consiliul Județean Timiș și consiliul local Timișoara s-au aliat pentru atragerea banilor europeni necesari renovării centrului orașului.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_126.wav|Documentația tehnică în vederea obținerii acordului de mediu a fost deja depusă.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_257.wav|Este ceva nou pentru mine, dar este frumos.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_284.wav|Investitorii care au ales drept plasamente indicii bursieri, în intervalul analizat, au avut și ei de câștigat.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_133.wav|Lovea birourile, a aruncat vreo trei scaune.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd2_034.wav|E un sentiment aparte când îi vezi pe toți că dansează.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_135.wav|Mai vin și acum credincioși care rămân și peste noapte la noi.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_038.wav|Din prima până în ultima secundă, convorbirea telefonică e o beșteleală de cartier aplicată cu toată impetuozitatea sărmanului cetățean.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_130.wav|Pandi la pauză s-a întâmplat tot.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_448.wav|Termenul pentru depunerea lucrărilor este zece octombrie, la galeria Foto Art, din piața unu decembrie.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd1_384.wav|Am auzit un zgomot foarte puternic și mult praf, moment în care am vrut să trag semnalul de alarmă.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_375.wav|Bilanțul accidentului a fost unul tragic.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_491.wav|A urmat o perioadă de spirit cazon.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_329.wav|Niciodată nu-mi plăcea să pierd.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_356.wav|Bujanovaci și Presevo sunt două comune cu populație majoritar albaneză.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_197.wav|Treizeci și cinci ani, fără ocupație, din localitate.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_325.wav|La ultimul nivel al turnurilor va exista o scară exterioară, pe care turiștii vor putea urca în cupola bisericii.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd1_101.wav|S-a intrat în taibrek acolo unde argentinianul a condus cu șase la trei.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_306.wav|Cei trei angajați implicați în eveniment au fost audiați și ieri.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_133.wav|Instanța a stabilit pentru data de treisprezece octombrie următorul termen de judecată.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_477.wav|Iar peste toate, sunt și păcăliți de logodnicele lor.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_474.wav|Vor fi în jur de o sută șaizeci de titluri.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_125.wav|Asta până când tatăl lui s-a îmbolnăvit de cancer.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_332.wav|Nu poate spune însă că și le mai dorește ca înainte.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_075.wav|Unul dintre cele mai importante lucruri este făina.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_142.wav|Unul care până în ultima clipă a vieții sale, s-a mândrit cu crimele comise.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_237.wav|Meciul se va juca în memoria lui Marian Cozma, ucis în luna februarie a acestui an, la Vezprem.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_299.wav|Zidul casei mele s-a crăpat.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_197.wav|Dacă vrem să creștem jucători, trebuie să acceptăm și astfel de erori.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_067.wav|Salcia minune trăiește douăzeci și cinci de ani.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_232.wav|O să vedem dacă dau afară pe cineva sau nu.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_280.wav|Pericolul imens era ca întreaga economie să se prăbușească.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_197.wav|Dacă vrem să creștem jucători, trebuie să acceptăm și astfel de erori.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_301.wav|Elena Cârstea va avea nevoie de două zile de recuperare fizică.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_436.wav|Este o certitudine pentru toate serviciile noastre secrete.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_342.wav|Bărbatul urmează a fi predat autorităților belgiene.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_263.wav|Nu toți angajatorii gălățeni anunță la a je o fe me că vor să concedieze colectiv.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd2_011.wav|Apoi au venit foarte multe delegări în toată țara.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd3_387.wav|Din meniul zilnic al beneficiarilor nu lipsește carnea.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd3_064.wav|Mai ales Soderling, care a adus trei puncte.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd2_346.wav|Sindicaliștii au anunțat aseară că vor bloca activitatea de la nouă octombrie.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_258.wav|Am visat mereu ca o Europă întreagă să asculte și să fredoneze melodia compusă și produsă de mine.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_235.wav|Nu știm dacă vom putea conta pe prezența unor personalități anunțate.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pss_rnd3_302.wav|Eu mi-am sacrificat și familia pentru niște rezultate.|31
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_330.wav|Replica arabilor, a venit miercuri, prin vocea președintelui clubului, Khalifah Suleiman.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd2_265.wav|Au o apărare foarte bună, în care se remarcă căpitanul Tarknișvili.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_221.wav|La fiecare zgomot tresăream, de câte ori auzeam sirene mă ascundeam.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_137.wav|Echipa a arătat acel spirit care ne-a făcut să câștigăm campionatul.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_121.wav|Automobilele și ambarcațiunile oferite cadou de către dezvoltatori, nu conving clienții.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_211.wav|Șoferul tirului a scăpat fără nicio leziune.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_129.wav|De asemenea, nevăzătorii vor primi un pliant plastifiat în limbajul Braile și vor beneficia de îndrumări speciale.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_003.wav|Băimăreanul urăște lipsa de punctualitate și fățărnicia.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_253.wav|Dar și asta pare acum prea puțin, povestește Ema.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_296.wav|Aveau bun simț, iar golănia nu era un exemplu la acel moment.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd2_272.wav|Am avut o discuție cu el și urmează să se decidă.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_281.wav|Una dintre acestea este Viorica Stoianov.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_329.wav|În urma impactului, pasagera din dreapta beemve ului a fost cea mai grav rănită.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd1_210.wav|Din păcate, în acești ani, statul a devenit tot mai slab.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_007.wav|Își încheie comentariul Ria Novosti.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/fds_rnd2_254.wav|Cinci din Râmnicu Vâlcea vor pleca vineri, optsprezece septembrie la Milano.|15
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd3_371.wav|Petrecerea va avea loc în club Seven Sins din Piața Centrală.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd2_309.wav|Reprezentantul Aquabis, Radu Căilean, are o posibilă explicație pentru situația femeii.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_007.wav|Amploarea nu va fi aceeași, dar organizatorii se vor strădui să aducă produse autentic germane la poalele Tâmpei.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_424.wav|În general iau lunar cam două sute de lei.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd1_115.wav|Optzeci și șase de persoane au fost legitimate, iar unsprezece cetățeni au fost conduși la sediul poliției.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_214.wav|A fost impresionat și atras de lucrările lui Darwin, de istorie, cultură și psihologie.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_336.wav|Resursele sunt limitate, iar cererea este mult mai mare.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_058.wav|Mi-au plăcut oamenii și mereu am avut încredere în oameni.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_488.wav|În octombrie, angajații acestei secții ar urma să-și piardă locul de muncă.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/mar_rnd2_259.wav|O altă explicație este legată de raportările pe care le fac firmele.|22
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd2_213.wav|Cel puțin asta spun agenții economici, care au fost prezenți la manifestare.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/htm_rnd1_331.wav|Toate secțiile spitalului în afară de blocul operator și secția nou născuți se confruntă cu problema lipsei lenjeriei curate.|19
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_128.wav|Preferam să mâncăm în cameră.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/rms_rnd1_082.wav|Poliția rutieră a amplasat, astăzi, radare pe de ne șase.|33
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd3_075.wav|Erau înarmați, am crezut că s-a întâmplat ceva grav.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd1_251.wav|Femeia are un teren în apropiere de Câlnic, unde își cultivă în fiecare an de-ale gurii.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_260.wav|Unitățile nu au primit autorizație pentru că nu au apă curentă, canalizare, iar grupurile sanitare sunt neconforme.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_424.wav|În general iau lunar cam două sute de lei.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_253.wav|Bunicii mei locuiau în cartier, părinții mei copilăriseră acolo, acolo s-au căsătorit și acolo locuiesc și azi.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_103.wav|În opinia a numeroși comentatori, aceasta este cea mai mare nerealizare a coaliției.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_316.wav|Tatăl acestuia, Vasile Rodideal este un cunoscut membru al lumii interlope.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_479.wav|El a intervenit și atunci când, după demisia mea, s-a forțat creșterea.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sgs_rnd1_430.wav|Victima este de naționalitate maghiară, de specializare lăcătuș mecanic.|36
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd3_491.wav|Ele nu aveau ce să caute în sala de nașteri.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sds_rnd1_166.wav|Atunci vânătorul și-a dat seama că este în fața unui record.|35
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd2_300.wav|Acesta se referă însă doar la proprietățile din capitală.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/cau_rnd1_426.wav|Vor fi create cel puțin cinci mii de locuri de muncă.|7
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bas_rnd1_168.wav|Procesul de negociere de până acum nu a fost ușor.|1
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_224.wav|Hai, vino, altfel nu se poate.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_396.wav|A început prin a studia canto.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_198.wav|Unul dintre motive îl reprezintă aglomerația din spitale.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/sam_rnd2_313.wav|Șotronul, lapte gros, coarda și chiar fotbal.|34
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_311.wav|În două mii patru am pierdut alegerile.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd1_162.wav|Micii meșteșugari din atelierele pentru reparat pantofi sunt afectați de apariția magazinelor cu produse la cinsprezece lei.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/eme_rnd3_193.wav|Se poate să fi fost fault, dar doar arbitrul știe.|14
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pmm_rnd2_056.wav|Am primit bani pentru a ne achita datoriile la zi.|30
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ips_rnd1_468.wav|Nu a mai venit însă la serviciu de patru luni.|20
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_040.wav|România aceea e la sat.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/ddm_rnd1_021.wav|Sunt unii care au descoperit pe aceste rețele foștii colegi de școală.|11
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/dcs_rnd2_363.wav|Probabil vreo unu zero, unu doi.|10
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/tss_rnd1_458.wav|Am salvat șaizeci de mii de locuri de muncă, în mod direct și indirect.|39
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd1_141.wav|Alții sunt însă mai pesimiști.|28
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/bea_rnd2_093.wav|Am gătit pentru mii de persoane până acum, poate zeci de mii.|2
+/media/DATA/CORPORA/SWARA2.0/SWARA1.0_22k/pcs_rnd2_328.wav|Bărbatul s-a simțit inferior la vederea animalului.|28
