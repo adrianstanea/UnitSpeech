@@ -7,11 +7,12 @@ cd ..
 GPU_ID=6
 IMAGE="nvcr.io/nvidia/pytorch:23.06-py3"
 
-CONTAINER_NAME="UnitSpeech-licenta"
+CONTAINER_NAME="UnitSpeech-licenta-RO"
 SOURCE_CODE_MOUNT="$(pwd)":/workspace/local
 
 LJSPEECH_MOUNT="$LJSPEECH_HOST_PATH:$LJSPEECHT_CONTAINER_PATH"
 LIBRITTS_MOUNT="$LIBRITTS_HOST_PATH:$LIBRITTS_CONTAINER_PATH"
+SWARA_MOUNT="$SWARA_HOST_PATH:$SWARA_CONTAINER_PATH"
 OUTPUTS_MOUNT="$OUTPUTS_HOST_PATH:$OUTPUTS_CONTAINER_PATH"
 CHECKPOINTS_MOUNT="$CHECKPOINTS_HOST_PATH:$CHECKPOINTS_CONTAINER_PATH"
 
@@ -24,6 +25,7 @@ docker container run -d \
                     -v $SOURCE_CODE_MOUNT \
                     -v $LJSPEECH_MOUNT \
                     -v $LIBRITTS_MOUNT \
+                    -v $SWARA_MOUNT \
                     -v $OUTPUTS_MOUNT \
                     -v $CHECKPOINTS_MOUNT \
                     --gpus=all \
