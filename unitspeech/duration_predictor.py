@@ -45,7 +45,6 @@ class DurationPredictor(BaseModule):
         self.proj = torch.nn.Conv1d(filter_channels, 1, 1)
 
     def forward(self, x, x_mask, w=None, g=None, reverse=False):
-        # g => speaker embedding
         x = torch.detach(x)
         if g is not None:
             x = torch.cat([x, g.transpose(1, 2).repeat(1, 1, x.shape[-1])], dim=1)

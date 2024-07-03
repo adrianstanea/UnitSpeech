@@ -1,63 +1,60 @@
-## UnitSpeech: Speaker-adaptive Speech Synthesis with Untranscribed Data (INTERSPEECH 2023, Oral)
-#### Heeseung Kim, Sungwon Kim, Jiheum Yeom, Sungroh Yoon
-![model-1](https://github.com/gmltmd789/UnitSpeech/assets/49265950/44cb4991-abb0-44b2-81fd-fce92cc1f3f1)
-<br><br>
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1jAglTVrBNeEQbOAJ3T_YRotoKqCBPNn9?usp=sharing)
-### [Paper](https://arxiv.org/abs/2306.16083)
-### [Audio demo](https://unitspeech.github.io/)
+## UnitSpeech: Speaker-adaptive Speech Synthesis with Untranscribed Data
+### [Reference Paper](https://arxiv.org/abs/2306.16083)
 
 ## Updates
-### 2023.07.04 : We changed the normalization method for better speaker similarity.
-- **We normalized the mel-spectrogram of the reference audio during fine-tuning using the min and max values of the reference audio's mel-spectrogram, rather than the min and max values obtained from the entire LibriTTS train set.**
-  - **We observed that this modification helped improve speaker similarity.**
 
-### 2023.06.29 : We update our code and checkpoints for better pronunciation.
-- **Extract reference speaker embeddings using the [WavLM](https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification#pre-trained-models)-based speaker encoder.**
-- **Modeling normalized mel-spectrogram (-1 ~ 1).**
+- Normalize the audio of the synthesized speech files using the [sv56 executable from the G722 ITU recommandation](https://github.com/foss-for-synopsys-dwc-arc-processors/G722/tree/master/sv56)
 
-### 2023.06.28 : Updated components compared to the version of INTERSPEECH.
-- **Change in vocoder (from HiFi-GAN to BigVGAN).**
-- **Support for speaker classifier-free guidance (advantageous for adapting to more unique voices.)**
-- **Change "training-free text classifier-free guidance" to "text classifier-free guidance" (learning text unconditional embedding).**
-- **Ensure compatibility with various recent works on unit-based speech synthesis (number of clusters of unit (K): 200 &rightarrow; 1000)**
-- **Substantial improvement in pronunciation accuracy**
-  - **To improve TTS (Text-to-Speech) pronunciation, an IPA-based phonemizer is used.** 
-  - **To improve VC (Voice Conversion) pronunciation, a contentvec encoder is introduced.**
-
-
-# Warning: Ethical & Legal Considerations
-1. **UnitSpeech was created with the primary objective of facilitating research endeavors.**
-2. **When utilizing samples generated using this model, it is crucial to clearly disclose that the samples were generated using AI technology. Additionally, it is necessary to provide the sources of the audio used in the generation process.**
-3. **We notify that users take full responsibility for any possible negative outcomes and legal & ethical issues that may arise due to their misuse of the model.**
-4. **As a precautionary measure against possible misapplication, we intend to introduce a classification model capable of discerning samples generated through the utilization of this model.**
-
-## TO DO
-- [ ] Release a classification model to distinguish samples from UnitSpeech
+- Create train scripts
+- Adapt fine-tuning and inference scripts to the new structure using Hydra
 
 ## Installation
-**Tested on Ubuntu 20.04.5 LTS, Python 3.8, Anaconda (2023.03-1) environment**  
-First, install the necessary package for the IPA phonemizer.
-```shell
-sudo apt-get install espeak=1.48.04+dfsg-8build1 espeak-ng=1.50+dfsg-6
-```
-If you are unable to install the specific versions of espeak and espeak-ng on Ubuntu 18.04 or earlier, please install the available versions of each package.<br>
-Note: If you have a different version of espeak-ng, the output of phonemizing text may vary, which can affect pronunciation accuracy.
 
-After that, create a conda environment and install the unitspeech package and the package required for extracting speaker embeddings.
+**Tested on Ubuntu 22.04.4 LTS, Python 3.8, Miniconda environment**
+
+- Clone the git repository for this project:
+
 ```shell
-conda create -n unitspeech python=3.8
-conda activate unitspeech
-git clone https://github.com/gmltmd789/UnitSpeech.git
+git clone https://github.com/adrianstanea/UnitSpeech
+```
+
+- Enter the `scripts_custom` directory and run the following bash script to build the Docker container. Make sure to adapt the `variables.sh` file to your needs.
+
+```shell
+./setup_docker_dgx.sh
+```
+
+- Install the Miniconda package manager following the instructions on the [official website](https://docs.conda.io/en/latest/miniconda.html) for the Linux OS.<br>
+
+- Install the necessary package for the IPA phonemizer.
+
+```shell
+sudo apt-get install espeak espeak-ng
+```
+
+- Build the sv56 audio normalization executable from the G722 ITU recommandation and place it under a reachable path.
+
+```shell
+git clone https://github.com/foss-for-synopsys-dwc-arc-processors/G722.git
+cd G722/sv56/
+make -f makefile.unx
+cp sv56demo /bin
+```
+
+- After that, create a conda environment and install the unitspeech package and the package required for extracting speaker embeddings.
+
+```shell
 cd UnitSpeech
 pip install -e .
 pip install --no-deps s3prl==0.4.10
+pip install -r requirements.txt
 ```
 
 ## Pretrained Models
+
 **We provide the [pretrained models](https://drive.google.com/drive/folders/1yFkb2TAYB_zMmoTuUOXu-zXb3UI9pVJ9?usp=sharing).**
 |File Name|Usage|
 |------|---|
-|contentvec_encoder.pt|Used for any-to-any voice conversion tasks.|
 |unit_encoder.pt|Used for fine-tuning and unit-based speech synthesis tasks.<br>(e.g., Adaptive Speech Synthesis for Speech-to-Unit Translation)|
 |text_encoder.pt|Used for adaptive text-to-speech tasks.|
 |duration_predictor.pt|Used for adaptive text-to-speech tasks.|
@@ -67,19 +64,31 @@ pip install --no-deps s3prl==0.4.10
 |bigvgan-config.json|Configuration for the vocoder.|
 
 **After downloading the files, please arrange them in the following structure.**
+
 ```buildoutcfg
 UnitSpeech/...
     unitspeech/...
         checkpoints/...
-            contentvec_encoder.pt
             duration_predictor.pt
             pretrained_decoder.pt
             text_encoder.pt
             unit_encoder.pt
+            CFG/
+                [DATASET_NAME]/
+                    ...                   -> Place unconditional mel and speaker features used in classifier-free guidance
+            mel_normalization/
+                [DATASET_NAME]/
+                    ...                   -> Place normalization parameters extracted for the dataset
+            spkr_embs/
+                [DATASET_NAME]/
+                    ...                   -> Place speaker embeddings extracted from the dataset
+            train/
+                ...                       -> Place checkpoint saved to resume training
+            inference/
+                <FINETUNED_DECODER_ID>.pt -> Placed by the finetune script and accessed by the inference script using the <ID> portion
             ...
-        speaker_encoder/...
-            checkpts/...
-                speaker_encoder.pt
+
+            speaker_encoder.pt
             ...
         vocoder/...
             checkpts/...
@@ -90,70 +99,80 @@ UnitSpeech/...
     ...
 ```
 
-## Fine-tuning
-The decoder is fine-tuned using the target speaker's voice, employing the unit encoder. **It is recommended to use a reference English speech with a duration of at least 5~10 seconds.**
+## Training
+
+### Data Preparation
+
+- Extract the necessary features from the dataset by executing the followings scripts within the `preprocessing` directory
 
 ```shell
-python scripts/finetune.py \
---reference_path REFERENCE_SPEECH_PATH \
---output_decoder_path FILEPATH1/FINETUNED_DECODER.pt
+python3 preprocessing/process_mel_normalization.py
+python3 preprocessing/process_spkr_embs.py
+python3 preprocessing/process_uncond_mel.py
+python3 preprocessing/process_uncond_spk.py
+python3 preprocessing/process_units.py
 ```
 
-By executing the code, your personalized decoder will be saved as "FILEPATH1/FINETUNED_DECODER.pt".<br>
-With the fine-tuned decoder, you can perform adaptive text-to-speech and any-to-any voice conversion, as described below. <br> <br>
-By default, fine-tuning is conducted in fp32 using the Adam optimizer with a learning rate of 2e-5 for 500 iterations.<br>
-You can adjust the above elements through arguments provided. (--fp16_run, --learning_rate, --n_iters)<br>
+### Base models: text encoder, duration predictor and decoder
+
+- Run the following script to train the base models: text encoder, duration predictor and decoder. Adjust the hyperparameters as needed. Training can be resumed from a checkpoint if the configuration is enabled within Hydra and the checkpoint is placed in the `checkpoints/train` directory.
+
+```shell
+python3 train_STEP1.py
+```
+
+### Unit encoder
+
+```shell
+python3 train_STEP2.py
+```
+
+## Fine-tuning
+
+The decoder is fine-tuned using the target speaker's voice, employing the unit encoder. **It is recommended to use a reference English speech with a duration of at least 5~10 seconds.**
+
+- The finetuned decoder will be saved in  
+
+```shell
+python3 finetune.py --ID=<ID> \
+                    --n_iters=<N_ITERS> \
+                    --learning_rate=<LEARNING_RATE> \
+                    --reference_sample=reference-speech-BOGDAN.wav
+```
+
+By default, fine-tuning is conducted using the Adam optimizer with a learning rate of 2e-5 for 500 iterations.<br>
 **For speakers with unique voices, increasing the number of fine-tuning iterations can help achieve better results.** <br>
 
 ## Inference
+
+- The ID must match the one provided in the fine-tuning script.
+
 ```shell
-# script for adaptive text-to-speech
-python scripts/text_to_speech.py \
---text "TEXT_TO_GENERATE" \
---decoder_path FILEPATH1/FINETUNED_DECODER.pt \
---generated_sample_path FILEPATH2/PATH_TO_SAVE_SYNTHESIZED_SPEECH.wav
-
-
-# script for any-to-any voice conversion
-python scripts/voice_conversion.py \
---source_path SOURCE_SPEECH_PATH_TO_CONVERT.wav \
---decoder_path FILEPATH1/FINETUNED_DECODER.pt \
---generated_sample_path FILEPATH2/PATH_TO_SAVE_SYNTHESIZED_SPEECH.wav
+python3 inference.py --ID=<ID> \
+                     --generated_sample_path=<GENERATED_SAMPLE_PATH> \
+                     --text=<TEXT> \
+                     --diffusion_steps=<DIFFUSION_STEPS> \
+                     --text_gradient_scale=<TEXT_GRADIENT_SCALE> \
+                     --spk_gradient_scale=<SPK_GRADIENT_SCALE> \
+                     --length_scale=<LENGTH_SCALE>
 ```
-You can adjust the number of diffusion steps, text gradient scale, and speaker gradient scale as arguments.<br>
-- text_gradient_scale : responsible for pronunciation accuracy and audio quality. Increasing its value makes the pronunciation of the samples more accurate.<br>
-- spk_gradient_scale : responsible for speaker similarity. Increasing its value generates voices that are closer to the reference speech.<br>
+
+You can adjust the number of diffusion steps, length_scale, text gradient scale, and speaker gradient scale as arguments.<br>
+
+- **text_gradient_scale** : responsible for pronunciation accuracy and audio quality. Increasing its value makes the pronunciation of the samples more accurate.<br>
+- **spk_gradient_scale** : responsible for speaker similarity. Increasing its value generates voices that are closer to the reference speech.<br>
 
 By default, text gradient scale is set to 1.0, and speaker gradient scale is set to 1.0.<br>
 **If you want better pronunciation and audio quality, please increase the value of "text_gradient_scale." This will slightly reduce speaker similarity.**<br>
 **If you want better speaker similarity, please increase the value of "spk_gradient_scale." This will slightly degrade pronunciation accuracy and audio quality.**<br>
 
 You can adjust the speed of speaking as arguments. (default: 1.0) <br>
-- length_scale : Increasing its value (> 1.0) makes the speech slow, while decreasing its value (< 1.0) makes the speech fast <br>
+
+- **length_scale** : Increasing its value (> 1.0) makes the speech slow, while decreasing its value (< 1.0) makes the speech fast <br>
 
 **Note: Using excessively large gradient scales can degrade the audio quality.**
 
-## License
-
-The code and model weights of UnitSpeech are released under the CC BY-NC-SA 4.0 license.
-
 ## References
-* [BigVGAN](https://github.com/NVIDIA/BigVGAN) (for vocoder)
-* [textlesslib](https://github.com/facebookresearch/textlesslib) (for unit extraction)
-* [ContentVec](https://github.com/auspicious3000/contentvec) (for contentvec extraction)
-* [VITS](https://github.com/jaywalnut310/vits) (for text & IPA phoneme sequence processing)
-* [Grad-TTS](https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS) (for overall architecture and code)
-* [denoising-diffusion-pytorch](https://github.com/rosinality/denoising-diffusion-pytorch) (for diffusion-based sampler)
-* [WavLM](https://github.com/microsoft/UniSpeech/tree/main/downstreams/speaker_verification) (for speaker embedding extraction)
 
-## Citation
-```
-@misc{kim2023unitspeech,
-      title={UnitSpeech: Speaker-adaptive Speech Synthesis with Untranscribed Data}, 
-      author={Heeseung Kim and Sungwon Kim and Jiheum Yeom and Sungroh Yoon},
-      year={2023},
-      eprint={2306.16083},
-      archivePrefix={arXiv},
-      primaryClass={cs.SD}
-}
-```
+- This repository uses the source code from UnitSpeech and extends it to allow for training the base models using the Hydra framework. The original source code can be found at the following link:
+  - [UnitSpeech](https://github.com/gmltmd789/UnitSpeech) (original source code implementation)

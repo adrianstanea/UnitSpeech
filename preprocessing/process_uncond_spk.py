@@ -9,7 +9,7 @@ import torchaudio as ta
 from tqdm import tqdm
 
 from conf.hydra_config import (
-    TrainingUnitEncoderConfig_STEP1,
+    MainConfig,
 )
 from preprocessing.utils import load_and_process_wav
 from unitspeech.speaker_encoder.ecapa_tdnn import ECAPA_TDNN
@@ -18,7 +18,7 @@ from unitspeech.vocoder.meldataset import mel_spectrogram
 
 
 def main():
-    cfg = TrainingUnitEncoderConfig_STEP1
+    cfg = MainConfig
     device = torch.device("cuda" if torch.cuda.is_available() and cfg.train.on_GPU else "cpu")
 
     logger = logging.getLogger()

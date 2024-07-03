@@ -9,9 +9,7 @@ _id_to_symbol = {i: s for i, s in enumerate(symbols)}
 
 """ https://github.com/jaywalnut310/vits/blob/2e561ba/text/cleaners.py """
 def phonemize(text, global_phonemizer):
-    # text = cleaners.convert_to_ascii(text)
     text = cleaners.lowercase(text)
-    # text = cleaners.expand_abbreviations(text)
     phonemes = global_phonemizer.phonemize([text], strip=True)[0]
     phonemes = cleaners.collapse_whitespace(phonemes)
     return phonemes

@@ -1,87 +1,95 @@
 import argparse
-import json
 import logging
 import os
 
-import hydra
-import numpy as np
 import torch
-from hydra.core.config_store import ConfigStore
-from hydra.utils import get_original_cwd
 
 from conf.hydra_config import (
-    LJSPeechConfig,
-    TrainingUnitEncoderConfig_STEP1,
+    MainConfig,
 )
-from data import TextMelSpeakerDataset
 from unitspeech.duration_predictor import DurationPredictor
 from unitspeech.encoder import Encoder
+from unitspeech.text import cleaned_text_to_sequence, phonemize, symbols
 from unitspeech.unitspeech import UnitSpeech
 from unitspeech.util import (
     fix_len_compatibility,
+    get_phonemizer,
+    get_vocoder,
+    intersperse,
     load_speaker_embs,
     save_plot,
 )
-from unitspeech.vocoder.env import AttrDict
-from unitspeech.vocoder.models import BigVGAN
 from scipy.io.wavfile import write
+from subprocess import PIPE, Popen
 
+from conf.hydra_config import (
+    MainConfig,
+)
 
+logging.basicConfig(level=logging.INFO)
 logger = logging.getLogger("inference.py")
-logger.setLevel(logging.DEBUG)
-
-cs = ConfigStore.instance()
-cs.store(name="config", node=TrainingUnitEncoderConfig_STEP1)
-cs.store(group="dataset", name="LJSpeech", node=LJSPeechConfig)
+cfg = MainConfig
 
 
-@hydra.main(config_path="conf", config_name="config")
-def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
-    text: str = "Hello, my name is Bogdan. I am creating a demonstration sample."
-    
-    # Run on CUDA
+def main():
+    global_phonemizer = get_phonemizer(cfg.inference.language)
+
     device = torch.device("cuda" if torch.cuda.is_available() and cfg.train.on_GPU else "cpu")
     if device.type == "cpu" and cfg.train.on_GPU:
         raise ValueError("CUDA is not available.")
     logger.info(f"Running on: {device.type}")
 
-    # Keep original working directory
-    output_dir = os.getcwd()  # Hydra changes the working directory when running the script
-    os.chdir(get_original_cwd())
-    cfg.train.log_dir = os.path.join(output_dir, cfg.train.log_dir)
     os.makedirs(cfg.train.log_dir, exist_ok=True)
 
-    # Runtime HYPERPARAMS
     num_downsamplings_in_unet = len(cfg.decoder.dim_mults) - 1
     out_size = fix_len_compatibility(
-        cfg.train.out_size_second * cfg.data.sampling_rate // cfg.data.hop_length, num_downsamplings_in_unet=num_downsamplings_in_unet
+        cfg.train.out_size_second * cfg.data.sampling_rate // cfg.data.hop_length,
+        num_downsamplings_in_unet=num_downsamplings_in_unet,
     )
 
     # Load and initialize Vocoder
-    with open(cfg.vocoder.config_path) as f:
-        vocoder_hps = AttrDict(json.load(f))
-    vocoder = BigVGAN(vocoder_hps)
-    vocoder.load_state_dict(torch.load(cfg.vocoder.ckpt_path, map_location=lambda loc, storage: loc)["generator"])
-    _ = vocoder.cuda().eval()
-    vocoder.remove_weight_norm()
+    vocoder = get_vocoder(config_path=cfg.vocoder.config_path, checkpoint=cfg.vocoder.ckpt_path, device=device)
 
-    # Load checkpoints for each module
+    ## LOAD CHECKPOINTS FOR EACH MODULE
+    logger.info("Initializing decoder: GradTTS ...")
+    decoder = UnitSpeech(
+        n_feats=cfg.data.n_feats,
+        dim=cfg.decoder.dim,
+        dim_mults=cfg.decoder.dim_mults,
+        beta_min=cfg.decoder.beta_min,
+        beta_max=cfg.decoder.beta_max,
+        pe_scale=cfg.decoder.pe_scale,
+        spk_emb_dim=cfg.decoder.spk_emb_dim,
+    ).to(device)
+    if cfg.inference.use_finetuned_decoder:
+        logger.info("Using finetuned decoder")
+        decoder_dict = torch.load(
+            f"{cfg.finetune.finetuned_decoders_path}/{cfg.inference.ID}.pt", map_location=lambda loc, storage: loc
+        )
+        decoder.load_state_dict(decoder_dict["model"])
+    else:
+        logger.info("Using generic decoder")
+        decoder_dict = torch.load(cfg.decoder.checkpoint, map_location=lambda loc, storage: loc)
+        decoder.load_state_dict(decoder_dict["model"])
+    _ = decoder.eval()
+
     logger.info("Initializing the Text Encoder...")
     text_encoder = Encoder(
-        n_vocab=cfg.encoder.n_vocab,
+        n_vocab=cfg.text_encoder.n_vocab,
         n_feats=cfg.data.n_feats,
-        n_channels=cfg.encoder.n_channels,
-        filter_channels=cfg.encoder.filter_channels,
-        n_heads=cfg.encoder.n_heads,
-        n_layers=cfg.encoder.n_layers,
-        kernel_size=cfg.encoder.kernel_size,
-        p_dropout=cfg.encoder.p_dropout,
-        window_size=cfg.encoder.window_size,
+        n_channels=cfg.text_encoder.n_channels,
+        filter_channels=cfg.text_encoder.filter_channels,
+        n_heads=cfg.text_encoder.n_heads,
+        n_layers=cfg.text_encoder.n_layers,
+        kernel_size=cfg.text_encoder.kernel_size,
+        p_dropout=cfg.text_encoder.p_dropout,
+        window_size=cfg.text_encoder.window_size,
     ).to(device)
-    if not os.path.exists(cfg.encoder.checkpoint):
-        raise FileNotFoundError(f"Checkpoint for encoder not found: {cfg.encoder.checkpoint}")
-    text_encoder_dict = torch.load(cfg.encoder.checkpoint, map_location=lambda loc, storage: loc)
+    if not os.path.exists(cfg.text_encoder.checkpoint):
+        raise FileNotFoundError(f"Checkpoint for encoder not found: {cfg.text_encoder.checkpoint}")
+    text_encoder_dict = torch.load(cfg.text_encoder.checkpoint, map_location=lambda loc, storage: loc)
     text_encoder.load_state_dict(text_encoder_dict["model"])
+    _ = text_encoder.eval()
 
     logger.info("Initializing the Duration Predictor...")
     duration_predictor = DurationPredictor(
@@ -93,81 +101,112 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
     ).to(device)
     duration_predictor_dict = torch.load(cfg.duration_predictor.checkpoint, map_location=lambda loc, storage: loc)
     duration_predictor.load_state_dict(duration_predictor_dict["model"])
-
-    logger.info("Initializing decoder: GradTTS ...")
-    decoder = UnitSpeech(
-        n_feats=cfg.data.n_feats,
-        dim=cfg.decoder.dim,
-        dim_mults=cfg.decoder.dim_mults,
-        beta_min=cfg.decoder.beta_min,
-        beta_max=cfg.decoder.beta_max,
-        pe_scale=cfg.decoder.pe_scale,
-        spk_emb_dim=cfg.decoder.spk_emb_dim,
-    ).to(device)
-    decoder_state_dict = torch.load(cfg.decoder.checkpoint, map_location=lambda loc, storage: loc)
-    decoder.load_state_dict(decoder_state_dict["model"])
-
-    logger.info("Loading speaker embeddings")
-    pretrained_embs = load_speaker_embs(embs_path=os.path.join(cfg.data.embs_path, cfg.dataset.name), normalize=True)
-    speaker_embeddings = torch.nn.Embedding.from_pretrained(pretrained_embs, freeze=True).to(device=device)
+    _ = duration_predictor.eval()
 
     logger.info("Loading spectrogram normalization params")
-    mel_max = torch.load(cfg.dataset.mel_max_path).unsqueeze(-1).to(device)
-    mel_min = torch.load(cfg.dataset.mel_min_path).unsqueeze(-1).to(device)
+    mel_max = decoder_dict["mel_max"].to(device)
+    mel_min = decoder_dict["mel_min"].to(device)
 
-    # Load samples for inference
-    logger.info("Loading validation dataset...")
-    test_dataset = TextMelSpeakerDataset(
-        filelist_path=cfg.dataset.test_filelist_path,
-        random_seed=cfg.train.seed,
-        add_blank=cfg.data.add_blank,
-        n_fft=cfg.data.n_fft,
-        n_mels=cfg.data.n_feats,
-        sample_rate=cfg.data.sampling_rate,
-        hop_length=cfg.data.hop_length,
-        win_length=cfg.data.win_length,
-        f_min=cfg.data.mel_fmin,
-        f_max=cfg.data.mel_fmax,
-        normalize_mels=cfg.dataset.normalize_mels,
-        mel_min_path=cfg.dataset.mel_min_path,
-        mel_max_path=cfg.dataset.mel_max_path,
-    )
-    test_batch = test_dataset.sample_test_batch(size=1)  # Change to load more samples
+    text: str = cfg.inference.text
+    SPKR_ID = torch.LongTensor([int(cfg.inference.ID)]).to(device)
 
-    logger.info("Running inference over test samples")
-    with torch.no_grad() as no_grad, torch.autograd.set_detect_anomaly(True) as anomaly_detect:
-        for idx, item in enumerate(test_batch):
-            logger.info(f"\tProcessing sample {idx}")
-            x = item["x"].to(torch.long).unsqueeze(0).cuda()  # phonemes: (batch, phonemes)
-            x_lengths = torch.LongTensor([x.shape[-1]]).cuda()  # phoneme lengths: (batch)
-            spk_id = item["spk_id"].cuda()  # (batch)
-            spk_embs = speaker_embeddings(spk_id).unsqueeze(1).cuda()
+    logger.info(f"Speaker ID: {SPKR_ID.item()}")
+    logger.info(f"Text: {text}")
+    # Process text
+    logger.info("Processing text")
+    phoneme = phonemize(text, global_phonemizer)
+    logger.info(f"Phonemes: {phoneme}")
+    phoneme = cleaned_text_to_sequence(phoneme)
+    phoneme = intersperse(phoneme, len(symbols))
+    phoneme = torch.LongTensor(phoneme).cuda().unsqueeze(0)
+    phoneme_lengths = torch.LongTensor([phoneme.shape[-1]]).cuda()
 
-            y_enc, y_dec, attn = decoder.execute_text_to_speech(
-                phoneme=x,
-                phoneme_lengths=x_lengths,
-                spk_emb=spk_embs,
-                text_encoder=text_encoder,
-                duration_predictor=duration_predictor,
-                num_downsamplings_in_unet=num_downsamplings_in_unet,
-                diffusion_steps=cfg.decoder.diffusion_steps,
-                length_scale=1.0,
-                text_gradient_scale=0.0,
-                spk_gradient_scale=0.0,
-            )
-            # Scale back the generated mel = y_dec
-            save_plot(y_dec.squeeze().cpu(), f"{cfg.train.log_dir}/decoder-normalized_{idx}.png", title="Mel Spectrogram")
+    spk_emb = decoder_dict["spk_emb"].to(device)
 
-            mel_generated = (y_dec + 1) / 2 * (mel_max - mel_min)
-            audio_generated = vocoder.forward(mel_generated).cpu().squeeze().clamp(-1, 1).numpy()
+    logger.info("Running inference")
+    with torch.no_grad():
+        y_enc, y_dec, attn = decoder.execute_text_to_speech(
+            phoneme=phoneme,
+            phoneme_lengths=phoneme_lengths,
+            spk_emb=spk_emb,
+            text_encoder=text_encoder,
+            duration_predictor=duration_predictor,
+            num_downsamplings_in_unet=num_downsamplings_in_unet,
+            diffusion_steps=cfg.inference.diffusion_steps,
+            length_scale=cfg.inference.length_scale,
+            text_gradient_scale=cfg.inference.text_gradient_scale,
+            spk_gradient_scale=cfg.inference.spk_gradient_scale,
+        )
+        mel_generated = (y_dec + 1) / 2 * (mel_max - mel_min) + mel_min
+        audio_generated = vocoder.forward(mel_generated).cpu().squeeze().clamp(-1, 1).numpy()
 
-            # OPTIONAL: save outputs of the current run
-            save_plot(attn.squeeze().cpu(), f"{cfg.train.log_dir}/attention_{idx}.png", title="Attention")
-            save_plot(y_enc.squeeze().cpu(), f"{cfg.train.log_dir}/encoder_{idx}.png", title="Encoder")
-            save_plot(y_dec.squeeze().cpu(), f"{cfg.train.log_dir}/decoder-WO-normalization_{idx}.png", title="Mel Spectrogram")
+    if cfg.inference.with_plot:
+        save_plot(y_dec.squeeze().cpu(), f"{cfg.train.log_dir}/decoder-normalized.png", title="Mel Spectrogram")
+        save_plot(attn.squeeze().cpu(), f"{cfg.train.log_dir}/attention.png", title="Attention")
+        save_plot(y_enc.squeeze().cpu(), f"{cfg.train.log_dir}/encoder.png", title="Encoder")
+        save_plot(
+            mel_generated.squeeze().cpu(), f"{cfg.train.log_dir}/decoder-WO-normalization.png", title="Mel Spectrogram"
+        )
 
-            write(f"{cfg.train.log_dir}/audio_{idx}.wav", cfg.data.sampling_rate, audio_generated)
+    write(f"{cfg.train.log_dir}/{cfg.inference.file_path}", cfg.data.sampling_rate, audio_generated)
+
+    if cfg.inference.with_sv56_normalization:
+        cmd = "python3 sv56_inplace.py --in_dir {cfg.train.log_dir}"
+        p = Popen(cmd, shell=True, stdout=PIPE)
+        r = p.wait()
+        if r != 0:
+            raise RuntimeError("Audio gain normalization failed to execute.")
+
+    os.system(f"cp {cfg.train.log_dir}/{cfg.inference.file_path} {os.getcwd()}/{cfg.inference.file_path}")
 
 
 if __name__ == "__main__":
-    hydra_main()
+    parser = argparse.ArgumentParser()
+    parser.add_argument(
+        "--generated_sample_path",
+        type=str,
+        default=cfg.inference.file_path,
+        help="The path to save the generated audio.",
+    )
+
+    parser.add_argument('--text', type=str, required=True,
+                        help='The desired transcript to be generated.')
+    parser.add_argument(
+        "--ID", type=int, default=cfg.inference.ID, help="The speaker ID to be used for the generation."
+    )
+    parser.add_argument(
+        "--text_gradient_scale",
+        type=float,
+        default=cfg.inference.text_gradient_scale,
+        help="Gradient scale of classifier-free guidance (cfg) for text condition. (0.0: wo cfg)",
+    )
+    parser.add_argument(
+        "--spk_gradient_scale",
+        type=float,
+        default=cfg.inference.spk_gradient_scale,
+        help="Gradient scale of classifier-free guidance (cfg) for speaker condition. (0.0: wo cfg)",
+    )
+    parser.add_argument(
+        "--length_scale",
+        type=float,
+        default=cfg.inference.length_scale,
+        help="The parameter for adjusting speech speed. The smaller it is compared to 1, the faster the speech becomes.",
+    )
+    parser.add_argument(
+        "--diffusion_steps",
+        type=int,
+        default=cfg.inference.diffusion_steps,
+        help="The number of iterations for sampling in the diffusion model.",
+    )
+    args = parser.parse_args()
+
+    # Reassign some values if necessary - hydra didnt support romanian characters from CLI
+    cfg.inference.file_path = args.generated_sample_path
+    cfg.inference.text = args.text
+    cfg.inference.ID = args.ID
+    cfg.inference.text_gradient_scale = args.text_gradient_scale
+    cfg.inference.spk_gradient_scale = args.spk_gradient_scale
+    cfg.inference.length_scale = args.length_scale
+    cfg.inference.diffusion_steps = args.diffusion_steps
+
+    main()

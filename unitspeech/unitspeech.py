@@ -1,12 +1,13 @@
 """ from https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS """
 
 import math
+import random
 
 import torch
 from einops import rearrange
 
 from unitspeech.base import BaseModule
-from unitspeech.util import fix_len_compatibility, generate_path, sequence_mask
+from unitspeech.util import fix_len_compatibility, generate_path, save_for_gif, save_plot, sequence_mask
 
 
 class Mish(BaseModule):
@@ -367,6 +368,8 @@ class UnitSpeech(BaseModule):
             shape = [xt.shape[0]] + [1] * (xt.ndim - 1)
             nonzero_mask = (1 - (idx == 0).type(torch.float32)).view(*shape)
             xt = (mean + nonzero_mask * torch.sqrt(var) * noise) * mask
+            #TODO: remove this
+            # save_for_gif(xt.squeeze().cpu(), f"/outputs/figures/diffusion/{i}.png", title=f"Iteration: {i}")
         xt = xt * mask
         return xt
 
@@ -435,16 +438,9 @@ class UnitSpeech(BaseModule):
         cond_y = cond_y.transpose(1, 2).contiguous()
         encoder_outputs = cond_y[:, :, :y_max_length]
 
-        # TODO: Here is when the paper says that it does not start from pure noise
         z = torch.randn_like(cond_y, device=cond_y.device) # UnitSpeech - sample from normal distribution
-        # z = cond_y + torch.randn_like(cond_y, device=cond_y.device) / temperature # GradTTS - in adition we dont have temperature in UnitSpeech
-        # z = cond_y + torch.randn_like(cond_y, device=cond_y.device) # GradTTS - sample from normal distribution with mean cond_y
-
 
         # Generate sample by performing reverse dynamics
-        # TODO: what is the role of text and speaker gradient scale?
-        # Answer: they control the amount of gradient that is backpropagated to the text and speaker embeddings in classifier free guidance
-        # We dont really need them in inference by the looks of it
         decoder_outputs = self.forward(z, y_mask, cond_y, spk_emb,
                                        n_timesteps=diffusion_steps,
                                        text_gradient_scale=text_gradient_scale,
@@ -452,3 +448,46 @@ class UnitSpeech(BaseModule):
         decoder_outputs = decoder_outputs[:, :, :y_max_length]
 
         return encoder_outputs, decoder_outputs, attn[:, :, :y_max_length]
+
+    def fine_tune(self, cond_x, y, y_mask, y_lengths, y_max_length, attn, spk_emb, segment_size, n_feats):
+        if y_max_length < segment_size:
+            pad_size = segment_size - y_max_length
+            y = torch.cat([y, torch.zeros_like(y)[:, :, :pad_size]], dim=-1)
+            y_mask = torch.cat([y_mask, torch.zeros_like(y_mask)[:, :, :pad_size]], dim=-1)
+
+        max_offset = (y_lengths - segment_size).clamp(0)
+        offset_ranges = list(zip([0] * max_offset.shape[0], max_offset.cpu().numpy()))
+        out_offset = torch.LongTensor(
+            [torch.tensor(random.choice(range(start, end)) if end > start else 0) for start, end in offset_ranges]
+        ).to(y_lengths)
+
+        attn_cut = torch.zeros(attn.shape[0], attn.shape[1], segment_size, dtype=attn.dtype, device=attn.device)
+        y_cut = torch.zeros(y.shape[0], n_feats, segment_size, dtype=y.dtype, device=y.device)
+        y_cut_lengths = []
+        for i, (y_, out_offset_) in enumerate(zip(y, out_offset)):
+            y_cut_length = segment_size + (y_lengths[i] - segment_size).clamp(None, 0)
+            y_cut_lengths.append(y_cut_length)
+            cut_lower, cut_upper = out_offset_, out_offset_ + y_cut_length
+            y_cut[i, :, :y_cut_length] = y_[:, cut_lower:cut_upper]
+            attn_cut[i, :, :y_cut_length] = attn[i, :, cut_lower:cut_upper]
+        y_cut_lengths = torch.LongTensor(y_cut_lengths)
+        y_cut_mask = sequence_mask(y_cut_lengths).unsqueeze(1).to(y_mask)
+
+        if y_cut_mask.shape[-1] < segment_size:
+            y_cut_mask = torch.nn.functional.pad(y_cut_mask, (0, segment_size - y_cut_mask.shape[-1]))
+
+        attn = attn_cut
+        y = y_cut
+        y_mask = y_cut_mask
+
+        # Align encoded text with mel-spectrogram and get cond_y segment
+        cond_y = torch.matmul(attn.squeeze(1).transpose(1, 2).contiguous(), cond_x.transpose(1, 2).contiguous())
+        cond_y = cond_y.transpose(1, 2).contiguous()
+        cond_y = cond_y * y_mask
+
+        # save_plot(cond_x.squeeze().cpu(), f"logs/new_exp/unit_encoder{random.randint(0, 1000)}.png", title="Encoder")
+
+        # Compute loss of score-based decoder
+        diff_loss, xt = self.compute_loss(y, y_mask, cond_y, spk_emb=spk_emb)
+
+        return diff_loss

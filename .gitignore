@@ -5,7 +5,7 @@
 notebooks/.ipynb_checkpoints
 notebooks/PS-*
 
-unitspeech/checkpoints*
+unitspeech/checkpoints/*
 unitspeech/outputs
 unitspeech/speaker_encoder/checkpts
 unitspeech/vocoder/checkpts
@@ -29,3 +29,7 @@ temp
 resources/LibriTTS
 resources/filelists - ORIGINAL
 _text
+unitspeech/checkpoints/finetune.json
+unitspeech/checkpoints
+.vscode/launch.json
+conf/config.yaml

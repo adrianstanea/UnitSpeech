@@ -1,17 +1,8 @@
-"""
-First step of training UnitSpeech: Train the Diffusion-Based Text-to-Speech Model
-
-Components:
-    - Text Encoder: Encodes phoneme embeddings into a sequence of hidden states.
-    - Duration Predictor: Predicts the duration of each phoneme to produce same length as mel-spectrogram.
-    - Decoder: Diffusion-based model that generates mel-spectrogram from hidden states.
-"""
 import logging
 import math
 import os
 import random
 from itertools import chain
-
 import hydra
 import monotonic_align
 import numpy as np
@@ -24,14 +15,12 @@ from torch.utils.tensorboard import SummaryWriter
 from tqdm import tqdm
 import phonemizer
 from phonemizer.logger import get_logger
-
-
 from conf.hydra_config import (
     AdamConfig,
     LJSPeechConfig,
     LibriTTSConfig,
     SWARAConfig,
-    TrainingUnitEncoderConfig_STEP1,
+    MainConfig,
 )
 from data import TextMelSpeakerBatchCollate, TextMelSpeakerDataset
 from unitspeech.duration_predictor import DurationPredictor
@@ -41,17 +30,23 @@ from unitspeech.util import (
     duration_loss,
     fix_len_compatibility,
     load_speaker_embs,
+    random_replace_tensor,
     sequence_mask,
 )
 
 logger = logging.getLogger("train_step1.py")
 logger.setLevel(logging.DEBUG)
-
 cs = ConfigStore.instance()
-cs.store(name="config", node=TrainingUnitEncoderConfig_STEP1)
+cs.store(name="config", node=MainConfig)
+
+spk_uncond = None
+text_uncond = None
 
 @hydra.main(config_path="conf", config_name="config")
-def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
+def hydra_main(cfg: MainConfig):
+    if cfg.train.with_uncond_score_estimator:
+        global spk_uncond
+        global text_uncond
     os.environ['CUDA_VISIBLE_DEVICES'] = cfg.train.CUDA_VISIBLE_DEVICES
     logger.info(f"Using CUDA_VISIBLE_DEVICES: {os.environ.get('CUDA_VISIBLE_DEVICES')}")
     # =============================================================================
@@ -68,7 +63,6 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
     logger.debug(f"Running from: {os.getcwd()}")
     logger.info(f"logging data into: {cfg.train.log_dir}")
     # =============================================================================
-    # TODO (OPTIONAL): HYPERPARAMTERES
     num_downsamplings_in_unet = len(cfg.decoder.dim_mults) - 1
     # out_size - a slice of mel-spectrogram to train the decoder on. Slice both text and mel-spectrogram.
     out_size = fix_len_compatibility(cfg.train.out_size_second * cfg.data.sampling_rate // cfg.data.hop_length,
@@ -84,27 +78,22 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
     # =============================================================================
     logger.info("Initializing datasets...")
     logger.info("Loading train dataset...")
-
     phonemizer_logger = get_logger(verbosity='quiet')
-    phonemizer_logger.setLevel(logger.ERROR)
-    # TODO: check if the mismatch warnining on WARNING log level is relevant
-    # https://github.com/lifeiteng/vall-e/issues/5 => CONFIRMS IT SHOULD BE FINE
+    phonemizer_logger.setLevel(logging.ERROR)
     if OmegaConf.get_type(cfg.dataset) is LibriTTSConfig or \
        OmegaConf.get_type(cfg.dataset) is LJSPeechConfig:
-        logger.info("Using English phonemizer") 
+        logger.info("Using English phonemizer")
         global_phonemizer = phonemizer.backend.EspeakBackend(language='en-us',
                                                                         preserve_punctuation=True,
                                                                         with_stress=True,
                                                                         words_mismatch='ignore',
                                                                         logger=phonemizer_logger)
     elif OmegaConf.get_type(cfg.dataset) is SWARAConfig:
-        logger.info("Using Romanian phonemizer") 
+        logger.info("Using Romanian phonemizer")
         global_phonemizer = phonemizer.backend.EspeakBackend(language='ro',
                                                                     preserve_punctuation=True,
                                                                     with_stress=True,
                                                                     language_switch="remove-flags",
-                                                                    # espeak can join two consecutive words or drop some words,
-                                                                    # yielding a word count mismatch between orthographic and phonemized text.
                                                                     words_mismatch='ignore',
                                                                     logger=phonemizer_logger)
     else:
@@ -130,21 +119,8 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
                               collate_fn=batch_collate,
                               drop_last=cfg.train.drop_last,
                               num_workers=cfg.train.num_workers,
-                              shuffle=cfg.train.shuffle)
-    # logger.info("Loading validation dataset...")
-    # test_dataset = TextMelSpeakerDataset(filelist_path=cfg.dataset.test_filelist_path,
-    #                                     random_seed=cfg.train.seed,
-    #                                     add_blank=cfg.data.add_blank,
-    #                                     n_fft=cfg.data.n_fft,
-    #                                     n_mels=cfg.data.n_feats,
-    #                                     sample_rate=cfg.data.sampling_rate,
-    #                                     hop_length=cfg.data.hop_length,
-    #                                     win_length=cfg.data.win_length,
-    #                                     f_min=cfg.data.mel_fmin,
-    #                                     f_max=cfg.data.mel_fmax,
-    #                                     normalize_mels=cfg.dataset.normalize_mels,
-    #                                     mel_min_path=cfg.dataset.mel_min_path,
-    #                                     mel_max_path=cfg.dataset.mel_max_path)
+                              shuffle=cfg.train.shuffle,
+                              pin_memory=True)
     # =============================================================================
     logger.info("Loading speaker embeddings")
     pretrained_embs = load_speaker_embs(embs_path =os.path.join(cfg.data.embs_path, cfg.dataset.name),
@@ -156,7 +132,8 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
     embedding_matrix = torch.stack([pretrained_embs[idx] for idx in original_indices], dim=0)
     speaker_embeddings = torch.nn.Embedding.from_pretrained(embedding_matrix,
                                                             freeze=True).to(device=device)
-
+    spk_uncond = torch.load(cfg.dataset.spk_uncond_path, map_location=lambda loc, storage: loc)
+    text_uncond = torch.load(cfg.dataset.text_uncond_path, map_location=lambda loc, storage: loc)
     # =============================================================================
     logger.info("Initializing decoder: GradTTS ...")
     # UnitSpeech uses GradTTS as the diffusion-based decoder model
@@ -173,21 +150,28 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
                                 map_location=lambda loc,
                                 storageL: loc)
         decoder.load_state_dict(decoder_dict['model'])
+    if not cfg.train.from_checkpoint:
+        decoder.spk_uncon.data = spk_uncond
+        decoder.text_uncon.data = text_uncond
+    # The unconditional speaker embedding is used to train the unconditional score on classifier-free guidance
+    if cfg.train.with_uncond_score_estimator:
+        spk_uncond = spk_uncond / spk_uncond.norm()
+    logger.debug(f"Decoder uncond: {decoder.spk_uncon}")
     logger.info(f"Number of parameters of the decoder: {decoder.nparams}")
     # =============================================================================
     logger.info("Initializing the Text Encoder...")
-    text_encoder = Encoder(n_vocab=cfg.encoder.n_vocab,
+    text_encoder = Encoder(n_vocab=cfg.text_encoder.n_vocab,
                            n_feats=cfg.data.n_feats,
-                           n_channels=cfg.encoder.n_channels,
-                           filter_channels=cfg.encoder.filter_channels, # filter_channels_dp is missing in UnitSpeech
-                           n_heads=cfg.encoder.n_heads,
-                           n_layers=cfg.encoder.n_layers,
-                           kernel_size=cfg.encoder.kernel_size,
-                           p_dropout=cfg.encoder.p_dropout,
-                           window_size=cfg.encoder.window_size).to(device)
+                           n_channels=cfg.text_encoder.n_channels,
+                           filter_channels=cfg.text_encoder.filter_channels,
+                           n_heads=cfg.text_encoder.n_heads,
+                           n_layers=cfg.text_encoder.n_layers,
+                           kernel_size=cfg.text_encoder.kernel_size,
+                           p_dropout=cfg.text_encoder.p_dropout,
+                           window_size=cfg.text_encoder.window_size).to(device)
     if cfg.train.from_checkpoint:
-        logger.info(f"Loading text encoder checkpoint from {cfg.encoder.train_checkpoint}")
-        text_encoder_dict = torch.load(cfg.encoder.train_checkpoint,
+        logger.info(f"Loading text encoder checkpoint from {cfg.text_encoder.train_checkpoint}")
+        text_encoder_dict = torch.load(cfg.text_encoder.train_checkpoint,
                                         map_location=lambda loc,
                                         storage: loc)
         text_encoder.load_state_dict(text_encoder_dict['model'])
@@ -220,18 +204,8 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
     if cfg.train.fp16_run:
         scaler = torch.cuda.amp.GradScaler()
     # =============================================================================
-    # logger.info("logger test batch...")
-    # test_batch = test_dataset.sample_test_batch(size=cfg.train.test_size)
-    # for item in test_batch:
-    #     mel, spk = item['y'], item['spk_id']
-    #     i = int(spk.cpu())
-    #     writer.add_image(f'image_{i}/ground_truth', plot_tensor(mel.squeeze()),
-    #                      global_step=0, dataformats='HWC')
-    #     save_plot(mel.squeeze(), f'{cfg.train.log_dir}/original_{i}.png')
-    # =============================================================================
     logger.info(f"Training for {cfg.train.n_epochs} epochs...")
     iteration = 0
-
     for epoch in range(1, cfg.train.n_epochs + 1):
         text_encoder.train()
         duration_predictor.train()
@@ -243,7 +217,6 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
                 text_encoder.zero_grad()
                 duration_predictor.zero_grad()
                 decoder.zero_grad()
-
                 with torch.cuda.amp.autocast(enabled=cfg.train.fp16_run):
                     dur_loss, prior_loss, diff_loss = compute_train_step_loss(cfg,
                                                                               batch,
@@ -254,29 +227,26 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
                                                                               decoder,
                                                                               out_size)
                 loss = sum([dur_loss, prior_loss, diff_loss])
-
-                # TODO: see train changes with greater value for gradient clipping
                 if cfg.train.fp16_run:
                     scaler.scale(loss).backward()
                     scaler.unscale_(optimizer)
                     text_encoder_grad_norm = torch.nn.utils.clip_grad_norm_(text_encoder.parameters(),
-                                                                            max_norm=1)
+                                                                            max_norm=5)
                     duration_predictor_grad_norm = torch.nn.utils.clip_grad_norm_(duration_predictor.parameters(),
-                                                                                  max_norm=1)
+                                                                                  max_norm=2)
                     decoder_grad_norm = torch.nn.utils.clip_grad_norm_(decoder.parameters(),
-                                                                       max_norm=1)
+                                                                       max_norm=2)
                     scaler.step(optimizer)
                     scaler.update()
                 else:
                     loss.backward()
                     text_encoder_grad_norm = torch.nn.utils.clip_grad_norm_(text_encoder.parameters(),
-                                                                            max_norm=1)
+                                                                            max_norm=5)
                     duration_predictor_grad_norm = torch.nn.utils.clip_grad_norm_(duration_predictor.parameters(),
-                                                                                  max_norm=1)
+                                                                                  max_norm=5)
                     decoder_grad_norm = torch.nn.utils.clip_grad_norm_(decoder.parameters(),
-                                                                       max_norm=1)
+                                                                       max_norm=2)
                     optimizer.step()
-
                 writer.add_scalar("Train1/duration_loss",
                                   dur_loss.item(), global_step=iteration)
                 writer.add_scalar("Train1/prior_loss",
@@ -294,19 +264,17 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
                 prior_losses.append(prior_loss.item())
                 diff_losses.append(diff_loss.item())
                 iteration += 1
-
                 # Update progress bar every X batches
                 if batch_idx % 5 == 0:
                     msg = f'Epoch: {epoch}, iteration: {iteration} | dur_loss: {dur_loss.item():.6f}, prior_loss: {prior_loss.item():.6f}, diff_loss: {diff_loss.item():.6f}'
                     progress_bar.set_description(msg)
 
-        log_msg = 'Epoch %d: duration loss = %.3f ' % (epoch, np.mean(dur_losses))
-        log_msg += '| prior loss = %.3f ' % np.mean(prior_losses)
-        log_msg += '| diffusion loss = %.3f\n' % np.mean(diff_losses)
+        log_msg = 'Epoch %d: duration loss = %.6f ' % (epoch, np.mean(dur_losses))
+        log_msg += '| prior loss = %.6f ' % np.mean(prior_losses)
+        log_msg += '| diffusion loss = %.6f\n' % np.mean(diff_losses)
         with open(f'{cfg.train.log_dir}/train.log', 'a') as f:
             f.write(log_msg)
-
-        # Evaluate and save model checkpoint every X epochs
+        logger.info(log_msg)
         if epoch % cfg.train.save_every > 0:
             continue
 
@@ -318,61 +286,25 @@ def hydra_main(cfg: TrainingUnitEncoderConfig_STEP1):
         logger.info(f"Saving checkpoints at epoch {epoch}...")
         os.makedirs(f"{cfg.train.log_dir}/checkpoints_{epoch}", exist_ok=True)
 
-        # with torch.no_grad():
-        #     for i, item in enumerate(test_batch):
-        #         # batch = 1 => we iterate sample by sample
-        #         x = item['x'].to(torch.long).unsqueeze(0).cuda() # phonemes: (batch, phonemes)
-        #         x_lengths = torch.LongTensor([x.shape[-1]]).cuda() # phoneme lengths: (batch)
-        #         spk_id = item['spk_id'].cuda() # (batch)
-        #         spk_embs = speaker_embeddings(spk_id).unsqueeze(1).cuda()
-
-        #         y_enc, y_dec, attn = decoder.execute_text_to_speech(phoneme = x,
-        #                                                             phoneme_lengths=x_lengths,
-        #                                                             spk_emb=spk_embs,
-        #                                                             text_encoder=text_encoder,
-        #                                                             duration_predictor=duration_predictor,
-        #                                                             num_downsamplings_in_unet=num_downsamplings_in_unet,
-        #                                                             diffusion_steps=cfg.decoder.diffusion_steps)
-        #         # Scale back the generated mel = y_dec
-        #         y_dec = ((y_dec + 1) / 2 * (train_dataset.mel_max.to(y_dec.device) - train_dataset.mel_min.to(y_dec.device)))
-        #         writer.add_image(f'image_{i}/generated_enc',
-        #                          plot_tensor(y_enc.squeeze().cpu()),
-        #                          global_step=iteration, dataformats='HWC')
-        #         writer.add_image(f'image_{i}/generated_dec',
-        #                          plot_tensor(y_dec.squeeze().cpu()),
-        #                          global_step=iteration, dataformats='HWC')
-        #         writer.add_image(f'image_{i}/alignment',
-        #                          plot_tensor(attn.squeeze().cpu()),
-        #                          global_step=iteration, dataformats='HWC')
-
-        #         save_plot(y_enc.squeeze().cpu(),
-        #                   f'{cfg.train.log_dir}/checkpoints_{epoch}/generated_enc_{i}.png')
-        #         save_plot(y_dec.squeeze().cpu(),
-        #                   f'{cfg.train.log_dir}/checkpoints_{epoch}/generated_dec_{i}.png')
-        #         save_plot(attn.squeeze().cpu(),
-        #                   f'{cfg.train.log_dir}/checkpoints_{epoch}/alignment_{i}.png')
-
-
         text_encoder_ckpt = {"model": text_encoder.state_dict()}
         logger.debug("Saving text encoder checkpoint")
         torch.save(text_encoder_ckpt,
                    f"{cfg.train.log_dir}/checkpoints_{epoch}/text_encoder.pt")
-
         duration_predictor_ckpt = {"model": duration_predictor.state_dict()}
         logger.debug("Saving duration predictor checkpoint")
         torch.save(duration_predictor_ckpt,
                    f"{cfg.train.log_dir}/checkpoints_{epoch}/duration_predictor.pt")
-
         pretrained_decoder_ckpt = {"model": decoder.state_dict(),
                                     "spk_emb": speaker_embeddings.state_dict(),
                                     "mel_min": train_dataset.mel_min,
-                                    "mel_max": train_dataset.mel_max}
+                                    "mel_max": train_dataset.mel_max,
+                                    "iteration": iteration}
         logger.debug("Saving decoder checkpoint")
         torch.save(pretrained_decoder_ckpt,
                    f"{cfg.train.log_dir}/checkpoints_{epoch}/pretrained_decoder.pt")
 
 
-def compute_train_step_loss(cfg: TrainingUnitEncoderConfig_STEP1,
+def compute_train_step_loss(cfg: MainConfig,
                             batch,
                             pretained_spk_embs,
                             spkr_emb_idx_mapping,
@@ -380,13 +312,18 @@ def compute_train_step_loss(cfg: TrainingUnitEncoderConfig_STEP1,
                             duration_predictor: DurationPredictor,
                             decoder: UnitSpeech,
                             out_size):
+    if cfg.train.with_uncond_score_estimator:
+        global spk_uncond
+        global text_uncond
+
     x_sample, x_sample_lengths = batch['x'].cuda(), batch['x_lengths'].cuda()  # TEXT
     y_sample, y_sample_lengths = batch['y'].cuda(), batch['y_lengths'].cuda()  # MEL
     spk_id = batch['spk_id'].cuda()
 
     contiguous_indices = torch.LongTensor([spkr_emb_idx_mapping[idx.item()] for idx in spk_id]).cuda()
     spk_embs = pretained_spk_embs(contiguous_indices).unsqueeze(1).cuda()
-
+    if cfg.train.with_uncond_score_estimator:
+        spk_embs = random_replace_tensor(spk_embs, spk_uncond)
 
     mu_x, x, x_mask = text_encoder(x_sample, x_sample_lengths)
     logw = duration_predictor(x, x_mask, w=None, g=spk_embs, reverse=True)
@@ -439,8 +376,6 @@ def compute_train_step_loss(cfg: TrainingUnitEncoderConfig_STEP1,
     # Align encoded text with mel-spectrogram and get mu_y segment
     mu_y = torch.matmul(attn.squeeze(1).transpose(1, 2).contiguous(), mu_x.transpose(1, 2).contiguous())
     mu_y = mu_y.transpose(1, 2).contiguous() # (batch, mels, mel_cut)
-    # NOTE: skipped in long train and worked fine
-    # mu_y = mu_y * y_mask # TODO: might need to skip this step if prior_loss remains unchanged
 
     # Compute loss of score-based decoder
     diff_loss, xt = decoder.compute_loss(y, y_mask, mu_y, spk_emb=spk_embs)

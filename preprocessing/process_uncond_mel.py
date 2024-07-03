@@ -9,7 +9,7 @@ import torchaudio as ta
 from tqdm import tqdm
 
 from conf.hydra_config import (
-    TrainingUnitEncoderConfig_STEP1,
+    MainConfig,
 )
 from preprocessing.utils import load_and_process_wav
 from unitspeech.speaker_encoder.ecapa_tdnn import ECAPA_TDNN
@@ -19,7 +19,7 @@ from unitspeech.vocoder.meldataset import mel_spectrogram
 
 count = 0
 
-def get_channel_wise_mel_normalization(filelist_path, text_uncond, cfg: TrainingUnitEncoderConfig_STEP1):
+def get_channel_wise_mel_normalization(filelist_path, text_uncond, cfg: MainConfig):
     filelist = parse_filelist(filelist_path, split_char='|')
     global count
 
@@ -48,7 +48,7 @@ def get_channel_wise_mel_normalization(filelist_path, text_uncond, cfg: Training
     return text_uncond
 
 def main():
-    cfg = TrainingUnitEncoderConfig_STEP1
+    cfg = MainConfig
     device = torch.device("cuda" if torch.cuda.is_available() and cfg.train.on_GPU else "cpu")
 
     logger = logging.getLogger()

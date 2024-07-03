@@ -1,12 +1,21 @@
 """ from https://github.com/huawei-noah/Speech-Backbones/tree/main/Grad-TTS """
 
+import json
+from math import perm
 import os
 from typing import Dict
 
+import librosa
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+import phonemizer
 
+from conf.hydra_config import SpeakerEmbedderCfg, UnitExtractorConfig
+from unitspeech.speaker_encoder.ecapa_tdnn import ECAPA_TDNN, ECAPA_TDNN_SMALL
+from unitspeech.textlesslib.textless.data.speech_encoder import SpeechEncoder
+from unitspeech.vocoder.env import AttrDict
+from unitspeech.vocoder.models import BigVGAN
 
 def sequence_mask(length, max_length=None):
     if max_length is None:
@@ -111,6 +120,19 @@ def save_plot(tensor, savepath, title=None):
     plt.close()
     return
 
+def save_for_gif(tensor, savepath, title=None):
+    plt.style.use('default')
+    fig, ax = plt.subplots(figsize=(12, 3))
+    im = ax.imshow(tensor, aspect="auto", origin="lower", interpolation='none')
+    if title:
+        plt.title(title)
+    plt.axis('off')
+    plt.tight_layout()
+    fig.canvas.draw()
+    plt.savefig(savepath)
+    plt.close()
+    return
+
 
 def save_figure_to_numpy(fig):
     data = np.fromstring(fig.canvas.tostring_rgb(), dtype=np.uint8, sep='')
@@ -128,6 +150,53 @@ def plot_tensor(tensor):
     data = save_figure_to_numpy(fig)
     plt.close()
     return data
+
+def get_phonemizer(language:str):
+    if language == 'en-us':
+        global_phonemizer = phonemizer.backend.EspeakBackend(
+            language="en-us",
+            preserve_punctuation=True,
+            with_stress=True,
+            language_switch="remove-flags"
+        )
+    elif language == 'ro':
+        global_phonemizer = phonemizer.backend.EspeakBackend(
+            language="ro",
+            preserve_punctuation=True,
+            with_stress=True,
+            language_switch="remove-flags",
+            words_mismatch="ignore",
+        )
+    else:
+        raise ValueError(f"Language {language} not supported.")
+    return global_phonemizer
+
+def get_vocoder(config_path, checkpoint, device):
+    with open(config_path) as f:
+        vocoder_hps = AttrDict(json.load(f))
+    vocoder = BigVGAN(vocoder_hps)
+    vocoder.load_state_dict(torch.load(checkpoint, map_location=lambda loc, storage: loc)["generator"])
+    _ = vocoder.to(device).eval()
+    vocoder.remove_weight_norm()
+    return vocoder
+
+def get_speaker_embedder(device, cfg=SpeakerEmbedderCfg) -> ECAPA_TDNN:
+    spk_embedder = ECAPA_TDNN_SMALL(feat_dim=cfg.feat_dim, feat_type=cfg.feat_type, config_path=cfg.config_path)
+    state_dict = torch.load(cfg.checkpoint, map_location=lambda storage, loc: storage)
+    spk_embedder.load_state_dict(state_dict["model"], strict=False)
+    _ = spk_embedder.to(device).eval()
+    return spk_embedder
+
+def get_unit_extracter(device, cfg: UnitExtractorConfig):
+    unit_extractor = SpeechEncoder.by_name(
+        dense_model_name=cfg.dense_model_name,
+        quantizer_model_name=cfg.quantizer_name,
+        vocab_size=cfg.vocab_size,
+        deduplicate=cfg.deduplicate,
+        need_f0=cfg.need_f0,
+    )
+    _ = unit_extractor.to(device).eval()
+    return unit_extractor
 
 def load_speaker_embs(embs_path: str, normalize: bool=True) -> Dict[int, torch.Tensor]:
     """Load mean speaker embeddings from .pt files in a directory.
@@ -151,6 +220,15 @@ def load_speaker_embs(embs_path: str, normalize: bool=True) -> Dict[int, torch.T
         else:
             raise ValueError(f"Speaker embedding file {spk_id_file} is not a .pt file.")
     return embs
+
+def random_replace_tensor(spk_embs, replacement_emb, replace_percentage: float=0.25):
+    n_items_to_replace = int(spk_embs.size(0) * replace_percentage)
+    permutation = torch.randperm(spk_embs.size(0))
+    idx_to_replace = permutation[:n_items_to_replace]
+    
+    for idx in idx_to_replace:
+        spk_embs[idx] = replacement_emb
+    return spk_embs 
 
 
 class HParams():
